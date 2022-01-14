@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
-use App\Models\Report;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -31,6 +30,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/user/{id}', [Controller::class, 'delete'])->name('user.delelte');    // Delete
 });
 
-Route::get('/', [Report::class, 'index'])->middleware('auth')->name('index');
-Route::get('/create', [Report::class, 'create'])->middleware('auth')->name('create');
-Route::post('/store', [Report::class, 'store'])->middleware('auth')->name('store');
+Route::get('/', [ReportController::class, 'index'])->middleware('auth')->name('index');
+Route::get('/create', [ReportController::class, 'create'])->middleware('auth')->name('create');
+Route::post('/store', [ReportController::class, 'store'])->middleware('auth')->name('store');
