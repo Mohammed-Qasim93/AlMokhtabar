@@ -41,4 +41,65 @@ class ReportController extends Controller
         Report::create($request->all());
         return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'نجاح العملية', 'message' => 'تمت العملية بنجاح']);
     }
+
+    public function print(){
+        $report = Report::latest()->first();
+        $html = '
+        <style>
+            body{
+                background: url("page_1.jpg");
+                background-image-resize: 6;
+                direction: rtl;
+                font-size: 16px;
+            }
+            .x{
+                text-align: center;
+                padding-top: 100px;
+            }
+            .lead{
+                line-height: 20px;
+                font-weight:: 70px;
+                font-size: 20px
+            }
+            .textsize{
+                font-size: 20px
+            }
+            .posDel{
+                position: absolute;
+                top: 1100px;
+                left: 75px;
+                font-size: 18px
+            }
+            .posRes{
+                position: absolute;
+                top: 1100px;
+                left: 655px;
+                font-size: 18px
+            }
+            .dataDel{
+                position: absolute;
+                top: 1130px;
+                left: 70px;
+                font-size: 22px;
+                width: 100px
+            }
+            .dataRes{
+                position: absolute;
+                top: 1130px;
+                left: 650px;
+                font-size: 22px;
+                width: 100px
+            }
+        </style>
+        <body>
+            <p>الجيزة</p>
+        </body>
+        ';
+        $mpdf = new \Mpdf\Mpdf(['format' => 'Legal']);
+        $mpdf->autoScriptToLang = true;
+        $mpdf->autoLangToFont = true;
+        $mpdf->WriteHTML($html);
+
+        $mpdf->Output('nn.pdf', 'I');
+    }
 }
