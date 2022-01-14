@@ -31,6 +31,7 @@ class ReportTable extends Migration
             $table->dateTime('collecteddate');
             $table->dateTime('printeddate');
             $table->string('branch');
+            $table->string('branchar');
             $table->bigInteger('amount');
             $table->string('paymentusername');
             $table->dateTime('paymentdate');
