@@ -13,7 +13,7 @@ class ReportTable extends Migration
      */
     public function up()
     {
-        Schema::create('report', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('patientid');  // تلقائي 212595887
             $table->string('pname');  // اسم المريض
