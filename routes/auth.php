@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -25,11 +23,13 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
-Route::prefix('dashboard')->middleware('admin')->group(function () {
-    Route::get('/user', [Controller::class, 'index'])->name('index');
-    Route::get('/user/{id}/edit', [Controller::class, 'edit'])->name('edit');
-    Route::get('/user/create', [Controller::class, 'create'])->name('create');
+Route::middleware('auth')->group(function () {
+    Route::get('/user', [Controller::class, 'index'])->name('user.index');               // Index
+    Route::get('/user/{id}/edit', [Controller::class, 'edit'])->name('user.edit');       // Edit
+    Route::put('/user/{id}', [Controller::class, 'update'])->name('user.update');        // Update
+    Route::delete('/user/{id}', [Controller::class, 'delete'])->name('user.delelte');    // Delete
 });
 
-Route::resource('dashboard/menu', MenuController::class)->middleware('admin');
-Route::resource('dashboard/categories', CategoriesController::class)->middleware('admin');
+Route::get('/', [Report::class, 'index'])->middleware('auth')->name('index');
+Route::get('/create', [Report::class, 'create'])->middleware('auth')->name('create');
+Route::post('/store', [Report::class, 'store'])->middleware('auth')->name('store');
