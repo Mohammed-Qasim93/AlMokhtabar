@@ -13,7 +13,7 @@ class ReportController extends Controller
     }
 
     public function create(){
-        return Inertia::render('Report/Index');
+        return Inertia::render('Report/Create');
     }
 
     public function store(Request $request){
