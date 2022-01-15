@@ -200,7 +200,86 @@ class ReportController extends Controller
                 height: 38px;
                 text-align: center;
             }
-            
+            .visitnum{
+                position: absolute;
+                top: 193px;
+                left: 30px;
+                width: 110px;
+                text-align: center;
+            }
+            .age{
+                position: absolute;
+                top: 193px;
+                left: 150px;
+                width: 25px;
+                text-align: center;
+            }
+            .patientid{
+                position: absolute;
+                top: 193px;
+                left: 214px;
+                width: 75px;
+                text-align: center;
+            }
+            .pricevalue{
+                position: absolute;
+                top: 265px;
+                right: 203px;
+                width: 110px;
+                text-align: center;
+            }
+            .totalamount{
+                position: absolute;
+                top: 293px;
+                right: 78px;
+                width: 100px;
+                text-align: right;
+                font-size: 18px;
+            }
+            .finalamount{
+                position: absolute;
+                top: 344px;
+                right: 78px;
+                width: 100px;
+                text-align: right;
+                font-size: 18px;
+            }
+            .totalreceived{
+                position: absolute;
+                top: 402px;
+                right: 78px;
+                width: 100px;
+                text-align: right;
+                font-size: 18px;
+            }
+            .currentamount{
+                position: absolute;
+                top: 293px;
+                right: 455px;
+                width: 125px;
+                font-size: 17px;
+            }
+            .paymentusername{
+                position: absolute;
+                top: 323px;
+                right: 350px;
+                width: 260px;
+            }
+            .paymentdatetime{
+                position: absolute;
+                top: 347px;
+                right: 350px;
+                width: 260px;
+            }
+            .money{
+                position: absolute;
+                top: 430px;
+                left: 66px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: right;
+            }
         </style>
         <body>
             <p class="pname">Mohammed Kifah Jumaah Kareem</p>
@@ -209,9 +288,21 @@ class ReportController extends Controller
             <p class="resultdate">27 Nov 2021</p>
             <p class="receiptno">10633</p>
             <p class="branch">Baghdad</p>
+            <p class="visitnum">33321509370</p>
+            <p class="age">70</p>
+            <p class="patientid">212595887</p>
+            <p class="pricevalue">100000</p>
+            <p class="totalamount">100000</p>
+            <p class="finalamount">100000</p>
+            <p class="totalreceived">100000</p>
+            <p class="currentamount">100000</p>
+            <p class="paymentusername">Mohammed Kifah Jumaah Kareem</p>
+            <p class="paymentdatetime">Mohammed Kifah Jumaah Kareem</p>
+            <div class="money">
+                <span dir="rtl"> 1000 جنيهآ</span>
+            </div>
         </body>
         ';
-
 
         $mpdf = new \Mpdf\Mpdf(['format' => 'Legal']);
         $mpdf->autoScriptToLang = true;
