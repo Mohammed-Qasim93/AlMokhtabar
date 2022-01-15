@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="البريد الالكتروني" />
+                    <Label forInput="email" value="Email" />
 
                     <Input
                         type="text"
@@ -63,7 +63,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="كلمة المرور" />
+                    <Label forInput="password" value="Password" />
 
                     <Input
                         type="password"
@@ -83,15 +83,15 @@ export default function Login({ status, canResetPassword }) {
                             handleChange={onHandleChange}
                         />
 
-                        <span className="mr-2 text-sm font-tajawal-light font-bold text-gray-600">
-                            تذكرني
+                        <span className="ml-2 text-sm font-thin text-gray-600">
+                            Remember me
                         </span>
                     </label>
                 </div>
 
                 <div className="flex items-center justify-center mt-4">
                     <Button className="ml-4" processing={processing}>
-                        دخول
+                        Log in
                     </Button>
                 </div>
             </form>

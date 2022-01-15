@@ -1,49 +1,73 @@
 import React from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import Authenticated from "../../Layouts/Authenticated";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-import Logo from "/logo.png";
-import page1 from "/page_1.jpg";
+import Button from "@/Components/Button";
 
-export default function Index(props) {
-    const downloadPDF = () => {
-        const input = document.getElementById("content");
-        html2canvas(input).then((canvas) => {
-            const imgData = canvas.toDataURL("image/png", 1.0);
-            const pdf = new jsPDF({
-                orientation: "p",
-                unit: "cm",
-                format: "a4",
-            });
-            pdf.addImage(imgData, "JPEG", 0, 0, 21, 29.7);
-
-            pdf.save("download.pdf");
-        });
-    };
-
+export default function Index({ auth, report }) {
     return (
-        <>
-            <Authenticated auth={props.auth}>
-                <Head title="Welcome" />
-                <div className="relative flex items-top justify-center    sm:pt-0">
-                    <div className="w-full max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 xl:py-20">
-                        <div
-                            id="content"
-                            style={{
-                                backgroundImage: `url(${page1})`,
-                                backgroundSize: "cover",
-                                width: "21cm",
-                                minHeight: "29.7cm",
-                                padding: "2cm",
-                                margin: "1cm auto",
-                            }}
+        <Authenticated auth={auth}>
+            <Head title="Patients" />
+            <div className="mt-8">
+                <p className="text-4xl text-center font-bold m-5">
+                    Patients Report Table
+                </p>
+                <div className="flex justify-center flex-col  mx-auto">
+                    <div className="w-5/6 mx-auto">
+                        <Link
+                            href="/create"
+                            className="px-4 py-2 bg-gray-800 rounded-lg text-slate-100"
                         >
-                            <button onClick={downloadPDF}>ojpj</button>
-                        </div>
+                            Create new
+                        </Link>
                     </div>
+                    <table className="m-5 w-5/6 mx-auto shadow-sm  rounded-t-lg overflow-hidden  border-gray-600 bg-gray-200 text-gray-700">
+                        <thead className="bg-gray-600 text-center capitalize  text-gray-200 ">
+                            <tr className="  ">
+                                <th className="px-4 py-3">Patient name</th>
+                                <th className="px-4 py-3">age</th>
+                                <th className="px-4 py-3">gender</th>
+                                <th className="px-4 py-3">result</th>
+                                <th className="px-4 py-3">visit number</th>
+                                <th className="px-4 py-3">branch</th>
+                                <th className="px-4 py-3">amount</th>
+                                <th className="px-4 py-3">payment</th>
+                            </tr>
+                        </thead>
+                        <tbody className="capitalize ">
+                            <tr className=" text-center border border-gray-600">
+                                <td className="px-4 py-3">Jill</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">male</td>
+                                <td className="px-4 py-3">positive</td>
+                                <td className="px-4 py-3">243</td>
+                                <td className="px-4 py-3">giza</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">098</td>
+                            </tr>
+                            <tr className=" text-center border border-gray-600">
+                                <td className="px-4 py-3">Jill</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">male</td>
+                                <td className="px-4 py-3">positive</td>
+                                <td className="px-4 py-3">243</td>
+                                <td className="px-4 py-3">giza</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">098</td>
+                            </tr>
+                            <tr className=" text-center border border-gray-600">
+                                <td className="px-4 py-3">Jill</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">male</td>
+                                <td className="px-4 py-3">positive</td>
+                                <td className="px-4 py-3">243</td>
+                                <td className="px-4 py-3">giza</td>
+                                <td className="px-4 py-3">50</td>
+                                <td className="px-4 py-3">098</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </Authenticated>
-        </>
+            </div>
+        </Authenticated>
     );
 }
