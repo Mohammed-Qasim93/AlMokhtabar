@@ -4855,9 +4855,6 @@ function Add(_ref) {
             className: " flex justify-center  text-gray-900 text-2xl",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               className: "pt-12",
-              style: {
-                width: "512px"
-              },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                   className: "mt-10 sm:mt-0",
@@ -4875,9 +4872,9 @@ function Add(_ref) {
                               className: "pt-4 pb-6 text-center",
                               children: "Create Report"
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                              className: "grid grid-cols-6 gap-6",
+                              className: "grid grid-cols-3 gap-6",
                               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-5",
+                                className: "col-span-6 sm:col-span-3",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
                                   htmlFor: "pname",
                                   className: "block text-sm font-medium text-gray-700",
@@ -4909,7 +4906,7 @@ function Add(_ref) {
                                   children: errors.age
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "gender",
                                   className: "block text-sm font-medium text-gray-700",
@@ -4928,7 +4925,7 @@ function Add(_ref) {
                                   children: errors.gender
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "visitdate",
                                   className: "block text-sm font-medium text-gray-700",
@@ -4942,6 +4939,102 @@ function Add(_ref) {
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.visitdate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "resultdate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Result Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "date",
+                                  value: data.resultdate,
+                                  name: "resultdate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.resultdate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "registereddate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Registered Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "datetime-local",
+                                  value: data.registereddate,
+                                  name: "registereddate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.registereddate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "authenticateddate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Authenticated Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "datetime-local",
+                                  value: data.authenticateddate,
+                                  name: "authenticateddate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.authenticateddate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "collecteddate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Collected Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "datetime-local",
+                                  value: data.collecteddate,
+                                  name: "collecteddate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.collecteddate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "printeddate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Printed Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "datetime-local",
+                                  value: data.printeddate,
+                                  name: "printeddate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.printeddate
+                                })]
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                                className: "col-span-6 sm:col-span-1",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                  htmlFor: "paymentuserdate",
+                                  className: "block text-sm font-medium text-gray-700",
+                                  children: "Payment Date"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                  onChange: onHandleChange,
+                                  type: "datetime-local",
+                                  value: data.paymentuserdate,
+                                  name: "paymentuserdate",
+                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                  className: "text-red-500 text-sm",
+                                  children: errors.paymentuserdate
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-3",
@@ -4962,22 +5055,6 @@ function Add(_ref) {
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-3",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "resultdate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Result Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "date",
-                                  value: data.resultdate,
-                                  name: "resultdate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.resultdate
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "referencerange",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Reference Range"
@@ -4992,71 +5069,7 @@ function Add(_ref) {
                                   children: errors.referencerange
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "registereddate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Registered Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "datetime-local",
-                                  value: data.registereddate,
-                                  name: "registereddate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.registereddate
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "authenticateddate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Authenticated Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "datetime-local",
-                                  value: data.authenticateddate,
-                                  name: "authenticateddate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.authenticateddate
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "collecteddate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Collected Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "datetime-local",
-                                  value: data.collecteddate,
-                                  name: "collecteddate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.collecteddate
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "printeddate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Printed Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "datetime-local",
-                                  value: data.printeddate,
-                                  name: "printeddate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.printeddate
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-2",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "branchar",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5072,7 +5085,7 @@ function Add(_ref) {
                                   children: errors.branchar
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "branch",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5088,7 +5101,7 @@ function Add(_ref) {
                                   children: errors.branch
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "amount",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5104,7 +5117,7 @@ function Add(_ref) {
                                   children: errors.amount
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "totalamount",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5120,7 +5133,7 @@ function Add(_ref) {
                                   children: errors.totalamount
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "finalamount",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5166,22 +5179,6 @@ function Add(_ref) {
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.paymentusername
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "paymentuserdate",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Payment Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "datetime-local",
-                                  value: data.paymentuserdate,
-                                  name: "paymentuserdate",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.paymentuserdate
                                 })]
                               })]
                             })]

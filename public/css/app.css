@@ -1474,6 +1474,10 @@ select {
     grid-column: span 5 / span 5;
   }
 
+  .sm\:col-start-1 {
+    grid-column-start: 1;
+  }
+
   .sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;

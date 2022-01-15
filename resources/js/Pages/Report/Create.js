@@ -89,7 +89,7 @@ export default function Add({ auth, errors, categories }) {
                 <div className="flex">
                     <div className="flex-1 flex flex-col">
                         <div className=" flex justify-center  text-gray-900 text-2xl">
-                            <div className="pt-12" style={{ width: "512px" }}>
+                            <div className="pt-12">
                                 <div>
                                     <div className="mt-10 sm:mt-0">
                                         <div className="grid grid-cols-2 gap-6">
@@ -100,8 +100,8 @@ export default function Add({ auth, errors, categories }) {
                                                             <h2 className="pt-4 pb-6 text-center">
                                                                 Create Report
                                                             </h2>
-                                                            <div className="grid grid-cols-6 gap-6">
-                                                                <div className="col-span-6 sm:col-span-5">
+                                                            <div className="grid grid-cols-3 gap-6">
+                                                                <div className="col-span-6 sm:col-span-3">
                                                                     <label
                                                                         htmlFor="pname"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -150,7 +150,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="gender"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -183,7 +183,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="visitdate"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -209,32 +209,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="result"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Result
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.result
-                                                                        }
-                                                                        name="result"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.result
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="resultdate"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -257,6 +232,162 @@ export default function Add({ auth, errors, categories }) {
                                                                     <small className="text-red-500 text-sm">
                                                                         {
                                                                             errors.resultdate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+                                                                <div className="col-span-6 sm:col-span-1">
+                                                                    <label
+                                                                        htmlFor="registereddate"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Registered
+                                                                        Date
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="datetime-local"
+                                                                        value={
+                                                                            data.registereddate
+                                                                        }
+                                                                        name="registereddate"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.registereddate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+                                                                <div className="col-span-6 sm:col-span-1">
+                                                                    <label
+                                                                        htmlFor="authenticateddate"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Authenticated
+                                                                        Date
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="datetime-local"
+                                                                        value={
+                                                                            data.authenticateddate
+                                                                        }
+                                                                        name="authenticateddate"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.authenticateddate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+                                                                <div className="col-span-6 sm:col-span-1">
+                                                                    <label
+                                                                        htmlFor="collecteddate"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Collected
+                                                                        Date
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="datetime-local"
+                                                                        value={
+                                                                            data.collecteddate
+                                                                        }
+                                                                        name="collecteddate"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.collecteddate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+                                                                <div className="col-span-6 sm:col-span-1">
+                                                                    <label
+                                                                        htmlFor="printeddate"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Printed
+                                                                        Date
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="datetime-local"
+                                                                        value={
+                                                                            data.printeddate
+                                                                        }
+                                                                        name="printeddate"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.printeddate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+                                                                <div className="col-span-6 sm:col-span-1">
+                                                                    <label
+                                                                        htmlFor="paymentuserdate"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Payment
+                                                                        Date
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="datetime-local"
+                                                                        value={
+                                                                            data.paymentuserdate
+                                                                        }
+                                                                        name="paymentuserdate"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.paymentuserdate
+                                                                        }
+                                                                    </small>
+                                                                </div>
+
+                                                                <div className="col-span-6 sm:col-span-3">
+                                                                    <label
+                                                                        htmlFor="result"
+                                                                        className="block text-sm font-medium text-gray-700"
+                                                                    >
+                                                                        Result
+                                                                    </label>
+                                                                    <input
+                                                                        onChange={
+                                                                            onHandleChange
+                                                                        }
+                                                                        type="text"
+                                                                        value={
+                                                                            data.result
+                                                                        }
+                                                                        name="result"
+                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+
+                                                                    <small className="text-red-500 text-sm">
+                                                                        {
+                                                                            errors.result
                                                                         }
                                                                     </small>
                                                                 </div>
@@ -287,111 +418,8 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="registereddate"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Registered
-                                                                        Date
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="datetime-local"
-                                                                        value={
-                                                                            data.registereddate
-                                                                        }
-                                                                        name="registereddate"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
 
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.registereddate
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="authenticateddate"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Authenticated
-                                                                        Date
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="datetime-local"
-                                                                        value={
-                                                                            data.authenticateddate
-                                                                        }
-                                                                        name="authenticateddate"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.authenticateddate
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="collecteddate"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Collected
-                                                                        Date
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="datetime-local"
-                                                                        value={
-                                                                            data.collecteddate
-                                                                        }
-                                                                        name="collecteddate"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.collecteddate
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="printeddate"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Printed
-                                                                        Date
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="datetime-local"
-                                                                        value={
-                                                                            data.printeddate
-                                                                        }
-                                                                        name="printeddate"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.printeddate
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-2">
                                                                     <label
                                                                         htmlFor="branchar"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -418,7 +446,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="branch"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -443,7 +471,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="amount"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -468,7 +496,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="totalamount"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -494,7 +522,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="finalamount"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -569,32 +597,6 @@ export default function Add({ auth, errors, categories }) {
                                                                     <small className="text-red-500 text-sm">
                                                                         {
                                                                             errors.paymentusername
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="paymentuserdate"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Payment
-                                                                        Date
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="datetime-local"
-                                                                        value={
-                                                                            data.paymentuserdate
-                                                                        }
-                                                                        name="paymentuserdate"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.paymentuserdate
                                                                         }
                                                                     </small>
                                                                 </div>
