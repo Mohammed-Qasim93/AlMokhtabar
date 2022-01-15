@@ -25,15 +25,7 @@ export default function Authenticated({ auth, header, children }) {
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/" active={route().current("/")}>
-                                    الرئيسية
-                                </NavLink>
-                            </div>
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
-                                >
-                                    لوحة التحكم
+                                    Home
                                 </NavLink>
                             </div>
 
@@ -64,6 +56,13 @@ export default function Authenticated({ auth, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
+                                        <Dropdown.Link
+                                            href={"/user"}
+                                            method="get"
+                                            as="button"
+                                        >
+                                            Profile
+                                        </Dropdown.Link>
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"
@@ -127,10 +126,10 @@ export default function Authenticated({ auth, header, children }) {
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
+                            href={"user/edit"}
+                            active={route().current("user/edit")}
                         >
-                            لوحة التحكم
+                            Profile
                         </ResponsiveNavLink>
                     </div>
 
