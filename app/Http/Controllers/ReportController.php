@@ -62,7 +62,7 @@ class ReportController extends Controller
             'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
             'receiptno' => $this->randomNum(Report::pluck('receiptno'), 10000, 99999),
         ]);
-        return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
+        return Redirect::route('print');
     }
 
     public function print(){
@@ -334,6 +334,7 @@ class ReportController extends Controller
         $mpdf->AddPage();
         $mpdf->WriteHTML($page2);
         $mpdf->Output('nn.pdf', 'I');
+        return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
     }
 
     public function randomNum($old, $from, $to){
