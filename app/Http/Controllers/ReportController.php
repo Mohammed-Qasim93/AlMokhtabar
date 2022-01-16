@@ -37,7 +37,7 @@ class ReportController extends Controller
             'branchar' => 'required|string',
             'amount' => 'required|numeric',
             'paymentusername' => 'required|string',
-            'paymentuserdate' => 'required|date',
+            'paymentdate' => 'required|date',
         ]);
         dd($request->all());
         Report::create([
