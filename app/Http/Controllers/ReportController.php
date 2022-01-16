@@ -73,6 +73,7 @@ class ReportController extends Controller
 
     public function print(){
         $report = Report::latest()->first();
+        dd($report);
         $page1 = '
         <style>
             body{
@@ -339,8 +340,8 @@ class ReportController extends Controller
         $mpdf->WriteHTML($page1);
         $mpdf->AddPage();
         $mpdf->WriteHTML($page2);
-        $mpdf->Output('nn.pdf', 'I');
-        return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
+        $mpdf->Output($report->pname, 'I');
+        Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
     }
 
     public function randomNum($old, $from, $to){

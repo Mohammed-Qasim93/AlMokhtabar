@@ -49,9 +49,9 @@ class Controller extends BaseController
                 'email' => $request->email,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
+            return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
         }else{
-            return Redirect::route('user.index');
+            return Redirect::route('index');
         }
 
 
