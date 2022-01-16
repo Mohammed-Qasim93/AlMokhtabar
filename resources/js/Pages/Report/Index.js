@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import Authenticated from "../../Layouts/Authenticated";
-import Button from "@/Components/Button";
 import Pagination from "@/Components/Pagination";
 
 export default function Index({ auth, report }) {
