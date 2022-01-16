@@ -55,7 +55,7 @@ class ReportController extends Controller
             'branchar' => $request->branchar,
             'amount' => $request->amount,
             'paymentusername' => $request->paymentusername,
-            'paymentdate' => $request->paymentuserdate,
+            'paymentdate' => $request->paymentdate,
             'visitnum' => $this->randomNum(Report::pluck('visitnum'), 1000000000, 99999999999),
             'clientid' => $this->randomNum(Report::pluck('clientid'), 10000, 99999),
             'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
