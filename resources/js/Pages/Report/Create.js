@@ -66,7 +66,6 @@ export default function Add({ auth, errors, categories }) {
                 Inertia.visit("/print?print=pdf");
             },
         });
-        console.log(data);
     };
 
     // const handleChange = (e) => {

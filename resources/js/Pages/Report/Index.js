@@ -4,7 +4,6 @@ import Authenticated from "../../Layouts/Authenticated";
 import Pagination from "@/Components/Pagination";
 
 export default function Index({ auth, report }) {
-    console.log(report);
     return (
         <Authenticated auth={auth}>
             <Head title="Patients" />
