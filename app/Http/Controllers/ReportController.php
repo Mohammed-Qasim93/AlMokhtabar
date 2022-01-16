@@ -65,6 +65,12 @@ class ReportController extends Controller
         return Redirect::route('print');
     }
 
+    public function show($id){
+        return Inertia::render('Report/Show', [
+            'report' => Report::findOrFail($id)
+        ]);
+    }
+
     public function print(){
         $report = Report::latest()->first();
         $page1 = '
