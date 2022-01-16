@@ -39,7 +39,7 @@ class ReportController extends Controller
             'paymentusername' => 'required|string',
             'paymentdate' => 'required|date',
         ]);
-        dd($request->all());
+
         Report::create([
             'pname' => $request->pname,
             'age' => $request->age,
