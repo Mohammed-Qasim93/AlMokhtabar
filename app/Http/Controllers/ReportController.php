@@ -8,6 +8,7 @@ use Inertia\Inertia;
 
 class ReportController extends Controller
 {
+    
     public function index(){
         return Inertia::render('Report/Index', [
             'report' => Report::paginate(20)
@@ -19,6 +20,7 @@ class ReportController extends Controller
     }
 
     public function store(Request $request){
+        
         $request->validate([
             'pname' => 'required|string',
             'age' => 'required|numeric',
@@ -26,7 +28,6 @@ class ReportController extends Controller
             'visitdate' => 'required|date',
             'resultdate' => 'required|date',
             'result' => 'required|string',
-            'referencerange' => 'required|string',
             'registereddate' => 'required|date',
             'authenticateddate' => 'required|date',
             'collecteddate' => 'required|date',
@@ -38,8 +39,28 @@ class ReportController extends Controller
             'paymentuserdate' => 'required|date',
         ]);
 
-        Report::create($request->all());
-        return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'نجاح العملية', 'message' => 'تمت العملية بنجاح']);
+        Report::create([
+            'pname' => $request->pname,
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'visitdate' => $request->visitdate,
+            'resultdate' => $request->resultdate,
+            'result' => $request->result,
+            'registereddate' => $request->registereddate,
+            'authenticateddate' => $request->authenticateddate,
+            'collecteddate' => $request->collecteddate,
+            'printeddate' => $request->printeddate,
+            'branch' => $request->branch,
+            'branchar' => $request->branchar,
+            'amount' => $request->amount,
+            'paymentusername' => $request->paymentusername,
+            'paymentuserdate' => $request->paymentuserdate,
+            'visitnum' => $this->randomNum(Report::pluck('visitnum'), 10000000000, 99999999999),
+            'clientid' => $this->randomNum(Report::pluck('clientid'), 100000, 99999),
+            'patientid' => $this->randomNum(Report::pluck('patientid'), 1000000000, 999999999),
+            'receiptno' => $this->randomNum(Report::pluck('receiptno'), 100000, 99999),
+        ]);
+        return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
     }
 
     public function print(){
@@ -311,5 +332,15 @@ class ReportController extends Controller
         $mpdf->AddPage();
         $mpdf->WriteHTML($page2);
         $mpdf->Output('nn.pdf', 'I');
+    }
+
+    public function randomNum($old, $from, $to){
+        $rand = mt_rand($from, $to);
+        foreach($old as $num){
+            if($num == $rand){
+                return $this->randomNum($old, $from, $to);
+            }
+        }
+        return $rand;
     }
 }

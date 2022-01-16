@@ -40,26 +40,16 @@ class Controller extends BaseController
             if($request->name !== $user->name){
                 $request->validate([
                     'name' => 'required|unique:users,name'
-                    ],[
-                    'name.required'        => 'يجب ادخال الاسم',
-                    'name.unique'        => 'الاسم مستخدم بالفعل',
                 ]);
             }
             if($request->email !== $user->email){
                 $request->validate([
                     'email' => 'required|unique:users,email|email'
-                    ],[
-                    'email.required'        => 'يجب ادخال البريد الالكتروني',
-                    'email.unique'        => 'البريد الالكتروني مستخدم',
-                    'email.email'        => 'البريد الالكتروني المدخل غير صالح',
                 ]);
             }
             if($request->password !== $user->password && $request->password !== null){
                 $request->validate([
-                    'password' => ['required', 'confirmed', Rules\Password::min(8)],
-                    ],[
-                    'password.required'  => 'يجب ادخال كلمة المرور',
-                    'password.confirmed' => 'كلمة المرور غير متطابقة',
+                    'password' => ['required', 'confirmed', Rules\Password::min(8)]
                 ]);
             }
             $user->update([
@@ -67,7 +57,7 @@ class Controller extends BaseController
                 'email' => $request->email,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'نجاح العملية', 'message' => 'تم التعديل بنجاح']);
+            return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
         }else{
             return Redirect::route('user.index');
         }
@@ -75,10 +65,7 @@ class Controller extends BaseController
 
         if($request->password !== $user->password && $request->password !== null){
             $request->validate([
-                'password' => ['required', 'confirmed', Rules\Password::min(8)],
-                ],[
-                'password.required'  => 'يجب ادخال كلمة المرور',
-                'password.confirmed' => 'كلمة المرور غير متطابقة',
+                'password' => ['required', 'confirmed', Rules\Password::min(8)]
             ]);
         }
     }
@@ -94,10 +81,10 @@ class Controller extends BaseController
     {
         $user = User::findOrFail($id);
         if($user == Auth::user()){
-            return Redirect::back()->with('success', ['icon' => 'warning' ,'title' => 'تنبيه', 'message' => 'الحساب مستخدم بالفعل']);
+            return Redirect::back()->with('success', ['icon' => 'warning' ,'title' => 'Warning', 'message' => 'This User is already in use']);
         }else{
             $user->delete();
-            return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'نجاح العملية', 'message' => 'تم الحذف بنجاح']);
+            return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Deleted successfully']);
         }
     }
 }
