@@ -4,7 +4,6 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
-import DashboardBar from "../../Components/DashboardBar";
 // import ComboBox from "@/Components/ComboBox";
 
 export default function Edit({ auth, user, errors, success }) {

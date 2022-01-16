@@ -4,9 +4,6 @@ import Input from "@/Components/Input";
 import Button from "@/Components/Button";
 import Authenticated from "@/Layouts/Authenticated";
 
-import DashboardBar from "../../Components/DashboardBar";
-
-import Checkbox from "../../Components/Checkbox";
 import Combo from "../../Components/Combo";
 
 export default function Add({ auth, errors, categories }) {

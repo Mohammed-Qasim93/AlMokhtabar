@@ -57,7 +57,7 @@ export default function Authenticated({ auth, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
-                                            href={`user/${auth.user.id}/edit`}
+                                            href={`/user/${auth.user.id}/edit`}
                                             method="get"
                                             as="button"
                                         >
