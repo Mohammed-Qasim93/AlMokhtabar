@@ -5,7 +5,6 @@ import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import DashboardBar from "../../Components/DashboardBar";
-import Toast from "../../Components/Toast";
 // import ComboBox from "@/Components/ComboBox";
 
 export default function Edit({ auth, user, errors, success }) {
@@ -32,14 +31,7 @@ export default function Edit({ auth, user, errors, success }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(`/user/${user.id}`, {
-            onSuccess: () => {
-                Toast.fire({
-                    icon: "success",
-                    title: success,
-                });
-            },
-        });
+        post(`/user/${user.id}`);
     };
 
     // const handlechecked = (e) => {
@@ -53,8 +45,7 @@ export default function Edit({ auth, user, errors, success }) {
         <Authenticated auth={auth}>
             <Head title={`Edit ${user.name}`} />
             <div className="flex">
-                <DashboardBar auth={auth} />
-                <div className="flex-1 flex flex-col max-w-6xl">
+                <div className="flex-1 flex flex-col ">
                     <div className=" flex justify-center  text-gray-900 text-2xl">
                         <div className="pt-12" style={{ width: "512px" }}>
                             <form
@@ -68,7 +59,7 @@ export default function Edit({ auth, user, errors, success }) {
                                     <Label
                                         className="text-xl w-full pb-2"
                                         forInput="name"
-                                        value="user Name"
+                                        value="Username"
                                     />
                                     <Input
                                         type="text"

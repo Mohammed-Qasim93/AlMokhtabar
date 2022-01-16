@@ -63,7 +63,11 @@ export default function Add({ auth, errors, categories }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post("/store");
+        post("/store", {
+            onFinish: () => {
+                Inertia.visit("/");
+            },
+        });
         console.log(data);
     };
 

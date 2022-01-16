@@ -57,7 +57,7 @@ export default function Authenticated({ auth, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
-                                            href={"/user"}
+                                            href={`user/${auth.user.id}/edit`}
                                             method="get"
                                             as="button"
                                         >
@@ -125,10 +125,7 @@ export default function Authenticated({ auth, header, children }) {
                     }
                 >
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink
-                            href={"user/edit"}
-                            active={route().current("user/edit")}
-                        >
+                        <ResponsiveNavLink href={`/user/${auth.user.id}/edit`}>
                             Profile
                         </ResponsiveNavLink>
                     </div>
