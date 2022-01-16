@@ -11,7 +11,6 @@ class ReportController extends Controller
 {
     
     public function index(){
-        dd(Carbon::parse(now())->format('Y-m-d H:m:s A'));
         return Inertia::render('Report/Index', [
             'report' => Report::paginate(20)
         ]);
