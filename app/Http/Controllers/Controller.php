@@ -9,7 +9,6 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
@@ -18,13 +17,6 @@ use Illuminate\Support\Facades\Redirect;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    public function index()
-    {
-        return Inertia::render('User/Index' , [
-            'user' => User::paginate(5),
-        ]);
-    }
 
     public function edit($id)
     {
@@ -67,24 +59,6 @@ class Controller extends BaseController
             $request->validate([
                 'password' => ['required', 'confirmed', Rules\Password::min(8)]
             ]);
-        }
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Items  $items
-     * @return \Illuminate\Http\Response
-     */
-    public function delete($id)
-    {
-        $user = User::findOrFail($id);
-        if($user == Auth::user()){
-            return Redirect::back()->with('success', ['icon' => 'warning' ,'title' => 'Warning', 'message' => 'This User is already in use']);
-        }else{
-            $user->delete();
-            return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Deleted successfully']);
         }
     }
 }

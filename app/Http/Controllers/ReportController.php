@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -10,6 +11,7 @@ class ReportController extends Controller
 {
     
     public function index(){
+        dd(Carbon::parse(now())->format('Y-m-d H:m:s A'));
         return Inertia::render('Report/Index', [
             'report' => Report::paginate(20)
         ]);
@@ -158,18 +160,18 @@ class ReportController extends Controller
             
         </style>
         <body>
-            <p dir="rtl" class="branchar">بغداد الجديدة</p>
-            <p class="pname">Mohammed Kifah Jumaah Kareem</p>
-            <p class="registered">27-11-2021 09:16:03</p>
-            <p class="authintecated">27-11-2021 09:16:03</p>
-            <p class="collected">27-11-2021 09:16:03</p>
-            <p class="printed">27-11-2021 09:16:03</p>
-            <p class="clientid">47019</p>
-            <p class="gender">Female</p>
-            <p class="age">56</p>
-            <p class="visitnum">33321509370</p>
-            <p class="result">Negative</p>
-            <p class="referencerange">Negative</p>
+            <p dir="rtl" class="branchar">' . $report->branchar . '</p>
+            <p class="pname">' . $report->pname . '</p>
+            <p class="registered">' . Carbon::parse($report->registerationdate)->format('Y-m-d H:m:s') . '</p>
+            <p class="authintecated">' . Carbon::parse($report->authenticateddate)->format('Y-m-d H:m:s') . '</p>
+            <p class="collected">' . Carbon::parse($report->collecteddate)->format('Y-m-d H:m:s') . '</p>
+            <p class="printed">' . Carbon::parse($report->printeddate)->format('Y-m-d H:m:s') . '</p>
+            <p class="clientid">' . $report->clientid . '</p>
+            <p class="gender">' . $report->gender . '</p>
+            <p class="age">' . $report->age . '</p>
+            <p class="visitnum">' . $report->visitnum . '</p>
+            <p class="result">' . $report->result . '</p>
+            <p class="referencerange">' . $report->result . '</p>
         </body>
         ';
         $page2 = '
@@ -303,24 +305,24 @@ class ReportController extends Controller
             }
         </style>
         <body>
-            <p class="pname">Mohammed Kifah Jumaah Kareem</p>
-            <p class="visitdate">27 Nov 2021</p>
-            <p class="paymentdate">27 Nov 2021</p>
-            <p class="resultdate">27 Nov 2021</p>
-            <p class="receiptno">10633</p>
-            <p class="branch">Baghdad</p>
-            <p class="visitnum">33321509370</p>
-            <p class="age">70</p>
-            <p class="patientid">212595887</p>
-            <p class="pricevalue">100000</p>
-            <p class="totalamount">100000</p>
-            <p class="finalamount">100000</p>
-            <p class="totalreceived">100000</p>
-            <p class="currentamount">100000</p>
-            <p class="paymentusername">Mohammed Kifah Jumaah Kareem</p>
-            <p class="paymentdatetime">Mohammed Kifah Jumaah Kareem</p>
+            <p class="pname">' . $report->pname . '</p>
+            <p class="visitdate">' . Carbon::parse($report->visitdate)->format('Y-M-d') . '</p>
+            <p class="paymentdate">' . Carbon::parse($report->paymentuserdate)->format('Y-m-d') . '</p>
+            <p class="resultdate">' . Carbon::parse($report->resultdate)->format('Y-M-d') . '</p>
+            <p class="receiptno">' . $report->receiptid . '</p>
+            <p class="branch">' . $report->branch . '</p>
+            <p class="visitnum">' . $report->visitnum . '</p>
+            <p class="age">' . $report->age . '</p>
+            <p class="patientid">' . $report->pateintid . '</p>
+            <p class="pricevalue">' . $report->amount . '</p>
+            <p class="totalamount">' . $report->amount . '</p>
+            <p class="finalamount">' . $report->amount . '</p>
+            <p class="totalreceived">' . $report->amount . '</p>
+            <p class="currentamount">' . $report->amount . '</p>
+            <p class="paymentusername">' . $report->paymentusername  . '</p>
+            <p class="paymentdatetime">' . Carbon::parse($report->paymentuserdate)->format('Y-m-d H:m:s A') . '</p>
             <div class="money">
-                <span dir="rtl"> 1000 جنيهآ</span>
+                <span dir="rtl"> ' . $report->amount . ' جنيهآ</span>
             </div>
         </body>
         ';

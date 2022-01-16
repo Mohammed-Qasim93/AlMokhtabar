@@ -23,7 +23,6 @@ class ReportTable extends Migration
             $table->dateTime('visitdate');
             $table->dateTime('resultdate');
             $table->string('result'); // نتيجة التحليل
-            $table->string('referencerange'); // نتيجة التحليل
             $table->bigInteger('clientid'); // تلقائي 47019
             $table->bigInteger('receiptno'); // تلقائي 10633
             $table->dateTime('registereddate');
@@ -34,7 +33,7 @@ class ReportTable extends Migration
             $table->string('branchar');
             $table->bigInteger('amount');
             $table->string('paymentusername');
-            $table->dateTime('paymentdate');
+            $table->dateTime('paymentuserdate');
             $table->timestamps();
         });
     }

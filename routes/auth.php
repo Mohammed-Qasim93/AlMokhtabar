@@ -25,10 +25,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/user', [Controller::class, 'index'])->name('user.index');               // Index
     Route::get('/user/{id}/edit', [Controller::class, 'edit'])->name('user.edit');       // Edit
     Route::put('/user/{id}', [Controller::class, 'update'])->name('user.update');        // Update
-    Route::delete('/user/{id}', [Controller::class, 'delete'])->name('user.delelte');    // Delete
 });
 
 Route::get('/', [ReportController::class, 'index'])->middleware('auth')->name('index');
