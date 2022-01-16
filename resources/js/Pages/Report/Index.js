@@ -4,6 +4,7 @@ import Authenticated from "../../Layouts/Authenticated";
 import Button from "@/Components/Button";
 
 export default function Index({ auth, report }) {
+    console.log(report);
     return (
         <Authenticated auth={auth}>
             <Head title="Patients" />
@@ -34,36 +35,18 @@ export default function Index({ auth, report }) {
                             </tr>
                         </thead>
                         <tbody className="capitalize ">
-                            <tr className=" text-center border border-gray-600">
-                                <td className="px-4 py-3">Jill</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">male</td>
-                                <td className="px-4 py-3">positive</td>
-                                <td className="px-4 py-3">243</td>
-                                <td className="px-4 py-3">giza</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">098</td>
-                            </tr>
-                            <tr className=" text-center border border-gray-600">
-                                <td className="px-4 py-3">Jill</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">male</td>
-                                <td className="px-4 py-3">positive</td>
-                                <td className="px-4 py-3">243</td>
-                                <td className="px-4 py-3">giza</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">098</td>
-                            </tr>
-                            <tr className=" text-center border border-gray-600">
-                                <td className="px-4 py-3">Jill</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">male</td>
-                                <td className="px-4 py-3">positive</td>
-                                <td className="px-4 py-3">243</td>
-                                <td className="px-4 py-3">giza</td>
-                                <td className="px-4 py-3">50</td>
-                                <td className="px-4 py-3">098</td>
-                            </tr>
+                            {report.map((item, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td className="px-4 py-3">
+                                            {item.pname}
+                                        </td>
+                                        <td className="px-4 py-3">
+                                            {item.age}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
