@@ -11,13 +11,12 @@ import Combo from "../../Components/Combo";
 
 export default function Add({ auth, errors, categories }) {
     const { data, setData, post } = useForm({
-        name: "",
+        pname: "",
         age: "",
         gender: "",
         visitdate: "",
         result: "",
         resultdate: "",
-        referencerange: "",
         collecteddate: "",
         printeddate: "",
         authenticateddate: "",
@@ -25,10 +24,8 @@ export default function Add({ auth, errors, categories }) {
         branch: "",
         branchar: "",
         amount: "",
-        totalamount: "",
-        finalamount: "",
-        totalreceived: "",
-        paymentuser: "",
+
+        paymentusername: "",
         paymentdate: "",
     });
 
@@ -350,7 +347,7 @@ export default function Add({ auth, errors, categories }) {
                                                                 </div>
                                                                 <div className="col-span-6 sm:col-span-1">
                                                                     <label
-                                                                        htmlFor="paymentuserdate"
+                                                                        htmlFor="paymentdate"
                                                                         className="block text-sm font-medium text-gray-700"
                                                                     >
                                                                         Payment
@@ -362,15 +359,15 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                         type="datetime-local"
                                                                         value={
-                                                                            data.paymentuserdate
+                                                                            data.paymentdate
                                                                         }
-                                                                        name="paymentuserdate"
+                                                                        name="paymentdate"
                                                                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                                                     />
 
                                                                     <small className="text-red-500 text-sm">
                                                                         {
-                                                                            errors.paymentuserdate
+                                                                            errors.paymentdate
                                                                         }
                                                                     </small>
                                                                 </div>
