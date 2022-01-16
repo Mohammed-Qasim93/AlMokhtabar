@@ -5,6 +5,7 @@ import Button from "@/Components/Button";
 import Authenticated from "@/Layouts/Authenticated";
 
 import Combo from "../../Components/Combo";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Add({ auth, errors, categories }) {
     const { data, setData, post } = useForm({
@@ -62,7 +63,7 @@ export default function Add({ auth, errors, categories }) {
 
         post("/store", {
             onFinish: () => {
-                Inertia.visit("/");
+                Inertia.visit("/print?print=pdf");
             },
         });
         console.log(data);
