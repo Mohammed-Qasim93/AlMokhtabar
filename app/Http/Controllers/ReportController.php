@@ -73,7 +73,6 @@ class ReportController extends Controller
 
     public function print(){
         $report = Report::latest()->first();
-        dd($report);
         $page1 = '
         <style>
             body{
@@ -316,7 +315,7 @@ class ReportController extends Controller
             <p class="visitdate">' . Carbon::parse($report->visitdate)->format('Y-M-d') . '</p>
             <p class="paymentdate">' . Carbon::parse($report->paymentuserdate)->format('Y-m-d') . '</p>
             <p class="resultdate">' . Carbon::parse($report->resultdate)->format('Y-M-d') . '</p>
-            <p class="receiptno">' . $report->receiptid . '</p>
+            <p class="receiptno">' . $report->receiptno . '</p>
             <p class="branch">' . $report->branch . '</p>
             <p class="visitnum">' . $report->visitnum . '</p>
             <p class="age">' . $report->age . '</p>
@@ -341,7 +340,6 @@ class ReportController extends Controller
         $mpdf->AddPage();
         $mpdf->WriteHTML($page2);
         $mpdf->Output($report->pname, 'I');
-        Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
     }
 
     public function randomNum($old, $from, $to){
