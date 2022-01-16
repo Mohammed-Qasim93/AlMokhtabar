@@ -56,10 +56,10 @@ class ReportController extends Controller
             'amount' => $request->amount,
             'paymentusername' => $request->paymentusername,
             'paymentuserdate' => $request->paymentuserdate,
-            'visitnum' => $this->randomNum(Report::pluck('visitnum'), 10000000000, 99999999999),
-            'clientid' => $this->randomNum(Report::pluck('clientid'), 100000, 99999),
-            'patientid' => $this->randomNum(Report::pluck('patientid'), 1000000000, 999999999),
-            'receiptno' => $this->randomNum(Report::pluck('receiptno'), 100000, 99999),
+            'visitnum' => $this->randomNum(Report::pluck('visitnum'), 1000000000, 99999999999),
+            'clientid' => $this->randomNum(Report::pluck('clientid'), 10000, 99999),
+            'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
+            'receiptno' => $this->randomNum(Report::pluck('receiptno'), 10000, 99999),
         ]);
         return Redirect::back()->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Added Successfully']);
     }
