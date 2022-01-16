@@ -40,6 +40,14 @@ export default function Add({ auth, errors, categories }) {
             name: "Femail",
         },
     ];
+    let resultArr = [
+        {
+            name: "Positive",
+        },
+        {
+            name: "Negative",
+        },
+    ];
 
     const onHandleChange = (event) => {
         setData(
@@ -128,16 +136,17 @@ export default function Add({ auth, errors, categories }) {
                                                                 </div>
                                                                 <div className="col-span-6 sm:col-span-1">
                                                                     <label
-                                                                        htmlFor="qty"
+                                                                        htmlFor="age"
                                                                         className="block text-sm font-medium text-gray-700"
                                                                     >
-                                                                        age
+                                                                        Age
                                                                     </label>
                                                                     <input
                                                                         onChange={
                                                                             onHandleChange
                                                                         }
-                                                                        type="text"
+                                                                        type="number"
+                                                                        min={1}
                                                                         value={
                                                                             data.age
                                                                         }
@@ -366,25 +375,33 @@ export default function Add({ auth, errors, categories }) {
                                                                     </small>
                                                                 </div>
 
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="result"
                                                                         className="block text-sm font-medium text-gray-700"
                                                                     >
                                                                         Result
                                                                     </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.result
-                                                                        }
+                                                                    <Combo
+                                                                        className="w-full rounded-lg"
                                                                         name="result"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                        add={
+                                                                            "true"
+                                                                        }
+                                                                        defaultValue={
+                                                                            "Choose Result"
+                                                                        }
+                                                                        options={
+                                                                            resultArr
+                                                                        }
+                                                                        handleChange={(
+                                                                            e
+                                                                        ) => {
+                                                                            onHandleChange(
+                                                                                e
+                                                                            );
+                                                                        }}
                                                                     />
-
                                                                     <small className="text-red-500 text-sm">
                                                                         {
                                                                             errors.result
@@ -392,34 +409,7 @@ export default function Add({ auth, errors, categories }) {
                                                                     </small>
                                                                 </div>
 
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="referencerange"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Reference
-                                                                        Range
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.referencerange
-                                                                        }
-                                                                        name="referencerange"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.referencerange
-                                                                        }
-                                                                    </small>
-                                                                </div>
-
-                                                                <div className="col-span-6 sm:col-span-2">
+                                                                <div className="col-span-6 sm:col-span-1">
                                                                     <label
                                                                         htmlFor="branchar"
                                                                         className="block text-sm font-medium text-gray-700"
@@ -496,85 +486,8 @@ export default function Add({ auth, errors, categories }) {
                                                                         }
                                                                     </small>
                                                                 </div>
-                                                                <div className="col-span-6 sm:col-span-1">
-                                                                    <label
-                                                                        htmlFor="totalamount"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Total
-                                                                        Amount
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.totalamount
-                                                                        }
-                                                                        name="totalamount"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
 
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.totalamount
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-1">
-                                                                    <label
-                                                                        htmlFor="finalamount"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Final
-                                                                        Amount
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.finalamount
-                                                                        }
-                                                                        name="finalamount"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.finalamount
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
-                                                                    <label
-                                                                        htmlFor="totalreceived"
-                                                                        className="block text-sm font-medium text-gray-700"
-                                                                    >
-                                                                        Total
-                                                                        Received
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={
-                                                                            onHandleChange
-                                                                        }
-                                                                        type="text"
-                                                                        value={
-                                                                            data.totalreceived
-                                                                        }
-                                                                        name="totalreceived"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-
-                                                                    <small className="text-red-500 text-sm">
-                                                                        {
-                                                                            errors.totalreceived
-                                                                        }
-                                                                    </small>
-                                                                </div>
-                                                                <div className="col-span-6 sm:col-span-3">
+                                                                <div className="col-span-6 sm:col-span-2">
                                                                     <label
                                                                         htmlFor="paymentusername"
                                                                         className="block text-sm font-medium text-gray-700"

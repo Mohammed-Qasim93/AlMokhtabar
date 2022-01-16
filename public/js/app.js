@@ -4808,6 +4808,11 @@ function Add(_ref) {
   }, {
     name: "Femail"
   }];
+  var resultArr = [{
+    name: "Positive"
+  }, {
+    name: "Negative"
+  }];
 
   var onHandleChange = function onHandleChange(event) {
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
@@ -4892,12 +4897,13 @@ function Add(_ref) {
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "qty",
+                                  htmlFor: "age",
                                   className: "block text-sm font-medium text-gray-700",
-                                  children: "age"
+                                  children: "Age"
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                                   onChange: onHandleChange,
-                                  type: "text",
+                                  type: "number",
+                                  min: 1,
                                   value: data.age,
                                   name: "age",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -5037,39 +5043,26 @@ function Add(_ref) {
                                   children: errors.paymentuserdate
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "result",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Result"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "text",
-                                  value: data.result,
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                                  className: "w-full rounded-lg",
                                   name: "result",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                  add: "true",
+                                  defaultValue: "Choose Result",
+                                  options: resultArr,
+                                  handleChange: function handleChange(e) {
+                                    onHandleChange(e);
+                                  }
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.result
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "referencerange",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Reference Range"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "text",
-                                  value: data.referencerange,
-                                  name: "referencerange",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.referencerange
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-2",
+                                className: "col-span-6 sm:col-span-1",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "branchar",
                                   className: "block text-sm font-medium text-gray-700",
@@ -5117,55 +5110,7 @@ function Add(_ref) {
                                   children: errors.amount
                                 })]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "totalamount",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Total Amount"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "text",
-                                  value: data.totalamount,
-                                  name: "totalamount",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.totalamount
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "finalamount",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Final Amount"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "text",
-                                  value: data.finalamount,
-                                  name: "finalamount",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.finalamount
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
-                                  htmlFor: "totalreceived",
-                                  className: "block text-sm font-medium text-gray-700",
-                                  children: "Total Received"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
-                                  onChange: onHandleChange,
-                                  type: "text",
-                                  value: data.totalreceived,
-                                  name: "totalreceived",
-                                  className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                                  className: "text-red-500 text-sm",
-                                  children: errors.totalreceived
-                                })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                                className: "col-span-6 sm:col-span-3",
+                                className: "col-span-6 sm:col-span-2",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
                                   htmlFor: "paymentusername",
                                   className: "block text-sm font-medium text-gray-700",
