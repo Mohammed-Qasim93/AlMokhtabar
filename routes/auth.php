@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [ReportController::class, 'index'])->middleware('auth')->name('index');
 Route::get('/create', [ReportController::class, 'create'])->middleware('auth')->name('create');
 Route::post('/store', [ReportController::class, 'store'])->middleware('auth')->name('store');
-// Route::get('/store/{id}', [ReportController::class, 'store'])->middleware('auth')->name('store');
+Route::get('/edit/{id}', [ReportController::class, 'edit'])->middleware('auth')->name('edit');
+Route::put('/update/{id}', [ReportController::class, 'update'])->middleware('auth')->name('update');
 
 Route::get('/print', [ReportController::class, 'print'])->middleware('auth')->name('print');
