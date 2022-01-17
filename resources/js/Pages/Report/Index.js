@@ -50,11 +50,13 @@ export default function Index({ auth, report }) {
                                                     {item.id}
                                                 </td>
 
-                                                <Link href={`/edit/${item.id}`}>
-                                                    <td className="px-4 py-3">
+                                                <td className="px-4 py-3">
+                                                    <Link
+                                                        href={`/edit/${item.id}`}
+                                                    >
                                                         {item.pname}
-                                                    </td>
-                                                </Link>
+                                                    </Link>
+                                                </td>
 
                                                 <td className="px-4 py-3">
                                                     {item.patientid}
