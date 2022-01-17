@@ -13,7 +13,7 @@ class ReportController extends Controller
     
     public function index(){
         return Inertia::render('Report/Index', [
-            'report' => Report::paginate(20)
+            'report' => Report::orderBy('created_at', 'desc')->paginate(20)
         ]);
     }
 
@@ -65,10 +65,14 @@ class ReportController extends Controller
         return Redirect::route('index');
     }
 
-    public function show($id){
+    public function edit($id){
         return Inertia::render('Report/Show', [
             'report' => Report::findOrFail($id)
         ]);
+    }
+
+    public function update(Request $request, $id){
+
     }
 
     public function print(){
@@ -340,7 +344,7 @@ class ReportController extends Controller
             $mpdf->WriteHTML($page1);
             $mpdf->AddPage();
             $mpdf->WriteHTML($page2);
-            $mpdf->Output($report->pname, 'I');
+            $mpdf->Output($report->pname, 'D');
         }else{
             return abort(404);
         }
