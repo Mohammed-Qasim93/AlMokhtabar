@@ -4694,7 +4694,7 @@ function Add(_ref) {
   var genderArr = [{
     name: "Male"
   }, {
-    name: "Femail"
+    name: "Female"
   }];
   var resultArr = [{
     name: "Positive"
@@ -4717,7 +4717,6 @@ function Add(_ref) {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.visit("/print?print=pdf");
       }
     });
-    console.log(data);
   }; // const handleChange = (e) => {
   //     const { name, value } = e.target;
   //     setData({ ...data, [name]: value });
@@ -4813,7 +4812,7 @@ function Add(_ref) {
                                   className: "w-full rounded-lg",
                                   name: "gender",
                                   add: "true",
-                                  defaultValue: "Choose Gender",
+                                  defaultValue: genderArr[0].name,
                                   options: genderArr,
                                   handleChange: function handleChange(e) {
                                     onHandleChange(e);
@@ -4944,7 +4943,7 @@ function Add(_ref) {
                                   className: "w-full rounded-lg",
                                   name: "result",
                                   add: "true",
-                                  defaultValue: "Choose Result",
+                                  defaultValue: resultArr[1].name,
                                   options: resultArr,
                                   handleChange: function handleChange(e) {
                                     onHandleChange(e);
@@ -5042,6 +5041,16 @@ function Add(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Report/Edit.js":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/Report/Edit.js ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Report/Index.js":
 /*!********************************************!*\
   !*** ./resources/js/Pages/Report/Index.js ***!
@@ -5068,7 +5077,6 @@ __webpack_require__.r(__webpack_exports__);
 function Index(_ref) {
   var auth = _ref.auth,
       report = _ref.report;
-  console.log(report);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: auth,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -5124,13 +5132,16 @@ function Index(_ref) {
               className: "capitalize ",
               children: report.data.map(function (item, index) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-                  className: "text-center",
+                  className: "text-center w-full",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
                     className: "px-4 py-3",
                     children: item.id
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-                    className: "px-4 py-3",
-                    children: item.pname
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+                    href: "/edit/".concat(item.id),
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                      className: "px-4 py-3",
+                      children: item.pname
+                    })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
                     className: "px-4 py-3",
                     children: item.patientid
@@ -58639,6 +58650,8 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Report/Create": "./resources/js/Pages/Report/Create.js",
 	"./Report/Create.js": "./resources/js/Pages/Report/Create.js",
+	"./Report/Edit": "./resources/js/Pages/Report/Edit.js",
+	"./Report/Edit.js": "./resources/js/Pages/Report/Edit.js",
 	"./Report/Index": "./resources/js/Pages/Report/Index.js",
 	"./Report/Index.js": "./resources/js/Pages/Report/Index.js",
 	"./User/Edit": "./resources/js/Pages/User/Edit.js",

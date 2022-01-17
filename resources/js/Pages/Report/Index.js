@@ -44,14 +44,18 @@ export default function Index({ auth, report }) {
                                         return (
                                             <tr
                                                 key={index}
-                                                className="text-center"
+                                                className="text-center w-full"
                                             >
                                                 <td className="px-4 py-3">
                                                     {item.id}
                                                 </td>
-                                                <td className="px-4 py-3">
-                                                    {item.pname}
-                                                </td>
+
+                                                <Link href={`/edit/${item.id}`}>
+                                                    <td className="px-4 py-3">
+                                                        {item.pname}
+                                                    </td>
+                                                </Link>
+
                                                 <td className="px-4 py-3">
                                                     {item.patientid}
                                                 </td>

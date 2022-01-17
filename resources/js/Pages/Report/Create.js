@@ -32,7 +32,7 @@ export default function Add({ auth, errors, categories }) {
             name: "Male",
         },
         {
-            name: "Femail",
+            name: "Female",
         },
     ];
     let resultArr = [
@@ -171,7 +171,8 @@ export default function Add({ auth, errors, categories }) {
                                                                             "true"
                                                                         }
                                                                         defaultValue={
-                                                                            "Choose Gender"
+                                                                            genderArr[0]
+                                                                                .name
                                                                         }
                                                                         options={
                                                                             genderArr
@@ -387,7 +388,8 @@ export default function Add({ auth, errors, categories }) {
                                                                             "true"
                                                                         }
                                                                         defaultValue={
-                                                                            "Choose Result"
+                                                                            resultArr[1]
+                                                                                .name
                                                                         }
                                                                         options={
                                                                             resultArr
