@@ -37,13 +37,13 @@ export default function Register() {
 
     return (
         <Guest>
-            <Head title="إضافة مستخدم" />
+            <Head title="Register" />
 
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="name" value="الاسم" />
+                    <Label forInput="name" value="Name" />
 
                     <Input
                         type="text"
@@ -58,7 +58,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="email" value="الايميل" />
+                    <Label forInput="email" value="Email" />
 
                     <Input
                         type="email"
@@ -72,7 +72,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="كلمة السر" />
+                    <Label forInput="password" value="Password" />
 
                     <Input
                         type="password"
@@ -88,7 +88,7 @@ export default function Register() {
                 <div className="mt-4">
                     <Label
                         forInput="password_confirmation"
-                        value="إعادة كلمة السر"
+                        value="Password Confirm"
                     />
 
                     <Input
@@ -103,7 +103,7 @@ export default function Register() {
 
                 <div className="flex items-center justify-center mt-4">
                     <Button className="ml-4" processing={processing}>
-                        إضافة
+                        Register
                     </Button>
                 </div>
             </form>

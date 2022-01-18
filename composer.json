@@ -2,10 +2,14 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "carlos-meneses/laravel-mpdf": "^2.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.3.5",
@@ -13,7 +17,6 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "mpdf/mpdf": "^8.0",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

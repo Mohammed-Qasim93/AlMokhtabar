@@ -5,7 +5,7 @@ export default function Button({
     options,
     handleChange,
     className,
-    defaultValue,
+    value,
     add,
 }) {
     return (
@@ -13,11 +13,11 @@ export default function Button({
             className={className}
             name={name}
             onChange={handleChange}
-            defaultValue={defaultValue}
+            value={value}
         >
-            {add && <option value="0"> {defaultValue}</option>}
+            {/* {add && <option value="0"> {defaultValue}</option>} */}
             {options.map((option, index) => (
-                <option key={index} value={index + 1}>
+                <option key={index} value={index}>
                     {option.name}
                 </option>
             ))}
