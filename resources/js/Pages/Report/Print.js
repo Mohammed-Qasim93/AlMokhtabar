@@ -10,6 +10,7 @@ import Button from "../../Components/Button";
 import moment from "moment";
 import "moment/locale/en-gb";
 import QRcode from "qrcode";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Print({ report, auth, errors, categories }) {
     const [qrcode, setQrcode] = React.useState("");
@@ -25,43 +26,37 @@ export default function Print({ report, auth, errors, categories }) {
         const divToPrint = document.querySelector("#page");
         html2canvas(divToPrint, {
             scale: 1,
-        }).then((canvas) => {
-            const imgData = canvas.toDataURL("image/jpg", 5);
-            const imgWidth = 210;
-            const pageHeight = 295;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-            const context = canvas.getContext("2d");
-            context;
-            let heightLeft = imgHeight;
-            const doc = new jsPDF("p", "mm", "a4");
+        })
+            .then((canvas) => {
+                const imgData = canvas.toDataURL("image/jpg");
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-            let position = 0;
-            doc.addImage(
-                imgData,
-                "JPEG",
-                0,
-                0,
-                imgWidth,
-                imgHeight + 25,
-                "",
-                visualViewport
-            );
-            heightLeft -= pageHeight;
-            while (heightLeft >= 0) {
-                position = heightLeft - imgHeight;
-                doc.addPage();
-                doc.addImage(
-                    imgData,
-                    "JPEG",
-                    0,
-                    position,
-                    imgWidth,
-                    imgHeight + 25
-                );
+                let heightLeft = imgHeight;
+                const doc = new jsPDF("p", "mm", "a4");
+
+                let position = 0;
+                doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
-            }
-            doc.save("download.pdf");
-        });
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(
+                        imgData,
+                        "JPEG",
+                        0,
+                        position,
+                        imgWidth,
+                        imgHeight
+                    );
+                    heightLeft -= pageHeight;
+                }
+                doc.save("download.pdf");
+            })
+            .then(() => {
+                Inertia.visit("/");
+            });
     };
 
     return (
@@ -80,6 +75,7 @@ export default function Print({ report, auth, errors, categories }) {
                         backgroundSize: "contain",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
+
                         width: "219mm",
                         height: "297mm",
                     }}
@@ -161,7 +157,7 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "14.9rem",
+                            top: "14.4rem",
                             left: "35.3rem",
                         }}
                         className="absolute w-[216px] font-tajawal-extrabold capitalize text-sm text-center  "
