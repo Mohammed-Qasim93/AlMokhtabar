@@ -23,15 +23,16 @@ export default function Print({ report, auth, errors, categories }) {
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint, {
-            scale: 2,
-        }).then((canvas) => {
+        var context = canvas.getContext("2d");
+        context.scale(scaleBy, scaleBy);
+        html2canvas(divToPrint).then((canvas) => {
             const imgData = canvas.toDataURL("image/png");
             const imgWidth = 210;
             const pageHeight = 295;
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
             let heightLeft = imgHeight;
             const doc = new jsPDF("p", "mm", "a4");
+
             let position = 0;
             doc.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight + 25);
             heightLeft -= pageHeight;
