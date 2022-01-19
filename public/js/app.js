@@ -5745,19 +5745,22 @@ function Print(_ref) {
     var divToPrint = document.querySelector("#page");
     html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
       var imgData = canvas.toDataURL("image/png");
+      var scaleBy = 5;
       var imgWidth = 210;
       var pageHeight = 295;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
       var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["default"]("p", "mm", "a4");
+      var context = canvas.getContext("2d");
+      context.scale(scaleBy, scaleBy);
       var position = 0;
-      doc.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight + 25);
+      doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight + 25);
       heightLeft -= pageHeight;
 
       while (heightLeft >= 0) {
         position = heightLeft - imgHeight;
         doc.addPage();
-        doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight + 25);
+        doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight + 25);
         heightLeft -= pageHeight;
       }
 
