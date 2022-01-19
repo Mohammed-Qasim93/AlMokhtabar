@@ -31,13 +31,13 @@ export default function Index({ auth, report }) {
                                                     <th className="px-4 py-3">
                                                         Id
                                                     </th>
-                                                    <th className="px-4 py-3">
-                                                        Patientid
-                                                    </th>
+
                                                     <th className="px-4 py-3">
                                                         Patient name
                                                     </th>
-
+                                                    <th className="px-4 py-3">
+                                                        Patientid
+                                                    </th>
                                                     <th className="px-4 py-3">
                                                         Age
                                                     </th>
@@ -65,11 +65,16 @@ export default function Index({ auth, report }) {
                                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                                 {item.id}
                                                             </td>
+
                                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                {item.patientid}
+                                                                <Link
+                                                                    href={`/${item.id}/edit`}
+                                                                >
+                                                                    {item.pname}
+                                                                </Link>
                                                             </td>
                                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                {item.pname}
+                                                                {item.patientid}
                                                             </td>
                                                             <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                 {item.age}
