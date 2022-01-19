@@ -6,6 +6,7 @@ import Authenticated from "@/Layouts/Authenticated";
 
 import Combo from "../../Components/Combo";
 import { Inertia } from "@inertiajs/inertia";
+import Footer from "../../Layouts/Footer";
 
 export default function Add({ auth, errors, categories }) {
     const { data, setData, post } = useForm({
@@ -522,6 +523,7 @@ export default function Add({ auth, errors, categories }) {
                     </div>
                 </div>
             </Authenticated>
+            <Footer />
         </>
     );
 }
