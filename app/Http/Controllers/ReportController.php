@@ -75,10 +75,14 @@ class ReportController extends Controller
 
     }
 
-    public function print(){
-        return Inertia::render('Report/Print', [
-            'report' => Report::latest()->first()
-        ]);
+    public function result(){
+        if(request('id')){
+            return Inertia::render('Report/Print', [
+                'report' => Report::where('pateintid', request('id'))->first()
+            ]);
+        }else{
+            return abort(404);
+        }
         // if(request('print') == 'pdf'){
         //     $report = Report::latest()->first();
         //     $page1 = '

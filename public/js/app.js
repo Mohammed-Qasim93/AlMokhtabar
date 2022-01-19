@@ -5749,16 +5749,15 @@ function Print(_ref) {
 
   var download = function download() {
     var divToPrint = document.querySelector("#page");
-    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
-      var imgData = canvas.toDataURL("image/png");
-      var scaleBy = 5;
+    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint, {
+      scale: 1
+    }).then(function (canvas) {
+      var imgData = canvas.toDataURL("image/jpg");
       var imgWidth = 210;
       var pageHeight = 297;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
       var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["default"]("p", "mm", "a4");
-      var context = canvas.getContext("2d");
-      context.scale(scaleBy, scaleBy);
       var position = 0;
       doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight + 25);
       heightLeft -= pageHeight;
@@ -5808,9 +5807,10 @@ function Print(_ref) {
           children: report.visitnum
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "15.8rem"
+            top: "15.8rem",
+            left: "12.2rem"
           },
-          className: "absolute w-[50px]  left-48 font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[50px]  font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.age
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
