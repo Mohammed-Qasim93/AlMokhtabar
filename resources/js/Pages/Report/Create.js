@@ -11,9 +11,9 @@ export default function Add({ auth, errors, categories }) {
     const { data, setData, post } = useForm({
         pname: "",
         age: "",
-        gender: "",
+        gender: "0",
         visitdate: "",
-        result: "",
+        result: "0",
         resultdate: "",
         collecteddate: "",
         printeddate: "",
@@ -22,11 +22,11 @@ export default function Add({ auth, errors, categories }) {
         branch: "",
         branchar: "",
         amount: "",
-
         paymentusername: "",
         paymentdate: "",
     });
 
+    console.log(data);
     let genderArr = [
         {
             name: "Male",
@@ -61,11 +61,7 @@ export default function Add({ auth, errors, categories }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post("/store", {
-            onFinish: () => {
-                Inertia.visit("/print?print=pdf");
-            },
-        });
+        post("/store");
     };
 
     // const handleChange = (e) => {
@@ -170,9 +166,8 @@ export default function Add({ auth, errors, categories }) {
                                                                         add={
                                                                             "true"
                                                                         }
-                                                                        defaultValue={
-                                                                            genderArr[0]
-                                                                                .name
+                                                                        value={
+                                                                            data.gender
                                                                         }
                                                                         options={
                                                                             genderArr
