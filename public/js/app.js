@@ -4696,9 +4696,9 @@ function Add(_ref) {
     name: "Female"
   }];
   var resultArr = [{
-    name: "Positive"
-  }, {
     name: "Negative"
+  }, {
+    name: "Positive"
   }];
 
   var onHandleChange = function onHandleChange(event) {
@@ -4937,8 +4937,7 @@ function Add(_ref) {
                                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_5__["default"], {
                                   className: "w-full rounded-lg",
                                   name: "result",
-                                  add: "true",
-                                  defaultValue: resultArr[1].name,
+                                  value: resultArr,
                                   options: resultArr,
                                   handleChange: function handleChange(e) {
                                     onHandleChange(e);

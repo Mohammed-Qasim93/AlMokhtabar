@@ -37,10 +37,10 @@ export default function Add({ auth, errors, categories }) {
     ];
     let resultArr = [
         {
-            name: "Positive",
+            name: "Negative",
         },
         {
-            name: "Negative",
+            name: "Positive",
         },
     ];
 
@@ -379,12 +379,8 @@ export default function Add({ auth, errors, categories }) {
                                                                     <Combo
                                                                         className="w-full rounded-lg"
                                                                         name="result"
-                                                                        add={
-                                                                            "true"
-                                                                        }
-                                                                        defaultValue={
-                                                                            resultArr[1]
-                                                                                .name
+                                                                        value={
+                                                                            resultArr
                                                                         }
                                                                         options={
                                                                             resultArr
