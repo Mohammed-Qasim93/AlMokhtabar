@@ -37,7 +37,7 @@ export default function Print({ report, auth, errors, categories }) {
                 const doc = new jsPDF("p", "mm", "a4");
 
                 let position = 0;
-                doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+                doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight + 25);
                 heightLeft -= pageHeight;
                 while (heightLeft >= 0) {
                     position = heightLeft - imgHeight;
@@ -48,7 +48,7 @@ export default function Print({ report, auth, errors, categories }) {
                         0,
                         position,
                         imgWidth,
-                        imgHeight
+                        imgHeight + 25
                     );
                     heightLeft -= pageHeight;
                 }
