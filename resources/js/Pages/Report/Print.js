@@ -34,14 +34,14 @@ export default function Print({ report, auth, errors, categories }) {
             var context = canvas.getContext("2d");
             context.scale(scaleBy, scaleBy);
             let position = 0;
-            doc.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight + 25);
+            doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight + 25);
             heightLeft -= pageHeight;
             while (heightLeft >= 0) {
                 position = heightLeft - imgHeight;
                 doc.addPage();
                 doc.addImage(
                     imgData,
-                    "PNG",
+                    "JPEG",
                     0,
                     position,
                     imgWidth,
