@@ -87,7 +87,7 @@ export default function Index({ auth, report }) {
                                                                 </td>
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     {item.gender ==
-                                                                    "0"
+                                                                        "0"
                                                                         ? "Male"
                                                                         : "Female"}
                                                                 </td>
