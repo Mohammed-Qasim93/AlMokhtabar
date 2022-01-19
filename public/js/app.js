@@ -5749,16 +5749,9 @@ function Print(_ref) {
 
   var download = function download() {
     var divToPrint = document.querySelector("#page");
-<<<<<<< HEAD
-    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint, {
-      scale: 1
-    }).then(function (canvas) {
-      var imgData = canvas.toDataURL("image/jpg");
-=======
     html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
       var imgData = canvas.toDataURL("image/png");
       var scaleBy = 5;
->>>>>>> 0212e63adfe5d6de433783513b64608172f2e062
       var imgWidth = 210;
       var pageHeight = 297;
       var imgHeight = canvas.height * imgWidth / canvas.width;
