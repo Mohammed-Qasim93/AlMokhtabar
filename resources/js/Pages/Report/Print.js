@@ -23,7 +23,9 @@ export default function Print({ report, auth, errors, categories }) {
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint).then((canvas) => {
+        html2canvas(divToPrint, {
+            dpi: 192,
+        }).then((canvas) => {
             const imgData = canvas.toDataURL("image/png");
             const imgWidth = 210;
             const pageHeight = 295;
