@@ -23,18 +23,29 @@ export default function Print({ report, auth, errors, categories }) {
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint).then((canvas) => {
-            const imgData = canvas.toDataURL("image/png");
-            var scaleBy = 5;
+        html2canvas(divToPrint, {
+            scale: 1,
+        }).then((canvas) => {
+            const imgData = canvas.toDataURL("image/jpg", 5);
             const imgWidth = 210;
             const pageHeight = 295;
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            const context = canvas.getContext("2d");
+            context;
             let heightLeft = imgHeight;
             const doc = new jsPDF("p", "mm", "a4");
-            var context = canvas.getContext("2d");
-            context.scale(scaleBy, scaleBy);
+
             let position = 0;
-            doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight + 25);
+            doc.addImage(
+                imgData,
+                "JPEG",
+                0,
+                0,
+                imgWidth,
+                imgHeight + 25,
+                "",
+                visualViewport
+            );
             heightLeft -= pageHeight;
             while (heightLeft >= 0) {
                 position = heightLeft - imgHeight;
@@ -90,8 +101,9 @@ export default function Print({ report, auth, errors, categories }) {
                     <p
                         style={{
                             top: "15.8rem",
+                            left: "12.2rem",
                         }}
-                        className="absolute w-[50px]  left-48 font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[50px]  font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.age}
                     </p>
