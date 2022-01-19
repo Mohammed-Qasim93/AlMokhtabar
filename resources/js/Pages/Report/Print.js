@@ -25,6 +25,7 @@ export default function Print({ report, auth, errors, categories }) {
         const divToPrint = document.querySelector("#page");
         html2canvas(divToPrint).then((canvas) => {
             const imgData = canvas.toDataURL("image/png");
+            var scaleBy = 5;
             const imgWidth = 210;
             const pageHeight = 295;
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
