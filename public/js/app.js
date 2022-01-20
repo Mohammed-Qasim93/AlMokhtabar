@@ -5810,9 +5810,10 @@ function Print(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "15.5rem",
-            left: "4rem"
+            left: "4rem",
+            lineHeight: "1.5"
           },
-          className: "absolute bg-gray-500  w-[400px] font-tajawal-extrabold capitalize text-5xl text-left  ",
+          className: "absolute bg-gray-500  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  ",
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {

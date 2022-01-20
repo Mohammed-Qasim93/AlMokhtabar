@@ -218,8 +218,9 @@ export default function Print({ report, auth, errors, categories }) {
                         style={{
                             top: "15.5rem",
                             left: "4rem",
+                            lineHeight: "1.5",
                         }}
-                        className="absolute bg-gray-500  w-[400px] font-tajawal-extrabold capitalize text-5xl text-left  "
+                        className="absolute bg-gray-500  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  "
                     >
                         {report.pname}
                     </p>
