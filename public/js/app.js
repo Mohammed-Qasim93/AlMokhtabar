@@ -5751,7 +5751,7 @@ function Print(_ref) {
       qrcode = _React$useState2[0],
       setQrcode = _React$useState2[1];
 
-  var qrUrl = "".concat(window.location.origin, "/report/").concat(report.id);
+  var qrUrl = "".concat(window.location.origin, "/result?id=").concat(report.patientid);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     qrcode__WEBPACK_IMPORTED_MODULE_10__.toDataURL(qrUrl).then(function (url) {
       setQrcode(url);
@@ -5786,10 +5786,122 @@ function Print(_ref) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
     className: "flex flex-col mt-4 items-center justify-center",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
       id: "page",
       className: "",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        className: "page1 relative",
+        style: {
+          backgroundImage: "url(".concat(_page_1_jpg__WEBPACK_IMPORTED_MODULE_3__["default"], ")"),
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          imageResolution: "700dpi",
+          width: "2480px",
+          height: "3500px"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "4.5rem",
+            left: "8.1rem"
+          },
+          className: "absolute  w-[300px]   font-tajawal-extrabold capitalize text-4xl text-right   ",
+          children: report.branchar
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "32rem",
+            left: "4rem",
+            lineHeight: "1.5"
+          },
+          className: "absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   ",
+          children: report.pname
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "50rem",
+            left: "2.5rem"
+          },
+          className: "absolute w-[500px]  left-8 font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: report.visitnum
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "49.6rem",
+            left: "32.2rem"
+          },
+          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-5xl text-right  ",
+          children: report.age
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "49.6rem",
+            left: "53.2rem"
+          },
+          className: "absolute w-[160px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: report.gender == "0" ? "Male" : "Female"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "28.2rem",
+            left: "82rem"
+          },
+          className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "28.2rem",
+            right: "10.2rem"
+          },
+          className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "35rem",
+            right: "10.2rem"
+          },
+          className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "35rem",
+            left: "82rem"
+          },
+          className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "46.5rem",
+            right: "5.4rem"
+          },
+          className: "absolute  w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: report.clientid
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "70rem",
+            left: "35rem"
+          },
+          className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: report.result == "0" ? "Negative" : "Positive"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "70rem",
+            left: "76.4rem"
+          },
+          className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          children: report.result == "0" ? "Negative" : "Positive"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          style: {
+            padding: "10rem",
+            bottom: "25rem",
+            left: "13rem"
+          },
+          className: "absolute   h-[26rem] w-80 flex flex-col items-center bg-gray-800  text-center rounded-3xl",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+            className: "text-6xl  absolute -top-1 text-gray-200 ",
+            children: "Scan me"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+            src: qrcode,
+            alt: "",
+            className: "rounded-3xl absolute w-72 bottom-3"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
         className: "page2 relative",
         style: {
           backgroundImage: "url(".concat(_page_2_jpg__WEBPACK_IMPORTED_MODULE_4__["default"], ")"),
@@ -5839,86 +5951,93 @@ function Print(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "11.3rem",
-            left: "62.5rem"
+            left: "64rem"
           },
-          className: "absolute w-[300px]  bg-red-400 font-tajawal-extrabold capitalize text-3xl text-center  ",
+          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "5.6rem",
-            left: "21.5rem"
+            top: "15.4rem",
+            left: "64rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center ",
+          className: "absolute w-[300px] font-tajawal-extrabold capitalize text-4xl text-center ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.resultdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "4.3rem",
-            left: "32.5rem"
+            top: "11.3rem",
+            right: "35rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.paymentdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "5.5rem",
-            left: "32.5rem"
+            top: "14.8rem",
+            right: "35rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.receiptno
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "14.3rem",
-            left: "39.3rem"
+            top: "43rem",
+            right: "24rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "13.9rem",
-            left: "18.3rem"
+            top: "50rem",
+            right: "24rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "14.9rem",
-            left: "18.3rem"
+            top: "53rem",
+            right: "24rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
+          children: report.amount
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          style: {
+            top: "45.4rem",
+            left: "35rem"
+          },
+          className: "absolute  w-[500px]  capitalize text-4xl text-left  ",
           children: report.paymentusername
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "16.1rem",
-            left: "18.3rem"
+            top: "49rem",
+            left: "35rem"
           },
-          className: "absolute w-[200px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.paymentdate
+          className: "absolute  w-[500px] capitalize text-4xl text-left  ",
+          children: report.s1date
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "16.7rem",
-            left: "39.3rem"
+            top: "41.8rem",
+            left: "35rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute  w-[500px] capitalize text-4xl text-left  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "17.5rem",
-            left: "39.3rem"
+            top: "38rem",
+            right: "43rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[180px] font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
           style: {
-            top: "18rem",
-            left: "5.3rem"
+            top: "54rem",
+            left: "16rem"
           },
-          className: "absolute flex items-center justify-center gap-x-4  w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
             children: "\u062C\u0646\u064A\u0647\u0627\u064B"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
             children: report.amount
           })]
         })]
-      })
+      })]
     })
   });
 }

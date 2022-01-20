@@ -14,7 +14,7 @@ import { Inertia } from "@inertiajs/inertia";
 
 export default function Print({ report, auth, errors, categories }) {
     const [qrcode, setQrcode] = React.useState("");
-    const qrUrl = `${window.location.origin}/report/${report.id}`;
+    const qrUrl = `${window.location.origin}/result?id=${report.patientid}`;
 
     useEffect(() => {
         QRcode.toDataURL(qrUrl)
@@ -53,7 +53,7 @@ export default function Print({ report, auth, errors, categories }) {
     return (
         <div className="flex flex-col mt-4 items-center justify-center">
             <div id="page" className="">
-                {/* <div
+                <div
                     className="page1 relative"
                     style={{
                         backgroundImage: `url(${page1})`,
@@ -80,7 +80,7 @@ export default function Print({ report, auth, errors, categories }) {
                             left: "4rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute w-[940px] bg-red-400 font-tajawal-extrabold capitalize text-7xl text-left   "
+                        className="absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   "
                     >
                         {report.pname}
                     </p>
@@ -89,7 +89,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "50rem",
                             left: "2.5rem",
                         }}
-                        className="absolute w-[500px] bg-red-400  left-8 font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[500px]  left-8 font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.visitnum}
                     </p>
@@ -107,7 +107,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "49.6rem",
                             left: "53.2rem",
                         }}
-                        className="absolute w-[160px] bg-red-300  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[160px]  font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.gender == "0" ? "Male" : "Female"}
                     </p>
@@ -160,7 +160,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "46.5rem",
                             right: "5.4rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute  w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.clientid}
                     </p>
@@ -169,7 +169,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "70rem",
                             left: "35rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
@@ -178,21 +178,28 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "70rem",
                             left: "76.4rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
-                    <div className="absolute left-16 bottom-28 h-40 w-32 flex flex-col items-center bg-gray-800  p-2 text-center rounded-lg">
-                        <span className="text-lg  absolute -top-1 text-gray-200 ">
+                    <div
+                        style={{
+                            padding: "10rem",
+                            bottom: "25rem",
+                            left: "13rem"
+
+                        }}
+                        className="absolute   h-[26rem] w-80 flex flex-col items-center bg-gray-800  text-center rounded-3xl">
+                        <span className="text-6xl  absolute -top-1 text-gray-200 ">
                             Scan me
                         </span>
                         <img
                             src={qrcode}
                             alt=""
-                            className="rounded-lg absolute w-28 bottom-3"
+                            className="rounded-3xl absolute w-72 bottom-3"
                         />
                     </div>
-                </div> */}
+                </div>
                 <div
                     className="page2 relative"
                     style={{
@@ -254,100 +261,111 @@ export default function Print({ report, auth, errors, categories }) {
                     <p
                         style={{
                             top: "11.3rem",
-                            left: "62.5rem",
+                            left: "64rem",
                         }}
-                        className="absolute w-[300px]  bg-red-400 font-tajawal-extrabold capitalize text-3xl text-center  "
+                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {moment(report.visitdate).format("ll")}
                     </p>
                     <p
                         style={{
-                            top: "5.6rem",
-                            left: "21.5rem",
+                            top: "15.4rem",
+                            left: "64rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center "
+                        className="absolute w-[300px] font-tajawal-extrabold capitalize text-4xl text-center "
                     >
                         {moment(report.resultdate).format("ll")}
                     </p>
                     <p
                         style={{
-                            top: "4.3rem",
-                            left: "32.5rem",
+                            top: "11.3rem",
+                            right: "35rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {moment(report.paymentdate).format("ll")}
                     </p>
                     <p
                         style={{
-                            top: "5.5rem",
-                            left: "32.5rem",
+                            top: "14.8rem",
+                            right: "35rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
                         {report.receiptno}
                     </p>
 
                     <p
                         style={{
-                            top: "14.3rem",
-                            left: "39.3rem",
+                            top: "43rem",
+                            right: "24rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+
                     >
                         {report.amount}
                     </p>
                     <p
                         style={{
-                            top: "13.9rem",
-                            left: "18.3rem",
+                            top: "50rem",
+                            right: "24rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+
                     >
                         {report.amount}
                     </p>
                     <p
                         style={{
-                            top: "14.9rem",
-                            left: "18.3rem",
+                            top: "53rem",
+                            right: "24rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+                    >
+                        {report.amount}
+                    </p>
+                    <p
+                        style={{
+                            top: "45.4rem",
+                            left: "35rem",
+                        }}
+                        className="absolute  w-[500px]  capitalize text-4xl text-left  "
                     >
                         {report.paymentusername}
                     </p>
                     <p
                         style={{
-                            top: "16.1rem",
-                            left: "18.3rem",
+                            top: "49rem",
+                            left: "35rem",
                         }}
-                        className="absolute w-[200px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute  w-[500px] capitalize text-4xl text-left  "
                     >
-                        {report.paymentdate}
+                        {report.s1date}
                     </p>
                     <p
                         style={{
-                            top: "16.7rem",
-                            left: "39.3rem",
+                            top: "41.8rem",
+                            left: "35rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
-                    >
-                        {report.amount}
-                    </p>
-                    <p
-                        style={{
-                            top: "17.5rem",
-                            left: "39.3rem",
-                        }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute  w-[500px] capitalize text-4xl text-left  "
                     >
                         {report.amount}
                     </p>
                     <p
                         style={{
-                            top: "18rem",
-                            left: "5.3rem",
+                            top: "38rem",
+                            right: "43rem",
                         }}
-                        className="absolute flex items-center justify-center gap-x-4  w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[180px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                    >
+                        {report.amount}
+                    </p>
+                    <p
+                        style={{
+                            top: "54rem",
+                            left: "16rem",
+                        }}
+                        className="absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  "
                     >
                         <span>جنيهاً</span>
                         <span>{report.amount}</span>
