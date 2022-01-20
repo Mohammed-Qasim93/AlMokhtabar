@@ -27,36 +27,26 @@ class ReportController extends Controller
             'pname' => 'required|string',
             'age' => 'required|numeric',
             'gender' => 'required|string',
-            'visitdate' => 'required|date',
-            'resultdate' => 'required|date',
             'result' => 'required|string',
-            'registereddate' => 'required|date',
-            'authenticateddate' => 'required|date',
-            'collecteddate' => 'required|date',
-            'printeddate' => 'required|date',
             'branch' => 'required|string',
             'branchar' => 'required|string',
             'amount' => 'required|numeric',
             'paymentusername' => 'required|string',
-            'paymentdate' => 'required|date',
+            's1date' => 'required|date',
+            's2date' => 'required|date',
         ]);
 
         Report::create([
             'pname' => $request->pname,
             'age' => $request->age,
             'gender' => $request->gender,
-            'visitdate' => $request->visitdate,
-            'resultdate' => $request->resultdate,
             'result' => $request->result,
-            'registereddate' => $request->registereddate,
-            'authenticateddate' => $request->authenticateddate,
-            'collecteddate' => $request->collecteddate,
-            'printeddate' => $request->printeddate,
             'branch' => $request->branch,
             'branchar' => $request->branchar,
             'amount' => $request->amount,
             'paymentusername' => $request->paymentusername,
-            'paymentdate' => $request->paymentdate,
+            's1date' => $request->s1date,
+            's2date' => $request->s2date,
             'visitnum' => $this->randomNum(Report::pluck('visitnum'), 1000000000, 99999999999),
             'clientid' => $this->randomNum(Report::pluck('clientid'), 10000, 99999),
             'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
@@ -72,7 +62,79 @@ class ReportController extends Controller
     }
 
     public function update(Request $request, $id){
+        $report = Report::findOrFail($id);
 
+        if(($report('pname') != $request->pname) || ($report('age') != $request->age) || ($report('gender') != $request->gender)
+            || ($report('result') != $request->result) || ($report('branch') != $request->branch) || ($report('branchar') != $request->branchar)
+            || ($report('amount') != $request->amount) || ($report('paymentusername') != $request->paymentusername) 
+            || ($report('s1date') != $request->s1date) || ($report('s2date') != $request->s2date)){
+
+            if(($report('pname') != $request->pname)){
+                $request->validate([
+                    'pname' => 'required|string'
+                ]);
+            }
+            if(($report('age') != $request->age)){
+                $request->validate([
+                    'age' => 'required|numeric',
+                ]);
+            }
+            if(($report('gender') != $request->gender)){
+                $request->validate([
+                    'gender' => 'required|string'
+                ]);
+            }
+            if(($report('result') != $request->result)){
+                $request->validate([
+                    'result' => 'required|string'
+                ]);
+            }
+            if(($report('branch') != $request->branch)){
+                $request->validate([
+                    'branch' => 'required|string'
+                ]);
+            }
+            if(($report('branchar') != $request->branchar)){
+                $request->validate([
+                    'branchar' => 'required|string'
+                ]);
+            }
+            if(($report('amount') != $request->amount)){
+                $request->validate([
+                    'amount' => 'required|numeric',
+                ]);
+            }
+            if(($report('paymentusername') != $request->paymentusername)){
+                $request->validate([
+                    'paymentusername' => 'required|string',
+                ]);
+            }
+            if(($report('s1date') != $request->s1date)){
+                $request->validate([
+                    's1date' => 'required|date',
+                ]);
+            }
+            if(($report('s2date') != $request->s2date)){
+                $request->validate([
+                    's2date' => 'required|date',
+                ]);
+            }
+
+            $report->update([
+                'pname' => $request->pname,
+                'age' => $request->age,
+                'gender' => $request->gender,
+                'result' => $request->result,
+                'branch' => $request->branch, 
+                'branchar' => $request->branchar,
+                'amount' => $request->amount,
+                'paymentusername' => $request->paymentusername,
+                's1date' => $request->s1date,
+                's2date' => $request->s2date,
+            ]);
+            return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
+        }
+        return Redirect::route('index');
     }
 
     public function result(){
