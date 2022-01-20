@@ -62,7 +62,7 @@ class ReportController extends Controller
             'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
             'receiptno' => $this->randomNum(Report::pluck('receiptno'), 10000, 99999),
         ]);
-        return Redirect::route('index');
+        return Redirect::route('result', ['id', Report::pluck('patientid')->latest()->first()]);
     }
 
     public function edit($id){

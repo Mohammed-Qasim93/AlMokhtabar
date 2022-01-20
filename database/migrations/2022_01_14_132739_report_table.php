@@ -20,20 +20,15 @@ class ReportTable extends Migration
             $table->integer('age');
             $table->string('gender');
             $table->bigInteger('visitnum');  // تلقائي 33321509370
-            $table->dateTime('visitdate');
-            $table->dateTime('resultdate');
             $table->string('result'); // نتيجة التحليل
             $table->bigInteger('clientid'); // تلقائي 47019
             $table->bigInteger('receiptno'); // تلقائي 10633
-            $table->dateTime('registereddate');
-            $table->dateTime('authenticateddate');
-            $table->dateTime('collecteddate');
-            $table->dateTime('printeddate');
+            $table->dateTime('s1date');
+            $table->dateTime('s2date');
             $table->string('branch');
             $table->string('branchar');
             $table->bigInteger('amount');
             $table->string('paymentusername');
-            $table->dateTime('paymentuserdate');
             $table->timestamps();
         });
     }
