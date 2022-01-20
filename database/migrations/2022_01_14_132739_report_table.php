@@ -22,7 +22,7 @@ class ReportTable extends Migration
             $table->bigInteger('visitnum');  // تلقائي 33321509370
             $table->string('result'); // نتيجة التحليل
             $table->bigInteger('clientid'); // تلقائي 47019
-            $table->bigInteger('receiptno'); // تلقائي 10633
+            $table->bigInteger('receiptno'); // تلقائي 1 0633
             $table->dateTime('s1date');
             $table->dateTime('s2date');
             $table->string('branch');
