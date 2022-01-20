@@ -22,6 +22,7 @@ class Report extends Model
         'clientid',
         'patientid',
         'receiptno',
+        'customer',
         's1date',
         's2date',
     ];

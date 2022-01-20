@@ -34,6 +34,7 @@ class ReportController extends Controller
             'paymentusername' => 'required|string',
             's1date' => 'required|date',
             's2date' => 'required|date',
+            'customer' => 'required|string',
         ]);
 
         Report::create([
@@ -47,12 +48,14 @@ class ReportController extends Controller
             'paymentusername' => $request->paymentusername,
             's1date' => $request->s1date,
             's2date' => $request->s2date,
+            'customer' => $request->customer,
             'visitnum' => $this->randomNum(Report::pluck('visitnum'), 1000000000, 99999999999),
             'clientid' => $this->randomNum(Report::pluck('clientid'), 10000, 99999),
             'patientid' => $this->randomNum(Report::pluck('patientid'), 100000000, 999999999),
             'receiptno' => $this->randomNum(Report::pluck('receiptno'), 10000, 99999),
         ]);
-        return Redirect::route('result', ['id', Report::pluck('patientid')->latest()->first()]);
+        dd(Report::pluck('patientid')->first());
+        return Redirect::route('result', ['id', Report::pluck('patientid')->orderBy('created_at', 'desc')->first()]);
     }
 
     public function edit($id){
@@ -67,7 +70,7 @@ class ReportController extends Controller
         if(($report('pname') != $request->pname) || ($report('age') != $request->age) || ($report('gender') != $request->gender)
             || ($report('result') != $request->result) || ($report('branch') != $request->branch) || ($report('branchar') != $request->branchar)
             || ($report('amount') != $request->amount) || ($report('paymentusername') != $request->paymentusername) 
-            || ($report('s1date') != $request->s1date) || ($report('s2date') != $request->s2date)){
+            || ($report('s1date') != $request->s1date) || ($report('s2date') != $request->s2date) || ($report('customer') != $request->customer)){
 
             if(($report('pname') != $request->pname)){
                 $request->validate([
@@ -119,6 +122,11 @@ class ReportController extends Controller
                     's2date' => 'required|date',
                 ]);
             }
+            if(($report('customer') != $request->customer)){
+                $request->validate([
+                    'customer' => 'required|string',
+                ]);
+            }
 
             $report->update([
                 'pname' => $request->pname,
@@ -131,6 +139,7 @@ class ReportController extends Controller
                 'paymentusername' => $request->paymentusername,
                 's1date' => $request->s1date,
                 's2date' => $request->s2date,
+                'customer' => $request->customer,
             ]);
             return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
         }

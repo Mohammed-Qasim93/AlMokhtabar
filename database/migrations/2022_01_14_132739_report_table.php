@@ -27,6 +27,7 @@ class ReportTable extends Migration
             $table->dateTime('s2date');
             $table->string('branch');
             $table->string('branchar');
+            $table->string('customer');
             $table->bigInteger('amount');
             $table->string('paymentusername');
             $table->timestamps();
