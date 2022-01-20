@@ -28,7 +28,7 @@ export default function Print({ report, auth, errors, categories }) {
             scale: 1,
         })
             .then((canvas) => {
-                const imgData = canvas.toDataURL("image/jpg");
+                const imgData = canvas.toDataURL("image/jpg", 5);
                 const imgWidth = 210;
                 const pageHeight = 297;
                 const imgHeight = (canvas.height * imgWidth) / canvas.width;

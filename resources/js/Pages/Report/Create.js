@@ -62,11 +62,7 @@ export default function Add({ auth, errors, categories }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post("/store", {
-            onFinish: () => {
-                Inertia.visit("/print");
-            },
-        });
+        post("/store");
     };
 
     // const handleChange = (e) => {

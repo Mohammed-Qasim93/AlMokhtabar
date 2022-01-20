@@ -4800,11 +4800,7 @@ function Add(_ref) {
 
   var submit = function submit(e) {
     e.preventDefault();
-    post("/store", {
-      onFinish: function onFinish() {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.visit("/print");
-      }
-    });
+    post("/store");
   }; // const handleChange = (e) => {
   //     const { name, value } = e.target;
   //     setData({ ...data, [name]: value });
@@ -5752,7 +5748,7 @@ function Print(_ref) {
     html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint, {
       scale: 1
     }).then(function (canvas) {
-      var imgData = canvas.toDataURL("image/jpg");
+      var imgData = canvas.toDataURL("image/jpg", 5);
       var imgWidth = 210;
       var pageHeight = 297;
       var imgHeight = canvas.height * imgWidth / canvas.width;
