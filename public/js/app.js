@@ -5635,19 +5635,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
-/* harmony import */ var _page_1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../page_1.jpg */ "./public/page_1.jpg");
-/* harmony import */ var _page_2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../page_2.jpg */ "./public/page_2.jpg");
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! qrcode */ "./node_modules/qrcode/lib/browser.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_1.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_2.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
+/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! qrcode */ "./node_modules/qrcode/lib/browser.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5687,7 +5687,7 @@ function Print(_ref) {
 
   var qrUrl = "".concat(window.location.origin, "/result?id=").concat(report.patientid);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    qrcode__WEBPACK_IMPORTED_MODULE_10__.toDataURL(qrUrl).then(function (url) {
+    qrcode__WEBPACK_IMPORTED_MODULE_9__.toDataURL(qrUrl).then(function (url) {
       setQrcode(url);
     }).then(function () {
       download();
@@ -5696,13 +5696,13 @@ function Print(_ref) {
 
   var download = function download() {
     var divToPrint = document.querySelector("#page");
-    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
+    html2canvas__WEBPACK_IMPORTED_MODULE_5___default()(divToPrint).then(function (canvas) {
       var imgData = canvas.toDataURL("image/jpeg", 1.0);
       var imgWidth = 210;
       var pageHeight = 295;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
-      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["default"]("p", "mm", "A4");
+      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_4__["default"]("p", "mm", "A4");
       var position = 0;
       doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
       heightLeft -= pageHeight;
@@ -5718,15 +5718,15 @@ function Print(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
     className: "flex flex-col mt-4 items-center justify-center",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       id: "page",
       className: "",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "page1 relative",
         style: {
-          backgroundImage: "url(".concat(_page_1_jpg__WEBPACK_IMPORTED_MODULE_3__["default"], ")"),
+          backgroundImage: "url(".concat(Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_1.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), ")"),
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -5734,14 +5734,14 @@ function Print(_ref) {
           width: "2480px",
           height: "3500px"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "4.5rem",
             left: "8.1rem"
           },
           className: "absolute  w-[300px]   font-tajawal-extrabold capitalize text-4xl text-right   ",
           children: report.branchar
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "32rem",
             left: "4rem",
@@ -5749,96 +5749,96 @@ function Print(_ref) {
           },
           className: "absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   ",
           children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "50rem",
             left: "2.5rem"
           },
           className: "absolute w-[500px]  left-8 font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "49.6rem",
             left: "32.2rem"
           },
           className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-5xl text-right  ",
           children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "49.6rem",
             left: "53.2rem"
           },
           className: "absolute w-[160px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.gender == "0" ? "Male" : "Female"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "28.2rem",
             left: "82rem"
           },
           className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "28.2rem",
             right: "10.2rem"
           },
           className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "35rem",
             right: "10.2rem"
           },
           className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "35rem",
             left: "82rem"
           },
           className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "46.5rem",
             right: "5.4rem"
           },
           className: "absolute  w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.clientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "70rem",
             left: "35rem"
           },
           className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "70rem",
             left: "76.4rem"
           },
           className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           style: {
             padding: "10rem",
             bottom: "25rem",
             left: "13rem"
           },
           className: "absolute   h-[26rem] w-80 flex flex-col items-center bg-gray-800  text-center rounded-3xl",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             className: "text-6xl  absolute -top-1 text-gray-200 ",
             children: "Scan me"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
             src: qrcode,
             alt: "",
             className: "rounded-3xl absolute w-72 bottom-3"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "page2 relative",
         style: {
-          backgroundImage: "url(".concat(_page_2_jpg__WEBPACK_IMPORTED_MODULE_4__["default"], ")"),
+          backgroundImage: "url(".concat(Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_2.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), ")"),
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -5846,14 +5846,14 @@ function Print(_ref) {
           width: "2480px",
           height: "3400px"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "11.7rem",
             right: "5.5rem"
           },
           className: "absolute  w-[140px] font-tajawal-extrabold capitalize text-3xl text-left  ",
           children: report.branch
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "15.5rem",
             left: "4rem",
@@ -5861,113 +5861,113 @@ function Print(_ref) {
           },
           className: "absolute  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  ",
           children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "27.2rem",
             left: "3.8rem"
           },
           className: "absolute   w-[300px]  capitalize text-5xl text-center  ",
           children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "27.2rem",
             left: "23.8rem"
           },
           className: "absolute   w-[80px]  capitalize text-5xl text-center  ",
           children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "27.2rem",
             left: "35rem"
           },
           className: "absolute  w-[250px]  capitalize text-5xl text-center  ",
           children: report.patientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "11.3rem",
             left: "64rem"
           },
           className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.visitdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "15.4rem",
             left: "64rem"
           },
           className: "absolute w-[300px] font-tajawal-extrabold capitalize text-4xl text-center ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.resultdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.resultdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "11.3rem",
             right: "35rem"
           },
           className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.paymentdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.paymentdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "14.8rem",
             right: "35rem"
           },
           className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.receiptno
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "43rem",
             right: "24rem"
           },
           className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "50rem",
             right: "24rem"
           },
           className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "53rem",
             right: "24rem"
           },
           className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "45.4rem",
             left: "35rem"
           },
           className: "absolute  w-[500px]  capitalize text-4xl text-left  ",
           children: report.paymentusername
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "49rem",
             left: "35rem"
           },
           className: "absolute  w-[500px] capitalize text-4xl text-left  ",
           children: report.s1date
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "41.8rem",
             left: "35rem"
           },
           className: "absolute  w-[500px] capitalize text-4xl text-left  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "38rem",
             right: "43rem"
           },
           className: "absolute w-[180px] font-tajawal-extrabold capitalize text-4xl text-center  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("p", {
           style: {
             top: "54rem",
             left: "16rem"
           },
           className: "absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             children: "\u062C\u0646\u064A\u0647\u0627\u064B"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             children: report.amount
           })]
         })]
@@ -5992,19 +5992,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
-/* harmony import */ var _page_1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../page_1.jpg */ "./public/page_1.jpg");
-/* harmony import */ var _page_2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../page_2.jpg */ "./public/page_2.jpg");
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! qrcode */ "./node_modules/qrcode/lib/browser.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_1.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_2.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
+/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! qrcode */ "./node_modules/qrcode/lib/browser.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6044,20 +6044,20 @@ function Print(_ref) {
 
   var qrUrl = "".concat(window.location.origin, "/report/").concat(report.id);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    qrcode__WEBPACK_IMPORTED_MODULE_10__.toDataURL(qrUrl).then(function (url) {
+    qrcode__WEBPACK_IMPORTED_MODULE_9__.toDataURL(qrUrl).then(function (url) {
       setQrcode(url);
     });
   }, []);
 
   var download = function download() {
     var divToPrint = document.querySelector("#page");
-    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
+    html2canvas__WEBPACK_IMPORTED_MODULE_5___default()(divToPrint).then(function (canvas) {
       var imgData = canvas.toDataURL("image/jpg", 1.0);
       var imgWidth = 210;
       var pageHeight = 297;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
-      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["default"]("p", "mm", "a4");
+      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_4__["default"]("p", "mm", "a4");
       var position = 0;
       doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight, "", "NONE");
       heightLeft -= pageHeight;
@@ -6071,22 +6071,22 @@ function Print(_ref) {
 
       doc.save("download.pdf");
     }).then(function () {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__.Inertia.visit("/");
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__.Inertia.visit("/");
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "flex flex-col mt-4 items-center justify-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
       className: "py-3 mt-4 bg-gray-800",
       handleClick: download,
       children: "Download as PDF"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       id: "page",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "page1 relative",
         style: {
-          backgroundImage: "url(".concat(_page_1_jpg__WEBPACK_IMPORTED_MODULE_3__["default"], ")"),
+          backgroundImage: "url(".concat(Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_1.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), ")"),
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -6094,208 +6094,208 @@ function Print(_ref) {
           width: "208mm",
           height: "295mm"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           className: "absolute w-[100px] top-5 left-20 font-tajawal-extrabold capitalize text-sm text-center   ",
           children: report.branchar
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           className: "absolute w-[310px] top-40 left-8 font-tajawal-extrabold capitalize text-xl text-center   ",
           children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "15.5rem"
           },
           className: "absolute w-[156px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "15.8rem",
             left: "12.2rem"
           },
           className: "absolute w-[50px]  font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "15.5rem"
           },
           className: "absolute w-[55px]  left-72 font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.gender == "0" ? "Male" : "Female"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "8.7rem",
             left: "26.5rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "8.7rem",
             left: "39.5rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "10.9rem",
             left: "38.5rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "10.9rem",
             left: "26.8rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "14.4rem",
             left: "35.3rem"
           },
           className: "absolute w-[216px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.clientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "20.5rem",
             left: "14.3rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "20.5rem",
             left: "27.3rem"
           },
           className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "absolute left-16 bottom-28 h-40 w-32 flex flex-col items-center bg-gray-800  p-2 text-center rounded-lg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             className: "text-lg  absolute -top-1 text-gray-200 ",
             children: "Scan me"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
             src: qrcode,
             alt: "",
             className: "rounded-lg absolute w-28 bottom-3"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "page2 relative",
         style: {
-          backgroundImage: "url(".concat(_page_2_jpg__WEBPACK_IMPORTED_MODULE_4__["default"], ")"),
+          backgroundImage: "url(".concat(Object(function webpackMissingModule() { var e = new Error("Cannot find module '/page_2.jpg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), ")"),
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           width: "219mm",
           height: "297mm"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "4.5rem"
           },
           className: "absolute w-[100px] right-4 font-tajawal-extrabold capitalize text-xs text-center  ",
           children: report.branch
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           className: "absolute w-[245px] top-24 left-8 font-tajawal-extrabold capitalize text-sm text-center   ",
           children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "9.5rem"
           },
           className: "absolute w-[100px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "9.5rem",
             left: "8.2rem"
           },
           className: "absolute w-[30px]   font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "9.5rem"
           },
           className: "absolute w-[85px]  left-48 font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.patientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "4.3rem",
             left: "21.5rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.visitdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "5.6rem",
             left: "21.5rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.resultdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.resultdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "4.3rem",
             left: "32.5rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.paymentdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+          children: moment__WEBPACK_IMPORTED_MODULE_7___default()(report.paymentdate).format("ll")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "5.5rem",
             left: "32.5rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.receiptno
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "14.3rem",
             left: "39.3rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "13.9rem",
             left: "18.3rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "14.9rem",
             left: "18.3rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.paymentusername
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "16.1rem",
             left: "18.3rem"
           },
           className: "absolute w-[200px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.paymentdate
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "16.7rem",
             left: "39.3rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
           style: {
             top: "17.5rem",
             left: "39.3rem"
           },
           className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("p", {
           style: {
             top: "18rem",
             left: "5.3rem"
           },
           className: "absolute flex items-center justify-center gap-x-4  w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             children: "\u062C\u0646\u064A\u0647\u0627\u064B"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("span", {
             children: report.amount
           })]
         })]
@@ -8898,36 +8898,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/Logo.png?247b6c2ea1f1a58680f8cae2e4b89009");
-
-/***/ }),
-
-/***/ "./public/page_1.jpg":
-/*!***************************!*\
-  !*** ./public/page_1.jpg ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/page_1.jpg?58703c43b89b6038625d31388eb327b1");
-
-/***/ }),
-
-/***/ "./public/page_2.jpg":
-/*!***************************!*\
-  !*** ./public/page_2.jpg ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/page_2.jpg?5f53bac4a240e0af627dcf78c5b016ee");
 
 /***/ }),
 
