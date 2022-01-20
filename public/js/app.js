@@ -5813,26 +5813,27 @@ function Print(_ref) {
             left: "4rem",
             lineHeight: "1.5"
           },
-          className: "absolute bg-gray-500  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  ",
+          className: "absolute  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  ",
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "9.5rem"
+            top: "27.5rem",
+            left: "3.8rem"
           },
-          className: "absolute w-[100px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute   w-[300px]  capitalize text-5xl text-center  ",
           children: report.visitnum
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "9.5rem",
-            left: "8.2rem"
+            top: "27.5rem",
+            left: "24rem"
           },
-          className: "absolute w-[30px]   font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute   w-[80px]  capitalize text-5xl text-center  ",
           children: report.age
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "9.5rem"
           },
-          className: "absolute w-[85px]  left-48 font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[85px]  left-48  capitalize text-sm text-center  ",
           children: report.patientid
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
