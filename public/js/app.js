@@ -5817,23 +5817,24 @@ function Print(_ref) {
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "27.5rem",
+            top: "27.2rem",
             left: "3.8rem"
           },
           className: "absolute   w-[300px]  capitalize text-5xl text-center  ",
           children: report.visitnum
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "27.5rem",
-            left: "24rem"
+            top: "27.2rem",
+            left: "23.8rem"
           },
           className: "absolute   w-[80px]  capitalize text-5xl text-center  ",
           children: report.age
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "9.5rem"
+            top: "27.2rem",
+            left: "34.8rem"
           },
-          className: "absolute w-[85px]  left-48  capitalize text-sm text-center  ",
+          className: "absolute  bg-red-400 w-[250px]  capitalize text-5xl text-center  ",
           children: report.patientid
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
