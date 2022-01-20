@@ -3277,7 +3277,8 @@ function ApplicationLogo(_ref) {
     src: _Logo_png__WEBPACK_IMPORTED_MODULE_1__["default"],
     width: "180",
     height: 40,
-    alt: ""
+    alt: "Logo",
+    className: className
   });
 }
 
@@ -5640,7 +5641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
 /* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
 /* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/ApplicationLogo */ "./resources/js/Components/ApplicationLogo.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
@@ -5686,6 +5687,12 @@ function Print(_ref) {
       setQrcode = _React$useState2[1];
 
   var qrUrl = "".concat(window.location.origin, "/result?id=").concat(report.patientid);
+
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0__.useState(true),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      spinner = _React$useState4[0],
+      setSpinner = _React$useState4[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     qrcode__WEBPACK_IMPORTED_MODULE_10__.toDataURL(qrUrl).then(function (url) {
       setQrcode(url);
@@ -5693,6 +5700,13 @@ function Print(_ref) {
       download();
     });
   }, []);
+  setTimeout(function () {
+    setSpinner(false);
+
+    if (auth.user !== null) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__.Inertia.replace("/");
+    }
+  }, 3000);
 
   var download = function download() {
     var divToPrint = document.querySelector("#page");
@@ -5718,9 +5732,51 @@ function Print(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "flex flex-col mt-4 items-center justify-center",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      style: {
+        width: "100%",
+        height: "100vh",
+        backgroundColor: "white",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: "10000",
+        overscrollBehavior: "none",
+        overflow: "hidden",
+        scrollbarWidth: "0px",
+        msOverflowStyle: "none"
+      },
+      className: "loader",
+      children: [spinner && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+        className: "m-5",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("svg", {
+          className: "animate-spin -ml-1 mr-3 h-10 w-10 text-gray-400",
+          xmlns: "http://www.w3.org/2000/svg",
+          fill: "none",
+          viewBox: "0 0 24 24",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("circle", {
+            className: "opacity-25",
+            cx: "12",
+            cy: "12",
+            r: "10",
+            stroke: "currentColor",
+            "stroke-width": "4"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("path", {
+            className: "opacity-75",
+            fill: "currentColor",
+            d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        className: "w-[20rem] h-20"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
       id: "page",
       className: "",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
@@ -5965,334 +6021,6 @@ function Print(_ref) {
             left: "16rem"
           },
           className: "absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  ",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-            children: "\u062C\u0646\u064A\u0647\u0627\u064B"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-            children: report.amount
-          })]
-        })]
-      })]
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Report/Print1.js":
-/*!*********************************************!*\
-  !*** ./resources/js/Pages/Report/Print1.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Print)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
-/* harmony import */ var _page_1_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../page_1.jpg */ "./public/page_1.jpg");
-/* harmony import */ var _page_2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../page_2.jpg */ "./public/page_2.jpg");
-/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.es.min.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Components/Button */ "./resources/js/Components/Button.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment/locale/en-gb */ "./node_modules/moment/locale/en-gb.js");
-/* harmony import */ var moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment_locale_en_gb__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var qrcode__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! qrcode */ "./node_modules/qrcode/lib/browser.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function Print(_ref) {
-  var report = _ref.report,
-      auth = _ref.auth,
-      errors = _ref.errors,
-      categories = _ref.categories;
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(""),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      qrcode = _React$useState2[0],
-      setQrcode = _React$useState2[1];
-
-  var qrUrl = "".concat(window.location.origin, "/report/").concat(report.id);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    qrcode__WEBPACK_IMPORTED_MODULE_10__.toDataURL(qrUrl).then(function (url) {
-      setQrcode(url);
-    });
-  }, []);
-
-  var download = function download() {
-    var divToPrint = document.querySelector("#page");
-    html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(divToPrint).then(function (canvas) {
-      var imgData = canvas.toDataURL("image/jpg", 1.0);
-      var imgWidth = 210;
-      var pageHeight = 297;
-      var imgHeight = canvas.height * imgWidth / canvas.width;
-      var heightLeft = imgHeight;
-      var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["default"]("p", "mm", "a4");
-      var position = 0;
-      doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight, "", "NONE");
-      heightLeft -= pageHeight;
-
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        doc.addPage();
-        doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-
-      doc.save("download.pdf");
-    }).then(function () {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__.Inertia.visit("/");
-    });
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-    className: "flex flex-col mt-4 items-center justify-center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      className: "py-3 mt-4 bg-gray-800",
-      handleClick: download,
-      children: "Download as PDF"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-      id: "page",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-        className: "page1 relative",
-        style: {
-          backgroundImage: "url(".concat(_page_1_jpg__WEBPACK_IMPORTED_MODULE_3__["default"], ")"),
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          imageResolution: "800dpi",
-          width: "208mm",
-          height: "295mm"
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          className: "absolute w-[100px] top-5 left-20 font-tajawal-extrabold capitalize text-sm text-center   ",
-          children: report.branchar
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          className: "absolute w-[310px] top-40 left-8 font-tajawal-extrabold capitalize text-xl text-center   ",
-          children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "15.5rem"
-          },
-          className: "absolute w-[156px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "15.8rem",
-            left: "12.2rem"
-          },
-          className: "absolute w-[50px]  font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "15.5rem"
-          },
-          className: "absolute w-[55px]  left-72 font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.gender == "0" ? "Male" : "Female"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "8.7rem",
-            left: "26.5rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "8.7rem",
-            left: "39.5rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "10.9rem",
-            left: "38.5rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "10.9rem",
-            left: "26.8rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "14.4rem",
-            left: "35.3rem"
-          },
-          className: "absolute w-[216px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.clientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "20.5rem",
-            left: "14.3rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "20.5rem",
-            left: "27.3rem"
-          },
-          className: "absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.result == "0" ? "Negative" : "Positive"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-          className: "absolute left-16 bottom-28 h-40 w-32 flex flex-col items-center bg-gray-800  p-2 text-center rounded-lg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-            className: "text-lg  absolute -top-1 text-gray-200 ",
-            children: "Scan me"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
-            src: qrcode,
-            alt: "",
-            className: "rounded-lg absolute w-28 bottom-3"
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-        className: "page2 relative",
-        style: {
-          backgroundImage: "url(".concat(_page_2_jpg__WEBPACK_IMPORTED_MODULE_4__["default"], ")"),
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          width: "219mm",
-          height: "297mm"
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "4.5rem"
-          },
-          className: "absolute w-[100px] right-4 font-tajawal-extrabold capitalize text-xs text-center  ",
-          children: report.branch
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          className: "absolute w-[245px] top-24 left-8 font-tajawal-extrabold capitalize text-sm text-center   ",
-          children: report.pname
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "9.5rem"
-          },
-          className: "absolute w-[100px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.visitnum
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "9.5rem",
-            left: "8.2rem"
-          },
-          className: "absolute w-[30px]   font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.age
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "9.5rem"
-          },
-          className: "absolute w-[85px]  left-48 font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.patientid
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "4.3rem",
-            left: "21.5rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "5.6rem",
-            left: "21.5rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.resultdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "4.3rem",
-            left: "32.5rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.paymentdate).format("ll")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "5.5rem",
-            left: "32.5rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.receiptno
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "14.3rem",
-            left: "39.3rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "13.9rem",
-            left: "18.3rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "14.9rem",
-            left: "18.3rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.paymentusername
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "16.1rem",
-            left: "18.3rem"
-          },
-          className: "absolute w-[200px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.paymentdate
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "16.7rem",
-            left: "39.3rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
-          style: {
-            top: "17.5rem",
-            left: "39.3rem"
-          },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
-          children: report.amount
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
-          style: {
-            top: "18rem",
-            left: "5.3rem"
-          },
-          className: "absolute flex items-center justify-center gap-x-4  w-[150px] font-tajawal-extrabold capitalize text-sm text-center  ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
             children: "\u062C\u0646\u064A\u0647\u0627\u064B"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
@@ -94358,8 +94086,6 @@ var map = {
 	"./Report/Index.js": "./resources/js/Pages/Report/Index.js",
 	"./Report/Print": "./resources/js/Pages/Report/Print.js",
 	"./Report/Print.js": "./resources/js/Pages/Report/Print.js",
-	"./Report/Print1": "./resources/js/Pages/Report/Print1.js",
-	"./Report/Print1.js": "./resources/js/Pages/Report/Print1.js",
 	"./User/Edit": "./resources/js/Pages/User/Edit.js",
 	"./User/Edit.js": "./resources/js/Pages/User/Edit.js"
 };
