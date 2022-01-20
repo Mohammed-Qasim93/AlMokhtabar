@@ -245,18 +245,18 @@ export default function Print({ report, auth, errors, categories }) {
                     <p
                         style={{
                             top: "27.2rem",
-                            left: "34.3rem",
+                            left: "35rem",
                         }}
-                        className="absolute  bg-red-400 w-[250px]  capitalize text-5xl text-center  "
+                        className="absolute  w-[250px]  capitalize text-5xl text-center  "
                     >
                         {report.patientid}
                     </p>
                     <p
                         style={{
-                            top: "4.3rem",
-                            left: "21.5rem",
+                            top: "11.3rem",
+                            left: "62.5rem",
                         }}
-                        className="absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  "
+                        className="absolute w-[300px]  bg-red-400 font-tajawal-extrabold capitalize text-3xl text-center  "
                     >
                         {moment(report.visitdate).format("ll")}
                     </p>

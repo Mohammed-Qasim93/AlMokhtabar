@@ -5832,16 +5832,16 @@ function Print(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "27.2rem",
-            left: "34.8rem"
+            left: "35rem"
           },
-          className: "absolute  bg-red-400 w-[250px]  capitalize text-5xl text-center  ",
+          className: "absolute  w-[250px]  capitalize text-5xl text-center  ",
           children: report.patientid
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "4.3rem",
-            left: "21.5rem"
+            top: "11.3rem",
+            left: "62.5rem"
           },
-          className: "absolute w-[100px] font-tajawal-extrabold capitalize text-sm text-center  ",
+          className: "absolute w-[300px]  bg-red-400 font-tajawal-extrabold capitalize text-3xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
