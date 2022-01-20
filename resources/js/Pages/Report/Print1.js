@@ -17,106 +17,113 @@ export default function Print({ report, auth, errors, categories }) {
     const qrUrl = `${window.location.origin}/report/${report.id}`;
 
     useEffect(() => {
-        QRcode.toDataURL(qrUrl)
-            .then((url) => {
-                setQrcode(url);
-            })
-            .then(() => {
-                download();
-            });
+        QRcode.toDataURL(qrUrl).then((url) => {
+            setQrcode(url);
+        });
     }, []);
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint).then((canvas) => {
-            const imgData = canvas.toDataURL("image/jpeg", 1.0);
-            const imgWidth = 210;
-            const pageHeight = 295;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        html2canvas(divToPrint)
+            .then((canvas) => {
+                const imgData = canvas.toDataURL("image/jpg", 1.0);
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-            let heightLeft = imgHeight;
-            const doc = new jsPDF("p", "mm", "A4");
+                let heightLeft = imgHeight;
+                const doc = new jsPDF("p", "mm", "a4");
 
-            let position = 0;
-            doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-            while (heightLeft >= 0) {
-                position = heightLeft - imgHeight;
-                doc.addPage();
-                doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+                let position = 0;
+                doc.addImage(
+                    imgData,
+                    "JPEG",
+                    0,
+                    0,
+                    imgWidth,
+                    imgHeight,
+                    "",
+                    "NONE"
+                );
                 heightLeft -= pageHeight;
-            }
-            doc.save("download.pdf");
-        });
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(
+                        imgData,
+                        "JPEG",
+                        0,
+                        position,
+                        imgWidth,
+                        imgHeight
+                    );
+                    heightLeft -= pageHeight;
+                }
+                doc.save("download.pdf");
+            })
+            .then(() => {
+                Inertia.visit("/");
+            });
     };
 
     return (
         <div className="flex flex-col mt-4 items-center justify-center">
-            <div id="page" className="">
-                {/* <div
+            <Button
+                className="py-3 mt-4 bg-gray-800"
+                handleClick={download}
+                children={"Download as PDF"}
+            />
+
+            <div id="page">
+                <div
                     className="page1 relative"
                     style={{
                         backgroundImage: `url(${page1})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
-                        imageResolution: "700dpi",
-                        width: "2480px",
-                        height: "3500px",
+                        imageResolution: "800dpi",
+                        width: "208mm",
+                        height: "295mm",
                     }}
                 >
-                    <p
-                        style={{
-                            top: "4.5rem",
-                            left: "8.1rem",
-                        }}
-                        className="absolute  w-[300px]   font-tajawal-extrabold capitalize text-4xl text-right   "
-                    >
+                    <p className="absolute w-[100px] top-5 left-20 font-tajawal-extrabold capitalize text-sm text-center   ">
                         {report.branchar}
                     </p>
-                    <p
-                        style={{
-                            top: "32rem",
-                            left: "4rem",
-                            lineHeight: "1.5",
-                        }}
-                        className="absolute w-[940px] bg-red-400 font-tajawal-extrabold capitalize text-7xl text-left   "
-                    >
+                    <p className="absolute w-[310px] top-40 left-8 font-tajawal-extrabold capitalize text-xl text-center   ">
                         {report.pname}
                     </p>
                     <p
                         style={{
-                            top: "50rem",
-                            left: "2.5rem",
+                            top: "15.5rem",
                         }}
-                        className="absolute w-[500px] bg-red-400  left-8 font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[156px]  left-8 font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.visitnum}
                     </p>
                     <p
                         style={{
-                            top: "49.6rem",
-                            left: "32.2rem",
+                            top: "15.8rem",
+                            left: "12.2rem",
                         }}
-                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-5xl text-right  "
+                        className="absolute w-[50px]  font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.age}
                     </p>
                     <p
                         style={{
-                            top: "49.6rem",
-                            left: "53.2rem",
+                            top: "15.5rem",
                         }}
-                        className="absolute w-[160px] bg-red-300  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[55px]  left-72 font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.gender == "0" ? "Male" : "Female"}
                     </p>
                     <p
                         style={{
-                            top: "28.2rem",
-                            left: "82rem",
+                            top: "8.7rem",
+                            left: "26.5rem",
                         }}
-                        className="absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {moment(report.created_at).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -124,10 +131,10 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "28.2rem",
-                            right: "10.2rem",
+                            top: "8.7rem",
+                            left: "39.5rem",
                         }}
-                        className="absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {moment(report.collecteddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -135,10 +142,10 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "35rem",
-                            right: "10.2rem",
+                            top: "10.9rem",
+                            left: "38.5rem",
                         }}
-                        className="absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {moment(report.priteddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -146,10 +153,10 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "35rem",
-                            left: "82rem",
+                            top: "10.9rem",
+                            left: "26.8rem",
                         }}
-                        className="absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {moment(report.authenticateddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -157,28 +164,28 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "46.5rem",
-                            right: "5.4rem",
+                            top: "14.4rem",
+                            left: "35.3rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[216px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.clientid}
                     </p>
                     <p
                         style={{
-                            top: "70rem",
-                            left: "35rem",
+                            top: "20.5rem",
+                            left: "14.3rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
                     <p
                         style={{
-                            top: "70rem",
-                            left: "76.4rem",
+                            top: "20.5rem",
+                            left: "27.3rem",
                         }}
-                        className="absolute bg-blue-700 w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[150px] font-tajawal-extrabold capitalize text-sm text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
@@ -192,35 +199,27 @@ export default function Print({ report, auth, errors, categories }) {
                             className="rounded-lg absolute w-28 bottom-3"
                         />
                     </div>
-                </div> */}
+                </div>
                 <div
                     className="page2 relative"
                     style={{
                         backgroundImage: `url(${page2})`,
-                        backgroundSize: "cover",
+                        backgroundSize: "contain",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
-                        imageResolution: "700dpi",
-                        width: "2480px",
-                        height: "3400px",
+                        width: "219mm",
+                        height: "297mm",
                     }}
                 >
                     <p
                         style={{
-                            top: "11.7rem",
-                            right: "5.5rem",
+                            top: "4.5rem",
                         }}
-                        className="absolute  w-[140px] font-tajawal-extrabold capitalize text-3xl text-left  "
+                        className="absolute w-[100px] right-4 font-tajawal-extrabold capitalize text-xs text-center  "
                     >
                         {report.branch}
                     </p>
-                    <p
-                        style={{
-                            top: "15.5rem",
-                            left: "4rem",
-                        }}
-                        className="absolute bg-gray-500  w-[400px] font-tajawal-extrabold capitalize text-5xl text-left  "
-                    >
+                    <p className="absolute w-[245px] top-24 left-8 font-tajawal-extrabold capitalize text-sm text-center   ">
                         {report.pname}
                     </p>
                     <p

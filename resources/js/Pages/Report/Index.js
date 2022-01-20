@@ -3,6 +3,7 @@ import { Link, Head } from "@inertiajs/inertia-react";
 import Authenticated from "../../Layouts/Authenticated";
 import Pagination from "@/Components/Pagination";
 import Footer from "../../Layouts/Footer";
+import pdf from "/pdf.svg";
 
 export default function Index({ auth, report }) {
     return (
@@ -55,6 +56,9 @@ export default function Index({ auth, report }) {
                                                         <th className="px-4 py-3">
                                                             amount
                                                         </th>
+                                                        <th className="px-4 py-3">
+                                                            Download
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -70,7 +74,7 @@ export default function Index({ auth, report }) {
 
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
-                                                                        href={`/${item.id}/edit`}
+                                                                        href={`/result?id=${item.id}`}
                                                                     >
                                                                         {
                                                                             item.pname
@@ -87,7 +91,7 @@ export default function Index({ auth, report }) {
                                                                 </td>
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     {item.gender ==
-                                                                        "0"
+                                                                    "0"
                                                                         ? "Male"
                                                                         : "Female"}
                                                                 </td>
@@ -105,6 +109,19 @@ export default function Index({ auth, report }) {
                                                                     {
                                                                         item.amount
                                                                     }
+                                                                </td>
+                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                    <Link
+                                                                        href={`/result?id=${item.patientid}`}
+                                                                    >
+                                                                        <img
+                                                                            className="h-6 w-6"
+                                                                            src={
+                                                                                pdf
+                                                                            }
+                                                                            alt="pdf"
+                                                                        />
+                                                                    </Link>
                                                                 </td>
                                                             </tr>
                                                         )
