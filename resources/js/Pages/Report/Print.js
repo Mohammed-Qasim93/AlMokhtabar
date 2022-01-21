@@ -27,12 +27,12 @@ export default function Print({ report, auth, errors, categories }) {
             });
     }, []);
 
-    // setTimeout(() => {
-    //     setSpinner(false);
-    //     if (auth.user !== null) {
-    //         Inertia.replace("/");
-    //     }
-    // }, 3000);
+    setTimeout(() => {
+        setSpinner(false);
+        if (auth.user !== null) {
+            Inertia.replace("/");
+        }
+    }, 3000);
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
@@ -60,7 +60,7 @@ export default function Print({ report, auth, errors, categories }) {
 
     return (
         <div className="flex flex-col mt-4 items-center justify-center">
-            {/* <div
+            <div
                 style={{
                     width: "100%",
                     height: "100vh",
@@ -102,9 +102,9 @@ export default function Print({ report, auth, errors, categories }) {
                 )}
 
                 <ApplicationLogo className="w-[20rem] h-20" />
-            </div> */}
+            </div>
             <div id="page" className="">
-                {/* <div
+                <div
                     className="page1 relative"
                     style={{
                         backgroundImage: `url(${page1})`,
@@ -250,7 +250,7 @@ export default function Print({ report, auth, errors, categories }) {
                             className="rounded-3xl absolute w-72 bottom-3"
                         />
                     </div>
-                </div> */}
+                </div>
                 <div
                     className="page2 relative"
                     style={{
@@ -350,9 +350,9 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "24rem",
                             right: "6rem",
                         }}
-                        className="absolute w-[630px] bg-red-500  font-tajawal-extrabold capitalize text-3xl text-center  "
+                        className="absolute w-[630px]  font-tajawal-extrabold capitalize text-4xl text-center  "
                     >
-                        kokok
+                        {report.customer}
                     </p>
 
                     <p
