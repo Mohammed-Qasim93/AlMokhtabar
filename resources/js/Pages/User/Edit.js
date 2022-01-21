@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
-import Checkbox from "@/Components/Checkbox";
-// import ComboBox from "@/Components/ComboBox";
 
-export default function Edit({ auth, user, errors, success }) {
-    console.log(user);
+export default function Edit({ auth, user, errors }) {
     let { data, setData, post } = useForm({
         name: user.name || "",
         email: user.email || "",
@@ -17,18 +14,11 @@ export default function Edit({ auth, user, errors, success }) {
         isAdmin: user.isAdmin,
         _method: "PUT",
     });
-    // let [userState, setUserState] = useState(initialState);
-    // let { email, name, isAdmin, password, password_confirmation } = userState;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData({ ...data, [name]: value });
     };
-
-    // const handelClick = (e) => {
-    //     e.preventDefault();
-    //     Inertia.post(`/user/${user.id}`, data);
-    // };
 
     const submit = (e) => {
         e.preventDefault();

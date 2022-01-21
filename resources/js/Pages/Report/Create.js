@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import React from "react";
+import { Head, useForm } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import Button from "@/Components/Button";
 import Authenticated from "@/Layouts/Authenticated";
 
 import Combo from "../../Components/Combo";
-import { Inertia } from "@inertiajs/inertia";
 import Footer from "../../Layouts/Footer";
 
-export default function Add({ auth, errors, categories }) {
+export default function Add({ auth, errors }) {
     const { data, setData, post } = useForm({
         pname: "",
         age: "",
@@ -50,36 +49,11 @@ export default function Add({ auth, errors, categories }) {
         );
     };
 
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //     Inertia.post(`/items`, data);
-    // };
-
     const submit = (e) => {
         e.preventDefault();
 
         post("/store");
     };
-
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setData({ ...data, [name]: value });
-    // };
-
-    // const handelClick = (e) => {
-    //     e.preventDefault();
-    //     axios.post("/items", data).then((response) => {
-    //         if (response.status === 201) {
-    //             Swal.fire({
-    //                 title: "تمت العملية بنجاح",
-    //                 icon: "success",
-    //                 showConfirmButton: false,
-    //                 timer: 1500,
-    //             });
-    //             Inertia.replace("/items");
-    //         }
-    //     });
-    // };
 
     return (
         <>

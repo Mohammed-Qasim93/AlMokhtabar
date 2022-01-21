@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import React from "react";
+import { Head, useForm } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import Button from "@/Components/Button";
 import Authenticated from "@/Layouts/Authenticated";
@@ -10,7 +10,6 @@ import Footer from "../../Layouts/Footer";
 import moment from "moment";
 
 export default function Add({ auth, errors, report }) {
-    console.log(report);
     const { data, setData, post } = useForm({
         pname: report.pname || "",
         age: report.age || "",
@@ -57,36 +56,11 @@ export default function Add({ auth, errors, report }) {
         Inertia.get("/");
     };
 
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //     Inertia.post(`/items`, data);
-    // };
-
     const submit = (e) => {
         e.preventDefault();
 
         post(`/update/${report.id}`);
     };
-
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setData({ ...data, [name]: value });
-    // };
-
-    // const handelClick = (e) => {
-    //     e.preventDefault();
-    //     axios.post("/items", data).then((response) => {
-    //         if (response.status === 201) {
-    //             Swal.fire({
-    //                 title: "تمت العملية بنجاح",
-    //                 icon: "success",
-    //                 showConfirmButton: false,
-    //                 timer: 1500,
-    //             });
-    //             Inertia.replace("/items");
-    //         }
-    //     });
-    // };
 
     return (
         <>

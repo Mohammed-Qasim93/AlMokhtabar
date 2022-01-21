@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
-import Guest from "@/Layouts/Guest";
-import Button from "@/Components/Button";
-import Input from "@/Components/Input";
-import Label from "@/Components/Label";
+import React from "react";
+import { Head, Link } from "@inertiajs/inertia-react";
 import ApplicationLogo from "../../Components/ApplicationLogo";
 import bg from "/images/bg.jpg";
 import Footer from "../../Layouts/Footer";
 
-export default function Result({ errors, report }) {
-    console.log(report);
+export default function Result(report) {
     return (
         <>
             <nav className="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">

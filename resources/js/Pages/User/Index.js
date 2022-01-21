@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import Authenticated from "../../Layouts/Authenticated";
-import Pagination from "@/Components/Pagination";
 import Footer from "../../Layouts/Footer";
+import Swal from "sweetalert2";
+import { Inertia } from "@inertiajs/inertia";
+import { Toast } from "@/Components/Toast";
 
-export default function Index({ auth, user }) {
-    console.log(user);
+export default function Index({ auth, user, success }) {
+    useEffect(() => {
+        if (success) {
+            Toast.fire({
+                icon: success.icon,
+                title: success.title,
+                text: success.message,
+            });
+        }
+    }, [success]);
+
+    const handleClick = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showDenyButton: true,
+            confirmButtonText: "Yes, delete it!",
+            denyButtonText: `No, cancel!`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Inertia.delete(`/user/${id}`);
+            }
+        });
+    };
     return (
         <>
             <Authenticated auth={auth}>
@@ -65,7 +89,7 @@ export default function Index({ auth, user }) {
                                                         <td className="text-base text-gray-900 flex items-center gap-4 justify-around font-light px-6 py-4 whitespace-nowrap">
                                                             <Link
                                                                 href={`/user/${item.id}/edit`}
-                                                                className="bg-green-500 rounded-md p-1"
+                                                                className="bg-green-500 rounded-md p-2"
                                                             >
                                                                 <svg
                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +104,33 @@ export default function Index({ auth, user }) {
                                                                     />
                                                                 </svg>
                                                             </Link>
+                                                            <button
+                                                                onClick={() =>
+                                                                    handleClick(
+                                                                        item.id
+                                                                    )
+                                                                }
+                                                                className={` px-2 py-2 transition duration-500 ease-in-out bg-red-500 hover:bg-red-600
+                                             text-white p-2 rounded-lg mx-2 
+                                               `}
+                                                            >
+                                                                <svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="red"
+                                                                    viewBox="0 0 24 24"
+                                                                    className="h-6 w-6"
+                                                                    stroke="#fff"
+                                                                >
+                                                                    <path
+                                                                        strokeLinecap="round"
+                                                                        strokeLinejoin="round"
+                                                                        strokeWidth={
+                                                                            2
+                                                                        }
+                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                                                    />
+                                                                </svg>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                 ))}

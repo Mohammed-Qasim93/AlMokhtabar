@@ -155,6 +155,7 @@ export default function Authenticated({ auth, header, children }) {
                             <ResponsiveNavLink
                                 method="post"
                                 href={`/user/${auth.user.id}/edit`}
+                                as="button"
                             >
                                 Log Out
                             </ResponsiveNavLink>
@@ -162,6 +163,7 @@ export default function Authenticated({ auth, header, children }) {
                                 <ResponsiveNavLink
                                     method="get"
                                     href={`/user/index`}
+                                    as="button"
                                 >
                                     Users
                                 </ResponsiveNavLink>

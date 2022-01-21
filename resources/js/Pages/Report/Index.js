@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import Authenticated from "../../Layouts/Authenticated";
 import Pagination from "@/Components/Pagination";
 import Footer from "../../Layouts/Footer";
+import Toast from "@/Components/Toast";
 
-export default function Index({ auth, report }) {
+export default function Index({ auth, report, success }) {
+    useEffect(() => {
+        if (success) {
+            Toast.fire({
+                icon: success.icon,
+                title: success.title,
+                text: success.message,
+            });
+        }
+    }, [success]);
+
     return (
         <>
             <Authenticated auth={auth}>
                 <Head title="Patients" />
-                <div className="mt-8 relative">
+                <div className="mt-8 relative pb-4">
                     <p className="text-4xl text-center font-bold m-5">
                         Patients Report Table
                     </p>
