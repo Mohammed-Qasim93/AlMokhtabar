@@ -18,6 +18,12 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function index(){
+        return Inertia::render('User/Index', [
+            'user' => User::all()
+        ]);
+    }
+
     public function edit($id)
     {
         return Inertia::render('User/Edit', [
