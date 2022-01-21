@@ -41,7 +41,7 @@ export default function Footer({}) {
                     </div>
                 </div>
                 <div className=" border-t-2 w-full bottom-0">
-                    <div className="flex p-4 justify-center gap-x-1">
+                    <div className="flex p-4 justify-center items-center gap-x-1">
                         <p>Developed by </p>
                         <a href="https://horizondev-7ul7z3h2p-mohammed-qasim93.vercel.app/">
                             {" "}

@@ -3363,29 +3363,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-
 function Button(_ref) {
   var name = _ref.name,
       options = _ref.options,
       handleChange = _ref.handleChange,
       className = _ref.className,
-      defaultValue = _ref.defaultValue,
+      value = _ref.value,
       add = _ref.add;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
     className: className,
     name: name,
-    id: "cars",
     onChange: handleChange,
-    defaultValue: defaultValue,
-    children: [add && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
-      value: "0",
-      children: [" ", defaultValue]
-    }), options.map(function (option, index) {
+    value: value,
+    children: options.map(function (option, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-        value: index + 1,
+        value: index,
         children: option.name
       }, index);
-    })]
+    })
   });
 }
 
@@ -4063,7 +4058,7 @@ function Footer(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: " border-t-2 w-full bottom-0",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "flex p-4 justify-center gap-x-1",
+          className: "flex p-4 justify-center items-center gap-x-1",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             children: "Developed by "
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
@@ -5088,7 +5083,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Combo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Combo */ "./resources/js/Components/Combo.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _Layouts_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Layouts/Footer */ "./resources/js/Layouts/Footer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -5171,96 +5169,96 @@ function Add(_ref) {
   // };
 
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_4__["default"], {
       auth: auth,
       errors: errors,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
         title: "Edit Report"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "flex",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "flex-1 flex flex-col",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
             className: " flex justify-center  text-gray-900 text-2xl",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "pt-12",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                   className: "mt-10 sm:mt-0",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     className: "grid grid-cols-2 gap-6",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                       className: "mt-5 md:mt-0 col-span-2",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("form", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("form", {
                         onSubmit: submit,
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                           className: "shadow overflow-hidden sm:rounded-md",
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                             className: "px-4 py-5 bg-white sm:p-6",
-                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h2", {
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h2", {
                               className: "pt-4 pb-6 text-center capitalize",
                               children: ["Edit", " ", report.pname + "'s", " ", "Report"]
-                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                               className: "grid grid-cols-3 gap-6",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
                                   htmlFor: "pname",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: ["Pateint Name", " "]
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
                                   handleChange: onHandleChange,
                                   type: "text",
                                   name: "pname",
                                   value: data.pname,
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.pname
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "age",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Age"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "number",
                                   min: 1,
                                   value: data.age,
                                   name: "age",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.age
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "gender",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Gender"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_5__["default"], {
                                   className: "w-full rounded-lg",
                                   name: "gender",
-                                  defaultValue: data.gender,
+                                  value: data.gender,
                                   options: genderArr,
                                   handleChange: function handleChange(e) {
                                     onHandleChange(e);
                                   }
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.gender
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "customer",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Customer"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   className: "w-full rounded-lg",
                                   name: "customer",
                                   type: "text",
@@ -5268,135 +5266,135 @@ function Add(_ref) {
                                   onChange: function onChange(e) {
                                     onHandleChange(e);
                                   }
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.customer
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "s2date",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Visit Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "datetime-local",
-                                  value: data.s2date,
+                                  value: moment__WEBPACK_IMPORTED_MODULE_8___default()(data.s2date).format("YYYY-MM-DDTHH:mm"),
                                   name: "s2date",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.s2date
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "s1date",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Result Date"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "datetime-local",
-                                  value: data.s1date,
+                                  value: moment__WEBPACK_IMPORTED_MODULE_8___default()(data.s1date).format("YYYY-MM-DDTHH:mm"),
                                   name: "s1date",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.s1date
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "result",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Result"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Combo__WEBPACK_IMPORTED_MODULE_5__["default"], {
                                   className: "w-full rounded-lg",
                                   name: "result",
-                                  defaultValue: resultArr,
+                                  value: data.result,
                                   options: resultArr,
                                   handleChange: function handleChange(e) {
                                     onHandleChange(e);
                                   }
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.result
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "branchar",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Branch In Arabic"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "text",
                                   value: data.branchar,
                                   name: "branchar",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.branchar
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "branch",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Branch"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "text",
                                   value: data.branch,
                                   name: "branch",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.branch
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-1",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "amount",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Amount"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "number",
                                   min: 1,
                                   value: data.amount,
                                   name: "amount",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.amount
                                 })]
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                                 className: "col-span-6 sm:col-span-3",
-                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
                                   htmlFor: "paymentusername",
                                   className: "block text-sm font-medium text-gray-700",
                                   children: "Payment User"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
                                   onChange: onHandleChange,
                                   type: "text",
                                   value: data.paymentusername,
                                   name: "paymentusername",
                                   className: "mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
                                   className: "text-red-500 text-sm",
                                   children: errors.paymentusername
                                 })]
                               })]
                             })]
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                             className: "px-4 py-3 flex justify-evenly bg-gray-50 text-right sm:px-6",
-                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
                               type: "button",
                               handleClick: back,
                               className: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none ",
                               children: "Back"
-                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
                               className: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none ",
                               children: "Save"
                             })]
@@ -5411,7 +5409,7 @@ function Add(_ref) {
           })
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Layouts_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Layouts_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
   });
 }
 
@@ -5506,7 +5504,7 @@ function Index(_ref) {
                           children: "amount"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("th", {
                           className: "px-4 py-3",
-                          children: "Download"
+                          children: "Actions"
                         })]
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tbody", {
@@ -5514,43 +5512,61 @@ function Index(_ref) {
                         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
                           className: "border-b bg-gray-300 ",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900",
+                            className: "px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900",
                             children: item.id
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                              href: "/edit/".concat(item.id),
-                              children: item.pname
-                            })
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            children: item.pname
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
                             children: item.patientid
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
                             children: item.age
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
                             children: item.gender == "0" ? "Male" : "Female"
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
-                            children: item.visitdate
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            children: item.s2date
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
                             children: item.branch
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
+                            className: "text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap",
                             children: item.amount
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-                            className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
+                            className: "text-base text-gray-900 flex items-center gap-4 justify-around font-light px-6 py-4 whitespace-nowrap",
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
                               href: "/result?id=".concat(item.patientid),
-                              className: "flex items-center justify-center",
-                              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                                className: "h-6 w-6",
-                                src: _pdf_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
-                                alt: "pdf"
+                              className: " bg-white p-1  rounded-md",
+                              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("svg", {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "red",
+                                className: "bi bi-file-pdf w-6 h-6",
+                                viewBox: "0 0 16 16",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("path", {
+                                  d: "M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("path", {
+                                  d: "M4.603 12.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.701 19.701 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.187-.012.395-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.065.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.716 5.716 0 0 1-.911-.95 11.642 11.642 0 0 0-1.997.406 11.311 11.311 0 0 1-1.021 1.51c-.29.35-.608.655-.926.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.27.27 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.647 12.647 0 0 1 1.01-.193 11.666 11.666 0 0 1-.51-.858 20.741 20.741 0 0 1-.5 1.05zm2.446.45c.15.162.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.881 3.881 0 0 0-.612-.053zM8.078 5.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"
+                                })]
                               })
-                            })
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+                              href: "/edit/".concat(item.id),
+                              className: "bg-green-500 rounded-md p-1",
+                              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("svg", {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "#fff",
+                                className: "bi bi-pencil-square h-6 w-6",
+                                viewBox: "0 0 16 16",
+                                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("path", {
+                                  d: "M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+                                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("path", {
+                                  fillRule: "evenodd",
+                                  d: "M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+                                })]
+                              })
+                            })]
                           })]
                         }, index);
                       })
@@ -5691,12 +5707,12 @@ function Print(_ref) {
         heightLeft -= pageHeight;
       }
 
-      doc.save("download.pdf");
+      doc.save("".concat(report.pname, "_").concat(moment__WEBPACK_IMPORTED_MODULE_8___default()().format("DD-MM-YYYY"), ".pdf"));
     });
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-    className: "flex flex-col mt-4 items-center justify-center",
+    className: "flex flex-col mt-4 items-center font-sans justify-center",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
       style: {
         width: "100%",
@@ -5754,85 +5770,85 @@ function Print(_ref) {
             top: "4.5rem",
             left: "8.1rem"
           },
-          className: "absolute  w-[300px]   font-tajawal-extrabold capitalize text-4xl text-right   ",
+          className: "absolute  w-[300px]    capitalize text-4xl text-right   ",
           children: report.branchar
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "32rem",
+            top: "30rem",
             left: "4rem",
             lineHeight: "1.5"
           },
-          className: "absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   ",
+          className: "absolute w-[940px]  capitalize text-6xl font-serif text-left   ",
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "50rem",
             left: "2.5rem"
           },
-          className: "absolute w-[500px]  left-8 font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[500px]  left-8  capitalize text-4xl text-center  ",
           children: report.visitnum
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "49.6rem",
             left: "32.2rem"
           },
-          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-5xl text-right  ",
+          className: "absolute w-[150px]   capitalize text-5xl text-right  ",
           children: report.age
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "49.6rem",
             left: "53.2rem"
           },
-          className: "absolute w-[160px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[160px]   capitalize text-4xl text-center  ",
           children: report.gender == "0" ? "Male" : "Female"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "28.2rem",
             left: "82rem"
           },
-          className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute  w-[400px]  capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.created_at).format("DD/MM/YYYY hh:mm:ss")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "28.2rem",
             right: "10.2rem"
           },
-          className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[400px]  capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.collecteddate).format("DD/MM/YYYY hh:mm:ss")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "35rem",
             right: "10.2rem"
           },
-          className: "absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute  w-[400px]  capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.priteddate).format("DD/MM/YYYY hh:mm:ss")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "35rem",
             left: "82rem"
           },
-          className: "absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[400px]  capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.authenticateddate).format("DD/MM/YYYY hh:mm:ss")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "46.5rem",
             right: "5.4rem"
           },
-          className: "absolute  w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute  w-[680px]  capitalize text-4xl text-center  ",
           children: report.clientid
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "70rem",
             left: "35rem"
           },
-          className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[680px]  capitalize text-4xl text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "70rem",
             left: "76.4rem"
           },
-          className: "absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[680px]  capitalize text-4xl text-center  ",
           children: report.result == "0" ? "Negative" : "Positive"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
           style: {
@@ -5866,15 +5882,16 @@ function Print(_ref) {
             top: "11.7rem",
             right: "5.5rem"
           },
-          className: "absolute  w-[140px] font-tajawal-extrabold capitalize text-3xl text-left  ",
+          className: "absolute  w-[140px]  capitalize text-3xl text-left  ",
           children: report.branch
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
-            top: "15.5rem",
+            top: "14rem",
             left: "4rem",
+            fontSize: "3rem",
             lineHeight: "1.5"
           },
-          className: "absolute  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  ",
+          className: "absolute  w-[740px]  capitalize  font-serif text-left  ",
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
@@ -5902,56 +5919,56 @@ function Print(_ref) {
             top: "11.3rem",
             left: "64rem"
           },
-          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[300px]   capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.visitdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "15.4rem",
             left: "64rem"
           },
-          className: "absolute w-[300px] font-tajawal-extrabold capitalize text-4xl text-center ",
+          className: "absolute w-[300px]  capitalize text-4xl text-center ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.resultdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "11.3rem",
             right: "35rem"
           },
-          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[300px]   capitalize text-4xl text-center  ",
           children: moment__WEBPACK_IMPORTED_MODULE_8___default()(report.paymentdate).format("ll")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "14.8rem",
             right: "35rem"
           },
-          className: "absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[300px]   capitalize text-4xl text-center  ",
           children: report.receiptno
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "24rem",
             right: "6rem"
           },
-          className: "absolute w-[630px]  font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[630px]   capitalize text-4xl text-center  ",
           children: report.customer
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "43rem",
             right: "24rem"
           },
-          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
+          className: "absolute w-[150px]   capitalize text-4xl text-right  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "50rem",
             right: "24rem"
           },
-          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
+          className: "absolute w-[150px]   capitalize text-4xl text-right  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
             top: "53rem",
             right: "24rem"
           },
-          className: "absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  ",
+          className: "absolute w-[150px]   capitalize text-4xl text-right  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
@@ -5979,14 +5996,14 @@ function Print(_ref) {
             top: "38rem",
             right: "43rem"
           },
-          className: "absolute w-[180px] font-tajawal-extrabold capitalize text-4xl text-center  ",
+          className: "absolute w-[180px]  capitalize text-4xl text-center  ",
           children: report.amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("p", {
           style: {
             top: "54rem",
             left: "16rem"
           },
-          className: "absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  ",
+          className: "absolute w-[400px] flex items-center justify-end gap-x-4  capitalize text-5xl  ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
             children: "\u062C\u0646\u064A\u0647\u0627\u064B"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
