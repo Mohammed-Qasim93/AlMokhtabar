@@ -7,6 +7,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import Combo from "../../Components/Combo";
 import { Inertia } from "@inertiajs/inertia";
 import Footer from "../../Layouts/Footer";
+import moment from "moment";
 
 export default function Add({ auth, errors, report }) {
     console.log(report);
@@ -169,7 +170,7 @@ export default function Add({ auth, errors, report }) {
                                                                     <Combo
                                                                         className="w-full rounded-lg"
                                                                         name="gender"
-                                                                        defaultValue={
+                                                                        value={
                                                                             data.gender
                                                                         }
                                                                         options={
@@ -230,9 +231,11 @@ export default function Add({ auth, errors, report }) {
                                                                             onHandleChange
                                                                         }
                                                                         type="datetime-local"
-                                                                        value={
+                                                                        value={moment(
                                                                             data.s2date
-                                                                        }
+                                                                        ).format(
+                                                                            "YYYY-MM-DDTHH:mm"
+                                                                        )}
                                                                         name="s2date"
                                                                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                                                     />
@@ -256,9 +259,11 @@ export default function Add({ auth, errors, report }) {
                                                                             onHandleChange
                                                                         }
                                                                         type="datetime-local"
-                                                                        value={
+                                                                        value={moment(
                                                                             data.s1date
-                                                                        }
+                                                                        ).format(
+                                                                            "YYYY-MM-DDTHH:mm"
+                                                                        )}
                                                                         name="s1date"
                                                                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                                                     />
@@ -279,8 +284,8 @@ export default function Add({ auth, errors, report }) {
                                                                     <Combo
                                                                         className="w-full rounded-lg"
                                                                         name="result"
-                                                                        defaultValue={
-                                                                            resultArr
+                                                                        value={
+                                                                            data.result
                                                                         }
                                                                         options={
                                                                             resultArr
