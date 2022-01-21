@@ -56,7 +56,7 @@ class ReportController extends Controller
             'patientid' => $pid,
             'receiptno' => $this->randomNum(Report::pluck('receiptno'), 10000, 99999),
         ]);
-        return Redirect::route('result', ['id' => $pid]);
+        return Redirect::route('print', ['id' => $pid]);
     }
 
     public function edit($id){
@@ -149,9 +149,14 @@ class ReportController extends Controller
 
     public function result(){
         if(request('id')){
-            return Inertia::render('Report/Result', [
-                'report' => Report::where('patientid', request('id'))->first()
-            ]);
+            $report = Report::where('patientid', request('id'))->first();
+            if($report){
+                return Inertia::render('Report/Result', [
+                    'report' => $report
+                ]);
+            }else{
+                return abort(404);
+            }        
         }else{
             return abort(404);
         }
@@ -159,9 +164,14 @@ class ReportController extends Controller
 
     public function print(){
         if(request('id')){
-            return Inertia::render('Report/Print', [
-                'report' => Report::where('patientid', request('id'))->first()
-            ]);
+            $report = Report::where('patientid', request('id'))->first();
+            if($report){
+                return Inertia::render('Report/Result', [
+                    'report' => $report
+                ]);
+            }else{
+                return abort(404);
+            }  
         }else{
             return abort(404);
         }

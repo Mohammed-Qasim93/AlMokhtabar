@@ -31,6 +31,12 @@ class Controller extends BaseController
         ]);
     }
 
+    public function delete($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+        return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Delete Successflly done']);
+    }
+
     public function update(Request $request, $id){
         $user = User::findOrFail($id);
 
@@ -56,9 +62,9 @@ class Controller extends BaseController
                 'isAdmin' => $request->isAdmin,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
+            return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Edit Successflly done']);
         }else{
-            return Redirect::route('index');
+            return Redirect::route('user.index');
         }
 
 
