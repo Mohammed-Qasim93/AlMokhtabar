@@ -6372,7 +6372,7 @@ function Index(_ref) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "absolute left-5  top-24 sm:left-72  ",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-              href: "/create",
+              href: "/register",
               className: "px-4 py-2 sm:ml-[11.2rem] bg-gray-800  text-slate-100",
               children: "Create new user"
             })

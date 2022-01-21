@@ -17,7 +17,7 @@ export default function Index({ auth, user }) {
                     <div className="flex justify-center flex-col">
                         <div className="absolute left-5  top-24 sm:left-72  ">
                             <Link
-                                href="/create"
+                                href="/register"
                                 className="px-4 py-2 sm:ml-[11.2rem] bg-gray-800  text-slate-100"
                             >
                                 Create new user
