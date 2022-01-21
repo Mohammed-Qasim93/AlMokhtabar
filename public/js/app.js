@@ -5538,7 +5538,7 @@ function Index(_ref) {
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
                             className: "text-base text-gray-900 flex items-center gap-4 justify-around font-light px-6 py-4 whitespace-nowrap",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                              href: "/result?id=".concat(item.patientid),
+                              href: "/print?id=".concat(item.patientid),
                               className: " bg-white p-1  rounded-md",
                               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("svg", {
                                 xmlns: "http://www.w3.org/2000/svg",
@@ -5741,7 +5741,7 @@ function Print(_ref) {
             cy: "12",
             r: "10",
             stroke: "currentColor",
-            "stroke-width": "4"
+            strokeWidth: "4"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("path", {
             className: "opacity-75",
             fill: "currentColor",

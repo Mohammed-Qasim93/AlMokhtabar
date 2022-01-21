@@ -106,7 +106,7 @@ export default function Index({ auth, report }) {
                                                                 </td>
                                                                 <td className="text-base text-gray-900 flex items-center gap-4 justify-around font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
-                                                                        href={`/result?id=${item.patientid}`}
+                                                                        href={`/print?id=${item.patientid}`}
                                                                         className=" bg-white p-1  rounded-md"
                                                                     >
                                                                         <svg
