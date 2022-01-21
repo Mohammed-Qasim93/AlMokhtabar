@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
 
 import Authenticated from "@/Layouts/Authenticated";
-import page1 from "/page_1.jpg";
-import page2 from "/page_2.jpg";
+import page1 from "/images/page_1.jpg";
+import page2 from "/images/page_2.jpg";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import ApplicationLogo from "../../Components/ApplicationLogo";
