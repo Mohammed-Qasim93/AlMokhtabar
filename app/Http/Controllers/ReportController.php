@@ -60,7 +60,7 @@ class ReportController extends Controller
     }
 
     public function edit($id){
-        return Inertia::render('Report/Show', [
+        return Inertia::render('Report/Edit', [
             'report' => Report::findOrFail($id)
         ]);
     }
