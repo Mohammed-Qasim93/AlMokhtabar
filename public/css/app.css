@@ -740,6 +740,15 @@ select {
 .mb-24 {
   margin-bottom: 6rem;
 }
+.ml-10 {
+  margin-left: 2.5rem;
+}
+.ml-32 {
+  margin-left: 8rem;
+}
+.ml-36 {
+  margin-left: 9rem;
+}
 .block {
   display: block;
 }
@@ -1650,6 +1659,38 @@ select {
 
   .sm\:mt-0 {
     margin-top: 0px;
+  }
+
+  .sm\:ml-36 {
+    margin-left: 9rem;
+  }
+
+  .sm\:ml-40 {
+    margin-left: 10rem;
+  }
+
+  .sm\:ml-52 {
+    margin-left: 13rem;
+  }
+
+  .sm\:ml-48 {
+    margin-left: 12rem;
+  }
+
+  .sm\:ml-44 {
+    margin-left: 11rem;
+  }
+
+  .sm\:ml-\[11\.5rem\] {
+    margin-left: 11.5rem;
+  }
+
+  .sm\:ml-\[11\.3rem\] {
+    margin-left: 11.3rem;
+  }
+
+  .sm\:ml-\[11\.2rem\] {
+    margin-left: 11.2rem;
   }
 
   .sm\:flex {

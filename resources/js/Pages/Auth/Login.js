@@ -90,7 +90,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="flex items-center justify-center mt-4">
-                    <Button className="ml-4" processing={processing}>
+                    <Button className="ml-4 rounded-md" processing={processing}>
                         Log in
                     </Button>
                 </div>

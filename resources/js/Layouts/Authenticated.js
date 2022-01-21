@@ -64,7 +64,7 @@ export default function Authenticated({ auth, header, children }) {
                                             Profile
                                         </Dropdown.Link>
                                         <Dropdown.Link
-                                            href={`/user`}
+                                            href={`/user/index`}
                                             method="get"
                                             as="button"
                                         >
@@ -148,6 +148,18 @@ export default function Authenticated({ auth, header, children }) {
                         </div>
 
                         <div className="mt-3 space-y-1">
+                            <ResponsiveNavLink
+                                method="post"
+                                href={`/user/${auth.user.id}/edit`}
+                            >
+                                Log Out
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink
+                                method="get"
+                                href={`/user/index`}
+                            >
+                                Users
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 method="post"
                                 href={route("logout")}
