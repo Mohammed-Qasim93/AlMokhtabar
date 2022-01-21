@@ -63,7 +63,7 @@ export default function Authenticated({ auth, header, children }) {
                                         >
                                             Profile
                                         </Dropdown.Link>
-                                        {auth.user.isAdmin && (
+                                        {auth.user.isAdmin == 1 ? (
                                             <Dropdown.Link
                                                 href={`/user/index`}
                                                 method="get"
@@ -71,6 +71,8 @@ export default function Authenticated({ auth, header, children }) {
                                             >
                                                 Users
                                             </Dropdown.Link>
+                                        ) : (
+                                            ""
                                         )}
                                         <Dropdown.Link
                                             href={route("logout")}
@@ -156,13 +158,15 @@ export default function Authenticated({ auth, header, children }) {
                             >
                                 Log Out
                             </ResponsiveNavLink>
-                            {auth.user.isAdmin && (
+                            {auth.user.isAdmin == 1 ? (
                                 <ResponsiveNavLink
                                     method="get"
                                     href={`/user/index`}
                                 >
                                     Users
                                 </ResponsiveNavLink>
+                            ) : (
+                                ""
                             )}
                             <ResponsiveNavLink
                                 method="post"
