@@ -36,4 +36,4 @@ Route::get('/edit/{id}', [ReportController::class, 'edit'])->middleware('auth')-
 Route::put('/update/{id}', [ReportController::class, 'update'])->middleware('auth')->name('update');
 
 Route::get('/result', [ReportController::class, 'result'])->name('result');
-
+Route::get('/print', [ReportController::class, 'print'])->name('print');

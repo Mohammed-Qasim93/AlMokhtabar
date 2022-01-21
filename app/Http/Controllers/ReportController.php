@@ -157,6 +157,16 @@ class ReportController extends Controller
         }
     }
 
+    public function print(){
+        if(request('id')){
+            return Inertia::render('Report/Print', [
+                'report' => Report::where('patientid', request('id'))->first()
+            ]);
+        }else{
+            return abort(404);
+        }
+    }
+
     public function randomNum($old, $from, $to){
         $rand = mt_rand($from, $to);
         foreach($old as $num){
