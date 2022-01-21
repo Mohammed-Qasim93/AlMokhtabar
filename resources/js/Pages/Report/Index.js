@@ -74,7 +74,7 @@ export default function Index({ auth, report }) {
 
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
-                                                                        href={`/show/${item.id}`}
+                                                                        href={`/edit/${item.id}`}
                                                                     >
                                                                         {
                                                                             item.pname
@@ -146,7 +146,7 @@ export default function Index({ auth, report }) {
                                 </div>
                             </div>
                         ) : (
-                            <div className="text-center">
+                            <div className="text-center mt-28">
                                 <p className="text-xl text-center font-bold m-5">
                                     No Patients Yet
                                 </p>

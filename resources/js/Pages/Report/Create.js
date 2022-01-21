@@ -163,7 +163,7 @@ export default function Add({ auth, errors, categories }) {
                                                                         add={
                                                                             "true"
                                                                         }
-                                                                        value={
+                                                                        defaultValue={
                                                                             data.gender
                                                                         }
                                                                         options={
@@ -273,7 +273,10 @@ export default function Add({ auth, errors, categories }) {
                                                                     <Combo
                                                                         className="w-full rounded-lg"
                                                                         name="result"
-                                                                        value={
+                                                                        add={
+                                                                            "true"
+                                                                        }
+                                                                        defaultValue={
                                                                             resultArr
                                                                         }
                                                                         options={

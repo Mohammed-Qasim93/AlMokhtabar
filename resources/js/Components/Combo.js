@@ -5,19 +5,20 @@ export default function Button({
     options,
     handleChange,
     className,
-    value,
+    defaultValue,
     add,
 }) {
     return (
         <select
             className={className}
             name={name}
+            id="cars"
             onChange={handleChange}
-            value={value}
+            defaultValue={defaultValue}
         >
-            {/* {add && <option value="0"> {defaultValue}</option>} */}
+            {add && <option value="0"> {defaultValue}</option>}
             {options.map((option, index) => (
-                <option key={index} value={index}>
+                <option key={index} value={index + 1}>
                     {option.name}
                 </option>
             ))}
