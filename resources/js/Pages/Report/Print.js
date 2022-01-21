@@ -59,7 +59,7 @@ export default function Print({ report, auth, errors, categories }) {
     };
 
     return (
-        <div className="flex flex-col mt-4 items-center justify-center">
+        <div className="flex flex-col mt-4 items-center font-sans justify-center">
             <div
                 style={{
                     width: "100%",
@@ -121,17 +121,17 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "4.5rem",
                             left: "8.1rem",
                         }}
-                        className="absolute  w-[300px]   font-tajawal-extrabold capitalize text-4xl text-right   "
+                        className="absolute  w-[300px]    capitalize text-4xl text-right   "
                     >
                         {report.branchar}
                     </p>
                     <p
                         style={{
-                            top: "32rem",
+                            top: "30rem",
                             left: "4rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-center   "
+                        className="absolute w-[940px]  capitalize text-6xl font-serif text-left   "
                     >
                         {report.pname}
                     </p>
@@ -140,7 +140,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "50rem",
                             left: "2.5rem",
                         }}
-                        className="absolute w-[500px]  left-8 font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[500px]  left-8  capitalize text-4xl text-center  "
                     >
                         {report.visitnum}
                     </p>
@@ -149,7 +149,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "49.6rem",
                             left: "32.2rem",
                         }}
-                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-5xl text-right  "
+                        className="absolute w-[150px]   capitalize text-5xl text-right  "
                     >
                         {report.age}
                     </p>
@@ -158,7 +158,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "49.6rem",
                             left: "53.2rem",
                         }}
-                        className="absolute w-[160px]  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[160px]   capitalize text-4xl text-center  "
                     >
                         {report.gender == "0" ? "Male" : "Female"}
                     </p>
@@ -167,7 +167,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "28.2rem",
                             left: "82rem",
                         }}
-                        className="absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
                         {moment(report.created_at).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -178,7 +178,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "28.2rem",
                             right: "10.2rem",
                         }}
-                        className="absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
                         {moment(report.collecteddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -189,7 +189,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "35rem",
                             right: "10.2rem",
                         }}
-                        className="absolute  w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
                         {moment(report.priteddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -200,7 +200,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "35rem",
                             left: "82rem",
                         }}
-                        className="absolute w-[400px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
                         {moment(report.authenticateddate).format(
                             "DD/MM/YYYY hh:mm:ss"
@@ -211,7 +211,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "46.5rem",
                             right: "5.4rem",
                         }}
-                        className="absolute  w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute  w-[680px]  capitalize text-4xl text-center  "
                     >
                         {report.clientid}
                     </p>
@@ -220,7 +220,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "70rem",
                             left: "35rem",
                         }}
-                        className="absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[680px]  capitalize text-4xl text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
@@ -229,7 +229,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "70rem",
                             left: "76.4rem",
                         }}
-                        className="absolute w-[680px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[680px]  capitalize text-4xl text-center  "
                     >
                         {report.result == "0" ? "Negative" : "Positive"}
                     </p>
@@ -268,17 +268,18 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "11.7rem",
                             right: "5.5rem",
                         }}
-                        className="absolute  w-[140px] font-tajawal-extrabold capitalize text-3xl text-left  "
+                        className="absolute  w-[140px]  capitalize text-3xl text-left  "
                     >
                         {report.branch}
                     </p>
                     <p
                         style={{
-                            top: "15.5rem",
+                            top: "14rem",
                             left: "4rem",
+                            fontSize: "3rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute  w-[740px] font-tajawal-extrabold capitalize text-5xl text-left  "
+                        className="absolute  w-[740px]  capitalize  font-serif text-left  "
                     >
                         {report.pname}
                     </p>
@@ -314,7 +315,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "11.3rem",
                             left: "64rem",
                         }}
-                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
                         {moment(report.visitdate).format("ll")}
                     </p>
@@ -323,7 +324,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "15.4rem",
                             left: "64rem",
                         }}
-                        className="absolute w-[300px] font-tajawal-extrabold capitalize text-4xl text-center "
+                        className="absolute w-[300px]  capitalize text-4xl text-center "
                     >
                         {moment(report.resultdate).format("ll")}
                     </p>
@@ -332,7 +333,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "11.3rem",
                             right: "35rem",
                         }}
-                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
                         {moment(report.paymentdate).format("ll")}
                     </p>
@@ -341,7 +342,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "14.8rem",
                             right: "35rem",
                         }}
-                        className="absolute w-[300px]  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
                         {report.receiptno}
                     </p>
@@ -350,7 +351,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "24rem",
                             right: "6rem",
                         }}
-                        className="absolute w-[630px]  font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[630px]   capitalize text-4xl text-center  "
                     >
                         {report.customer}
                     </p>
@@ -360,7 +361,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "43rem",
                             right: "24rem",
                         }}
-                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+                        className="absolute w-[150px]   capitalize text-4xl text-right  "
                     >
                         {report.amount}
                     </p>
@@ -369,7 +370,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "50rem",
                             right: "24rem",
                         }}
-                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+                        className="absolute w-[150px]   capitalize text-4xl text-right  "
                     >
                         {report.amount}
                     </p>
@@ -378,7 +379,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "53rem",
                             right: "24rem",
                         }}
-                        className="absolute w-[150px]  font-tajawal-extrabold capitalize text-4xl text-right  "
+                        className="absolute w-[150px]   capitalize text-4xl text-right  "
                     >
                         {report.amount}
                     </p>
@@ -414,7 +415,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "38rem",
                             right: "43rem",
                         }}
-                        className="absolute w-[180px] font-tajawal-extrabold capitalize text-4xl text-center  "
+                        className="absolute w-[180px]  capitalize text-4xl text-center  "
                     >
                         {report.amount}
                     </p>
@@ -423,7 +424,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "54rem",
                             left: "16rem",
                         }}
-                        className="absolute w-[400px] flex items-center justify-end gap-x-4 font-tajawal-extrabold capitalize text-5xl  "
+                        className="absolute w-[400px] flex items-center justify-end gap-x-4  capitalize text-5xl  "
                     >
                         <span>جنيهاً</span>
                         <span>{report.amount}</span>
