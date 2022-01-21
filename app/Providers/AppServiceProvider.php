@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Inertia::share('success', function(){
+            return session()->get('success') ? session()->get('success') : null;
+        });
     }
 
     /**
