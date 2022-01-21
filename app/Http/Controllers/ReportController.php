@@ -166,7 +166,7 @@ class ReportController extends Controller
         if(request('id')){
             $report = Report::where('patientid', request('id'))->first();
             if($report){
-                return Inertia::render('Report/Result', [
+                return Inertia::render('Report/Print', [
                     'report' => $report
                 ]);
             }else{
