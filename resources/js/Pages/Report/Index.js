@@ -74,7 +74,7 @@ export default function Index({ auth, report }) {
 
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
-                                                                        href={`/edit/${item.id}`}
+                                                                        href={`/show/${item.id}`}
                                                                     >
                                                                         {
                                                                             item.pname
