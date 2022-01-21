@@ -54,7 +54,7 @@ export default function Print({ report, auth, errors, categories }) {
                 doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
             }
-            doc.save("download.pdf");
+            doc.save(`${report.pname}_${moment().format("DD-MM-YYYY")}.pdf`);
         });
     };
 
@@ -131,7 +131,7 @@ export default function Print({ report, auth, errors, categories }) {
                             left: "4rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   "
+                        className="absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-center   "
                     >
                         {report.pname}
                     </p>

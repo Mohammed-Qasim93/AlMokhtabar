@@ -5707,7 +5707,7 @@ function Print(_ref) {
         heightLeft -= pageHeight;
       }
 
-      doc.save("download.pdf");
+      doc.save("".concat(report.pname, "_").concat(moment__WEBPACK_IMPORTED_MODULE_8___default()().format("DD-MM-YYYY"), ".pdf"));
     });
   };
 
@@ -5778,7 +5778,7 @@ function Print(_ref) {
             left: "4rem",
             lineHeight: "1.5"
           },
-          className: "absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-left   ",
+          className: "absolute w-[940px] font-tajawal-extrabold capitalize text-7xl text-center   ",
           children: report.pname
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
           style: {
