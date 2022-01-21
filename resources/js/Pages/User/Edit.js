@@ -92,7 +92,7 @@ export default function Edit({ auth, user, errors, success }) {
                                 <small className="text-red-500 text-base">
                                     {errors.email}
                                 </small>
-                                {user.isAdmin == "1" && user.id !== 1 && (
+                                {auth.user.isAdmin == "1" && user.id !== 1 && (
                                     <div className="flex items-center h-10 w-1/2 text-gray-900">
                                         <Input
                                             name="isAdmin"
