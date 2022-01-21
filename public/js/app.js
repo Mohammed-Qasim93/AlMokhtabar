@@ -6017,6 +6017,16 @@ function Print(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Report/Result.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Report/Result.js ***!
+  \*********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/User/Edit.js":
 /*!*****************************************!*\
   !*** ./resources/js/Pages/User/Edit.js ***!
@@ -94069,6 +94079,8 @@ var map = {
 	"./Report/Index.js": "./resources/js/Pages/Report/Index.js",
 	"./Report/Print": "./resources/js/Pages/Report/Print.js",
 	"./Report/Print.js": "./resources/js/Pages/Report/Print.js",
+	"./Report/Result": "./resources/js/Pages/Report/Result.js",
+	"./Report/Result.js": "./resources/js/Pages/Report/Result.js",
 	"./User/Edit": "./resources/js/Pages/User/Edit.js",
 	"./User/Edit.js": "./resources/js/Pages/User/Edit.js"
 };
