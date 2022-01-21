@@ -68,62 +68,62 @@ class ReportController extends Controller
     public function update(Request $request, $id){
         $report = Report::findOrFail($id);
 
-        if(($report('pname') != $request->pname) || ($report('age') != $request->age) || ($report('gender') != $request->gender)
-            || ($report('result') != $request->result) || ($report('branch') != $request->branch) || ($report('branchar') != $request->branchar)
-            || ($report('amount') != $request->amount) || ($report('paymentusername') != $request->paymentusername) 
-            || ($report('s1date') != $request->s1date) || ($report('s2date') != $request->s2date) || ($report('customer') != $request->customer)){
+        if(($report->pname != $request->pname) || ($report->age != $request->age) || ($report->gender != $request->gender)
+            || ($report->result != $request->result) || ($report->branch != $request->branch) || ($report->branchar != $request->branchar)
+            || ($report->amount != $request->amount) || ($report->paymentusername != $request->paymentusername) 
+            || ($report->s1date != $request->s1date) || ($report->s2date != $request->s2date) || ($report->customer != $request->customer)){
 
-            if(($report('pname') != $request->pname)){
+            if(($report->pname != $request->pname)){
                 $request->validate([
                     'pname' => 'required|string'
                 ]);
             }
-            if(($report('age') != $request->age)){
+            if(($report->age != $request->age)){
                 $request->validate([
                     'age' => 'required|numeric',
                 ]);
             }
-            if(($report('gender') != $request->gender)){
+            if(($report->gender != $request->gender)){
                 $request->validate([
                     'gender' => 'required|string'
                 ]);
             }
-            if(($report('result') != $request->result)){
+            if(($report->result != $request->result)){
                 $request->validate([
                     'result' => 'required|string'
                 ]);
             }
-            if(($report('branch') != $request->branch)){
+            if(($report->branch != $request->branch)){
                 $request->validate([
                     'branch' => 'required|string'
                 ]);
             }
-            if(($report('branchar') != $request->branchar)){
+            if(($report->branchar != $request->branchar)){
                 $request->validate([
                     'branchar' => 'required|string'
                 ]);
             }
-            if(($report('amount') != $request->amount)){
+            if(($report->amount != $request->amount)){
                 $request->validate([
                     'amount' => 'required|numeric',
                 ]);
             }
-            if(($report('paymentusername') != $request->paymentusername)){
+            if(($report->paymentusername != $request->paymentusername)){
                 $request->validate([
                     'paymentusername' => 'required|string',
                 ]);
             }
-            if(($report('s1date') != $request->s1date)){
+            if(($report->s1date != $request->s1date)){
                 $request->validate([
                     's1date' => 'required|date',
                 ]);
             }
-            if(($report('s2date') != $request->s2date)){
+            if(($report->s2date != $request->s2date)){
                 $request->validate([
                     's2date' => 'required|date',
                 ]);
             }
-            if(($report('customer') != $request->customer)){
+            if(($report->customer != $request->customer)){
                 $request->validate([
                     'customer' => 'required|string',
                 ]);
