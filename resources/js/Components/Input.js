@@ -10,6 +10,7 @@ export default function Input({
     isFocused,
     handleChange,
     placeholder,
+    checked,
 }) {
     const input = useRef();
 
@@ -34,6 +35,7 @@ export default function Input({
                 required={required}
                 placeholder={placeholder}
                 onChange={(e) => handleChange(e)}
+                defaultChecked={checked}
             />
         </div>
     );

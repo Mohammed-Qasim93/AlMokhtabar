@@ -4,14 +4,14 @@ import Authenticated from "../../Layouts/Authenticated";
 import Pagination from "@/Components/Pagination";
 import Footer from "../../Layouts/Footer";
 
-export default function Index({ auth, report }) {
+export default function Index({ auth, users }) {
     return (
         <>
             <Authenticated auth={auth}>
-                <Head title="Patients" />
+                <Head title="Users" />
                 <div className="mt-8 relative">
                     <p className="text-4xl text-center font-bold m-5">
-                        Patients Report Table
+                        Users Table
                     </p>
                     <div className="flex justify-center flex-col">
                         <div className="absolute left-5  top-24 sm:left-72  ">
@@ -19,7 +19,7 @@ export default function Index({ auth, report }) {
                                 href="/create"
                                 className="px-4 py-2  bg-gray-800  text-slate-100"
                             >
-                                Create new
+                                Create new user
                             </Link>
                         </div>
                         {report.data.length > 0 ? (

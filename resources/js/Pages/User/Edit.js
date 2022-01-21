@@ -4,14 +4,17 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
+import Checkbox from "@/Components/Checkbox";
 // import ComboBox from "@/Components/ComboBox";
 
 export default function Edit({ auth, user, errors, success }) {
+    console.log(user);
     let { data, setData, post } = useForm({
         name: user.name || "",
         email: user.email || "",
         password: "",
         password_confirmation: "",
+        isAdmin: user.isAdmin,
         _method: "PUT",
     });
     // let [userState, setUserState] = useState(initialState);
@@ -33,16 +36,16 @@ export default function Edit({ auth, user, errors, success }) {
         post(`/user/${user.id}`);
     };
 
-    // const handlechecked = (e) => {
-    //     if (data.isAdmin == "1") {
-    //         setData({ ...data, isAdmin: "0" });
-    //     } else {
-    //         setData({ ...data, isAdmin: "1" });
-    //     }
-    // };
+    const handlechecked = (e) => {
+        if (data.isAdmin == "1") {
+            setData({ ...data, isAdmin: "0" });
+        } else {
+            setData({ ...data, isAdmin: "1" });
+        }
+    };
     return (
         <Authenticated auth={auth}>
-            <Head title={`Edit ${user.name}`} />
+            <Head title={`Edit  ${user.name}  `} />
             <div className="flex">
                 <div className="flex-1 flex flex-col ">
                     <div className=" flex justify-center  text-gray-900 text-2xl">
@@ -89,6 +92,23 @@ export default function Edit({ auth, user, errors, success }) {
                                 <small className="text-red-500 text-base">
                                     {errors.email}
                                 </small>
+                                {user.isAdmin == "1" && user.id !== 1 && (
+                                    <div className="flex items-center h-10 w-1/2 text-gray-900">
+                                        <Input
+                                            name="isAdmin"
+                                            type="checkbox"
+                                            value={data.isAdmin}
+                                            handleChange={handlechecked}
+                                            className="w-6 h-6"
+                                            checked={data.isAdmin}
+                                        />
+                                        <Label
+                                            forInput="isAdmin"
+                                            className="text-xl px-4 "
+                                            value="Make Admin"
+                                        />
+                                    </div>
+                                )}
 
                                 <div className="">
                                     <Label
@@ -125,7 +145,7 @@ export default function Edit({ auth, user, errors, success }) {
                                 </small>
 
                                 <div className="flex justify-center">
-                                    <Button className="bg-green-500 py-2">
+                                    <Button className="bg-green-500 py-2 rounded-md">
                                         Save
                                     </Button>
                                 </div>

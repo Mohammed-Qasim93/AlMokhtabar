@@ -2,9 +2,11 @@ import React from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Link } from "@inertiajs/inertia-react";
 
-export default function Guest({ children }) {
+export default function Guest({ children, className = "min-h-screen" }) {
     return (
-        <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <div
+            className={` ${className} flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100`}
+        >
             <div>
                 <Link href="/">
                     <ApplicationLogo className="w-64 h-20 fill-current text-gray-500" />
