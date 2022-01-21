@@ -63,13 +63,15 @@ export default function Authenticated({ auth, header, children }) {
                                         >
                                             Profile
                                         </Dropdown.Link>
-                                        <Dropdown.Link
-                                            href={`/user/index`}
-                                            method="get"
-                                            as="button"
-                                        >
-                                            Users
-                                        </Dropdown.Link>
+                                        {auth.user.isAdmin && (
+                                            <Dropdown.Link
+                                                href={`/user/index`}
+                                                method="get"
+                                                as="button"
+                                            >
+                                                Users
+                                            </Dropdown.Link>
+                                        )}
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"
@@ -154,12 +156,14 @@ export default function Authenticated({ auth, header, children }) {
                             >
                                 Log Out
                             </ResponsiveNavLink>
-                            <ResponsiveNavLink
-                                method="get"
-                                href={`/user/index`}
-                            >
-                                Users
-                            </ResponsiveNavLink>
+                            {auth.user.isAdmin && (
+                                <ResponsiveNavLink
+                                    method="get"
+                                    href={`/user/index`}
+                                >
+                                    Users
+                                </ResponsiveNavLink>
+                            )}
                             <ResponsiveNavLink
                                 method="post"
                                 href={route("logout")}
