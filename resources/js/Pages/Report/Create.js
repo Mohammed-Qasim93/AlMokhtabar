@@ -197,7 +197,6 @@ export default function Add({ auth, errors, categories }) {
                                                                         value={
                                                                             data.customer
                                                                         }
-
                                                                         onChange={(
                                                                             e
                                                                         ) => {
@@ -251,7 +250,6 @@ export default function Add({ auth, errors, categories }) {
                                                                             onHandleChange
                                                                         }
                                                                         type="datetime-local"
-
                                                                         value={
                                                                             data.s1date
                                                                         }
@@ -359,7 +357,8 @@ export default function Add({ auth, errors, categories }) {
                                                                         onChange={
                                                                             onHandleChange
                                                                         }
-                                                                        type="text"
+                                                                        type="number"
+                                                                        min={1}
                                                                         value={
                                                                             data.amount
                                                                         }

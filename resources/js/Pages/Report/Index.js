@@ -65,7 +65,7 @@ export default function Index({ auth, report }) {
                                                     {report.data.map(
                                                         (item, index) => (
                                                             <tr
-                                                                class="border-b bg-gray-300 "
+                                                                className="border-b bg-gray-300 "
                                                                 key={index}
                                                             >
                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -74,7 +74,7 @@ export default function Index({ auth, report }) {
 
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
-                                                                        href={`/result?id=${item.id}`}
+                                                                        href={`/edit/${item.id}`}
                                                                     >
                                                                         {
                                                                             item.pname
@@ -113,6 +113,7 @@ export default function Index({ auth, report }) {
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     <Link
                                                                         href={`/result?id=${item.patientid}`}
+                                                                        className="flex items-center justify-center"
                                                                     >
                                                                         <img
                                                                             className="h-6 w-6"
@@ -129,6 +130,18 @@ export default function Index({ auth, report }) {
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <Pagination
+                                            firstPageUrl={report.first_page_url}
+                                            lastPageUrl={report.last_page_url}
+                                            nextPage={report.next_page_url}
+                                            prevPage={report.prev_page_url}
+                                            perPage={report.perPage}
+                                            to={report.to}
+                                            total={report.data.length}
+                                            currentPage={report.current_page}
+                                            path={report.path}
+                                            lastPage={report.last_page}
+                                        />
                                     </div>
                                 </div>
                             </div>

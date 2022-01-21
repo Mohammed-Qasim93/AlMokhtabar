@@ -8,9 +8,11 @@ export default function Footer({}) {
             <div className="w-full h-full flex flex-col justify-between px-6 py-4 bg-white shadow-md mt-16 overflow-hidden sm:rounded-lg">
                 <div className="flex p-4 items-center justify-around">
                     <div className="flex flex-col justify-start">
-                        <ApplicationLogo />
-                        <p>Love your self</p>
-                        <p>All rights reserved &copy;</p>
+                        <ApplicationLogo className="w-[180px] h-[50px]" />
+                        <div className="text-center">
+                            <p>Love your self</p>
+                            <p>All rights reserved &copy;</p>
+                        </div>
                     </div>
                     <div className="flex flex-col gap-4 justify-center capitalize">
                         <p>tech support</p>
