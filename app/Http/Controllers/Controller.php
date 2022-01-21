@@ -33,8 +33,12 @@ class Controller extends BaseController
 
     public function delete($id){
         $user = User::findOrFail($id);
-        $user->delete();
-        return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Delete Successflly done']);
+        if($user->isAdmin){
+            return Redirect::route('user.index')->with('warning', ['icon' => 'warning' ,'title' => 'warning', 'message' => 'Cannot delete this User']);
+        }else{
+            $user->delete();
+            return Redirect::route('user.index')->with('success', ['icon' => 'success' ,'title' => 'Successful', 'message' => 'Delete Successflly done']);
+        }
     }
 
     public function update(Request $request, $id){
