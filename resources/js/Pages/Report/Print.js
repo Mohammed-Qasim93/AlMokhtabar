@@ -8,29 +8,18 @@ import ApplicationLogo from "../../Components/ApplicationLogo";
 import moment from "moment";
 import "moment/locale/en-gb";
 import QRcode from "qrcode";
+import Button from "../../Components/Button";
 import { Inertia } from "@inertiajs/inertia";
 
-export default function Print({ report, auth, errors, categories }) {
+export default function Print({ report }) {
     const [qrcode, setQrcode] = React.useState("");
     const qrUrl = `${window.location.origin}/result?id=${report.patientid}`;
-    const [spinner, setSpinner] = React.useState(true);
 
     useEffect(() => {
-        QRcode.toDataURL(qrUrl)
-            .then((url) => {
-                setQrcode(url);
-            })
-            .then(() => {
-                download();
-            });
+        QRcode.toDataURL(qrUrl).then((url) => {
+            setQrcode(url);
+        });
     }, []);
-
-    setTimeout(() => {
-        setSpinner(false);
-        if (auth.user !== null) {
-            Inertia.replace("/");
-        }
-    }, 3000);
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
@@ -74,30 +63,11 @@ export default function Print({ report, auth, errors, categories }) {
                 }}
                 className="loader"
             >
-                {spinner && (
-                    <div className="m-5">
-                        <svg
-                            className="animate-spin -ml-1 mr-3 h-10 w-10 text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                            ></circle>
-                            <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                        </svg>
-                    </div>
-                )}
+                <div className="m-5">
+                    <Button className="text-xl" handleClick={download}>
+                        Download Result
+                    </Button>
+                </div>
 
                 <ApplicationLogo className="w-[20rem] h-20" />
             </div>
@@ -167,9 +137,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format(
-                            "DD/MM/YYYY hh:mm:ss"
-                        )}
+                        {moment(report.s2date).format("DD/MM/YYYY hh:mm:ss")}
                     </p>
                     <p
                         style={{
@@ -178,9 +146,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute w-[400px] capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format(
-                            "DD/MM/YYYY hh:mm:ss"
-                        )}
+                        {moment(report.s2date).format("DD/MM/YYYY hh:mm:ss")}
                     </p>
                     <p
                         style={{
@@ -189,9 +155,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s1date).format(
-                            "DD/MM/YYYY hh:mm:ss"
-                        )}
+                        {moment(report.s1date).format("DD/MM/YYYY hh:mm:ss")}
                     </p>
                     <p
                         style={{
@@ -200,9 +164,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s1date).format(
-                            "DD/MM/YYYY hh:mm:ss"
-                        )}
+                        {moment(report.s1date).format("DD/MM/YYYY hh:mm:ss")}
                     </p>
                     <p
                         style={{
@@ -265,7 +227,6 @@ export default function Print({ report, auth, errors, categories }) {
                         style={{
                             top: "15rem",
                             right: "12.5rem",
-
                         }}
                         className="absolute  w-[200px]  capitalize text-3xl text-center "
                     >
