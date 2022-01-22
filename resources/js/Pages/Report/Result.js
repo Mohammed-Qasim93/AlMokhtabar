@@ -4,7 +4,7 @@ import ApplicationLogo from "../../Components/ApplicationLogo";
 import bg from "/images/bg.jpg";
 import Footer from "../../Layouts/Footer";
 
-export default function Result(report) {
+export default function Result({ report }) {
     return (
         <>
             <nav className="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
@@ -19,9 +19,6 @@ export default function Result(report) {
                         </div>
                         <div className="w-full  h-full flex justify-center  mt-64 mb-24">
                             <div className="flex p-5 rounded-lg flex-col items-center sm:w-3/4 w-full h-[400px] bg-white shadow-sm justify-center gap-y-8">
-                                <p className="capitalize">
-                                    welcome {report.pname}
-                                </p>
                                 <ul className="list-disc capitalize">
                                     <li className="">
                                         <span> {report.patientid} </span>

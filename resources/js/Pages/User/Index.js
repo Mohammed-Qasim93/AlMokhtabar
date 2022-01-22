@@ -4,7 +4,7 @@ import Authenticated from "../../Layouts/Authenticated";
 import Footer from "../../Layouts/Footer";
 import Swal from "sweetalert2";
 import { Inertia } from "@inertiajs/inertia";
-import { Toast } from "@/Components/Toast";
+import Toast from "@/Components/Toast";
 
 export default function Index({ auth, user, success }) {
     useEffect(() => {

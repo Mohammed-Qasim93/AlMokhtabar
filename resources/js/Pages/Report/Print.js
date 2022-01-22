@@ -129,7 +129,7 @@ export default function Print({ report, auth, errors, categories }) {
                             left: "4rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute w-[940px]  capitalize text-6xl font-serif text-left   "
+                        className="absolute w-[940px]  capitalize text-[2.8rem] font-serif text-left   "
                     >
                         {report.pname}
                     </p>
@@ -272,9 +272,9 @@ export default function Print({ report, auth, errors, categories }) {
                     </p>
                     <p
                         style={{
-                            top: "14rem",
+                            top: "14.2rem",
                             left: "4rem",
-                            fontSize: "3rem",
+                            fontSize: "2.2rem",
                             lineHeight: "1.5",
                         }}
                         className="absolute  w-[740px]  capitalize  font-serif text-left  "
