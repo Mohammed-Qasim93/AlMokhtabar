@@ -77,7 +77,7 @@ export default function Print({ report }) {
                 className="loader"
             >
                 <div className="m-5">
-                    <a className="text-xl" download onClick={download}>
+                    <a className="text-xl" download={download()} href="/">
                         Download Result
                     </a>
                 </div>

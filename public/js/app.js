@@ -5685,8 +5685,8 @@ function Print(_ref) {
         className: "m-5",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("a", {
           className: "text-xl",
-          download: true,
-          onClick: download,
+          download: download(),
+          href: "/",
           children: "Download Result"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_5__["default"], {
