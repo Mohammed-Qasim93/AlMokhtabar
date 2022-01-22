@@ -23,26 +23,39 @@ export default function Print({ report }) {
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint).then((canvas) => {
-            const imgData = canvas.toDataURL("image/jpeg", 1.0);
-            const imgWidth = 210;
-            const pageHeight = 295;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        html2canvas(divToPrint)
+            .then((canvas) => {
+                const imgData = canvas.toDataURL("image/jpeg", 1.0);
+                const imgWidth = 210;
+                const pageHeight = 295;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-            let heightLeft = imgHeight;
-            const doc = new jsPDF("p", "mm", "A4");
+                let heightLeft = imgHeight;
+                const doc = new jsPDF("p", "mm", "A4");
 
-            let position = 0;
-            doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-            while (heightLeft >= 0) {
-                position = heightLeft - imgHeight;
-                doc.addPage();
-                doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+                let position = 0;
+                doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
-            }
-            doc.save(`${report.pname}_${moment().format("DD-MM-YYYY")}.pdf`);
-        });
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(
+                        imgData,
+                        "JPEG",
+                        0,
+                        position,
+                        imgWidth,
+                        imgHeight
+                    );
+                    heightLeft -= pageHeight;
+                }
+                doc.save(
+                    `${report.pname}_${moment().format("DD-MM-YYYY")}.pdf`
+                );
+            })
+            .then(() => {
+                Inertia.get("/");
+            });
     };
 
     return (
@@ -64,9 +77,9 @@ export default function Print({ report }) {
                 className="loader"
             >
                 <div className="m-5">
-                    <Button className="text-xl" handleClick={download}>
+                    <a className="text-xl" download onClick={download}>
                         Download Result
-                    </Button>
+                    </a>
                 </div>
 
                 <ApplicationLogo className="w-[20rem] h-20" />

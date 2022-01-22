@@ -5659,6 +5659,8 @@ function Print(_ref) {
       }
 
       doc.save("".concat(report.pname, "_").concat(moment__WEBPACK_IMPORTED_MODULE_6___default()().format("DD-MM-YYYY"), ".pdf"));
+    }).then(function () {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__.Inertia.get("/");
     });
   };
 
@@ -5681,9 +5683,10 @@ function Print(_ref) {
       className: "loader",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
         className: "m-5",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("a", {
           className: "text-xl",
-          handleClick: download,
+          download: true,
+          onClick: download,
           children: "Download Result"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_5__["default"], {
