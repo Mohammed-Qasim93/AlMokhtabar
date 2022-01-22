@@ -119,7 +119,7 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "4.5rem",
                             left: "8.1rem",
                         }}
-                        className="absolute  w-[300px]    capitalize text-4xl text-right   "
+                        className="absolute  w-[300px]  font-serif font-bold  capitalize text-4xl text-right   "
                     >
                         {report.branchar}
                     </p>
@@ -263,10 +263,11 @@ export default function Print({ report, auth, errors, categories }) {
                 >
                     <p
                         style={{
-                            top: "11.7rem",
-                            right: "5.5rem",
+                            top: "15rem",
+                            right: "12.5rem",
+
                         }}
-                        className="absolute  w-[140px]  capitalize text-3xl text-left  "
+                        className="absolute  w-[200px]  capitalize text-3xl text-center bg-red-400  "
                     >
                         {report.branch}
                     </p>
@@ -274,7 +275,7 @@ export default function Print({ report, auth, errors, categories }) {
                         style={{
                             top: "14.2rem",
                             left: "4rem",
-                            fontSize: "2.2rem",
+                            fontSize: "2rem",
                             lineHeight: "1.5",
                         }}
                         className="absolute  w-[740px]  capitalize  font-serif text-left  "
