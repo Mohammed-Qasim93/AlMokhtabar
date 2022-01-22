@@ -8,54 +8,52 @@ import ApplicationLogo from "../../Components/ApplicationLogo";
 import moment from "moment";
 import "moment/locale/en-gb";
 import QRcode from "qrcode";
-import Button from "../../Components/Button";
 import { Inertia } from "@inertiajs/inertia";
 
-export default function Print({ report }) {
+export default function Print({ report, auth, errors, categories }) {
     const [qrcode, setQrcode] = React.useState("");
     const qrUrl = `${window.location.origin}/result?id=${report.patientid}`;
+    const [spinner, setSpinner] = React.useState(true);
 
     useEffect(() => {
-        QRcode.toDataURL(qrUrl).then((url) => {
-            setQrcode(url);
-        });
+        QRcode.toDataURL(qrUrl)
+            .then((url) => {
+                setQrcode(url);
+            })
+            .then(() => {
+                download();
+            });
     }, []);
+
+    setTimeout(() => {
+        setSpinner(false);
+        if (auth.user !== null) {
+            Inertia.replace("/");
+        }
+    }, 3000);
 
     const download = () => {
         const divToPrint = document.querySelector("#page");
-        html2canvas(divToPrint)
-            .then((canvas) => {
-                const imgData = canvas.toDataURL("image/jpeg", 1.0);
-                const imgWidth = 210;
-                const pageHeight = 295;
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        html2canvas(divToPrint).then((canvas) => {
+            const imgData = canvas.toDataURL("image/jpeg", 1.0);
+            const imgWidth = 210;
+            const pageHeight = 295;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-                let heightLeft = imgHeight;
-                const doc = new jsPDF("p", "mm", "A4");
+            let heightLeft = imgHeight;
+            const doc = new jsPDF("p", "mm", "A4");
 
-                let position = 0;
-                doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+            let position = 0;
+            doc.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                doc.addPage();
+                doc.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(
-                        imgData,
-                        "JPEG",
-                        0,
-                        position,
-                        imgWidth,
-                        imgHeight
-                    );
-                    heightLeft -= pageHeight;
-                }
-                doc.save(
-                    `${report.pname}_${moment().format("DD-MM-YYYY")}.pdf`
-                );
-            })
-            .then(() => {
-                Inertia.get("/");
-            });
+            }
+            doc.save(`${report.pname}_${moment().format("DD-MM-YYYY")}.pdf`);
+        });
     };
 
     return (
@@ -76,11 +74,30 @@ export default function Print({ report }) {
                 }}
                 className="loader"
             >
-                <div className="m-5">
-                    <a className="text-xl" download={download()} href="/">
-                        Download Result
-                    </a>
-                </div>
+                {spinner && (
+                    <div className="m-5">
+                        <svg
+                            className="animate-spin -ml-1 mr-3 h-10 w-10 text-gray-400"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                            ></circle>
+                            <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                        </svg>
+                    </div>
+                )}
 
                 <ApplicationLogo className="w-[20rem] h-20" />
             </div>
@@ -102,7 +119,7 @@ export default function Print({ report }) {
                             top: "4.5rem",
                             left: "8.1rem",
                         }}
-                        className="absolute  w-[300px]  font-serif font-bold  capitalize text-4xl text-right   "
+                        className="absolute  w-[300px]    capitalize text-4xl text-right   "
                     >
                         {report.branchar}
                     </p>
@@ -112,7 +129,7 @@ export default function Print({ report }) {
                             left: "4rem",
                             lineHeight: "1.5",
                         }}
-                        className="absolute w-[940px]  capitalize text-[2.8rem] font-serif text-left   "
+                        className="absolute w-[940px]  capitalize text-6xl font-serif text-left   "
                     >
                         {report.pname}
                     </p>
@@ -150,16 +167,20 @@ export default function Print({ report }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format("DD/MM/YYYY hh:mm:ss")}
+                        {moment(report.created_at).format(
+                            "DD/MM/YYYY hh:mm:ss"
+                        )}
                     </p>
                     <p
                         style={{
                             top: "28.2rem",
                             right: "10.2rem",
                         }}
-                        className="absolute w-[400px] capitalize text-4xl text-center  "
+                        className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format("DD/MM/YYYY hh:mm:ss")}
+                        {moment(report.collecteddate).format(
+                            "DD/MM/YYYY hh:mm:ss"
+                        )}
                     </p>
                     <p
                         style={{
@@ -168,7 +189,9 @@ export default function Print({ report }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s1date).format("DD/MM/YYYY hh:mm:ss")}
+                        {moment(report.priteddate).format(
+                            "DD/MM/YYYY hh:mm:ss"
+                        )}
                     </p>
                     <p
                         style={{
@@ -177,7 +200,9 @@ export default function Print({ report }) {
                         }}
                         className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.s1date).format("DD/MM/YYYY hh:mm:ss")}
+                        {moment(report.authenticateddate).format(
+                            "DD/MM/YYYY hh:mm:ss"
+                        )}
                     </p>
                     <p
                         style={{
@@ -238,18 +263,18 @@ export default function Print({ report }) {
                 >
                     <p
                         style={{
-                            top: "15rem",
-                            right: "12.5rem",
+                            top: "11.7rem",
+                            right: "5.5rem",
                         }}
-                        className="absolute  w-[200px]  capitalize text-3xl text-center "
+                        className="absolute  w-[140px]  capitalize text-3xl text-left  "
                     >
                         {report.branch}
                     </p>
                     <p
                         style={{
-                            top: "14.2rem",
+                            top: "14rem",
                             left: "4rem",
-                            fontSize: "2rem",
+                            fontSize: "3rem",
                             lineHeight: "1.5",
                         }}
                         className="absolute  w-[740px]  capitalize  font-serif text-left  "
@@ -290,25 +315,25 @@ export default function Print({ report }) {
                         }}
                         className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format("ll")}
+                        {moment(report.visitdate).format("ll")}
                     </p>
                     <p
                         style={{
                             top: "15.4rem",
                             left: "64rem",
                         }}
-                        className="absolute w-[300px] capitalize text-4xl text-center "
+                        className="absolute w-[300px]  capitalize text-4xl text-center "
                     >
-                        {moment(report.s1date).format("ll")}
+                        {moment(report.resultdate).format("ll")}
                     </p>
                     <p
                         style={{
                             top: "11.3rem",
                             right: "35rem",
                         }}
-                        className="absolute w-[300px] capitalize text-4xl text-center  "
+                        className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
-                        {moment(report.s2date).format("ll")}
+                        {moment(report.paymentdate).format("ll")}
                     </p>
                     <p
                         style={{
@@ -370,9 +395,9 @@ export default function Print({ report }) {
                             top: "49rem",
                             left: "35rem",
                         }}
-                        className="absolute w-[500px] capitalize text-4xl text-left  "
+                        className="absolute  w-[500px] capitalize text-4xl text-left  "
                     >
-                        {report.s2date}
+                        {report.s1date}
                     </p>
                     <p
                         style={{
