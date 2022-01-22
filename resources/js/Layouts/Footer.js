@@ -19,19 +19,6 @@ export default function Footer({ }) {
                     </div>
 
                 </div>
-                <div className=" border-t-2 w-full bottom-0">
-                    <div className="flex p-4 justify-center items-center gap-x-1">
-                        <p>Programmed & Developed by </p>
-                        <a
-                            className="text-blue-500 underline"
-                            target="_blank"
-                            href="https://horizondev-7ul7z3h2p-mohammed-qasim93.vercel.app/"
-                        >
-                            {" "}
-                            HorizonDev{" "}
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     );

@@ -167,7 +167,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.created_at).format(
+                        {moment(report.s2date).format(
                             "DD/MM/YYYY hh:mm:ss"
                         )}
                     </p>
@@ -176,9 +176,9 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "28.2rem",
                             right: "10.2rem",
                         }}
-                        className="absolute w-[400px]  capitalize text-4xl text-center  "
+                        className="absolute w-[400px] capitalize text-4xl text-center  "
                     >
-                        {moment(report.collecteddate).format(
+                        {moment(report.s2date).format(
                             "DD/MM/YYYY hh:mm:ss"
                         )}
                     </p>
@@ -189,7 +189,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute  w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.priteddate).format(
+                        {moment(report.s1date).format(
                             "DD/MM/YYYY hh:mm:ss"
                         )}
                     </p>
@@ -200,7 +200,7 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute w-[400px]  capitalize text-4xl text-center  "
                     >
-                        {moment(report.authenticateddate).format(
+                        {moment(report.s1date).format(
                             "DD/MM/YYYY hh:mm:ss"
                         )}
                     </p>
@@ -267,7 +267,7 @@ export default function Print({ report, auth, errors, categories }) {
                             right: "12.5rem",
 
                         }}
-                        className="absolute  w-[200px]  capitalize text-3xl text-center bg-red-400  "
+                        className="absolute  w-[200px]  capitalize text-3xl text-center "
                     >
                         {report.branch}
                     </p>
@@ -316,25 +316,25 @@ export default function Print({ report, auth, errors, categories }) {
                         }}
                         className="absolute w-[300px]   capitalize text-4xl text-center  "
                     >
-                        {moment(report.visitdate).format("ll")}
+                        {moment(report.s2date).format("ll")}
                     </p>
                     <p
                         style={{
                             top: "15.4rem",
                             left: "64rem",
                         }}
-                        className="absolute w-[300px]  capitalize text-4xl text-center "
+                        className="absolute w-[300px] capitalize text-4xl text-center "
                     >
-                        {moment(report.resultdate).format("ll")}
+                        {moment(report.s1date).format("ll")}
                     </p>
                     <p
                         style={{
                             top: "11.3rem",
                             right: "35rem",
                         }}
-                        className="absolute w-[300px]   capitalize text-4xl text-center  "
+                        className="absolute w-[300px] capitalize text-4xl text-center  "
                     >
-                        {moment(report.paymentdate).format("ll")}
+                        {moment(report.s2date).format("ll")}
                     </p>
                     <p
                         style={{
@@ -396,9 +396,9 @@ export default function Print({ report, auth, errors, categories }) {
                             top: "49rem",
                             left: "35rem",
                         }}
-                        className="absolute  w-[500px] capitalize text-4xl text-left  "
+                        className="absolute w-[500px] capitalize text-4xl text-left  "
                     >
-                        {report.s1date}
+                        {report.s2date}
                     </p>
                     <p
                         style={{
