@@ -864,8 +864,8 @@ select {
 .w-72 {
   width: 18rem;
 }
-.w-\[200px\] {
-  width: 200px;
+.w-\[140px\] {
+  width: 140px;
 }
 .w-\[740px\] {
   width: 740px;
@@ -881,9 +881,6 @@ select {
 }
 .w-1\/2 {
   width: 50%;
-}
-.w-\[140px\] {
-  width: 140px;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -1278,15 +1275,12 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-\[2\.8rem\] {
-  font-size: 2.8rem;
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 .text-5xl {
   font-size: 3rem;
-  line-height: 1;
-}
-.text-6xl {
-  font-size: 3.75rem;
   line-height: 1;
 }
 .text-3xl {
