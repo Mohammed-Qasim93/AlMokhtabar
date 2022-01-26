@@ -257,7 +257,7 @@ export default function Print({ report, auth }) {
                             top: "14.8rem",
                             right: "10rem",
                         }}
-                        className="absolute bg-red-400 w-[300px]  capitalize text-3xl text-center  "
+                        className="absolute w-[300px]  capitalize text-3xl text-center  "
                     >
                         {report.branch}
                     </p>
