@@ -170,7 +170,7 @@ class ReportController extends Controller
         if($report){
             $gender = $report->gender == 0 ? "Female" : "Male";
             $result = $report->result == 0 ? "Negative" : "Positive";
-            $url = 'almokhtabar22.000webhostapp.com';
+            $url = 'almokhtabar22.000webhostapp.com/result?id=' . $report->patientid;
             $page1 = '
             <style>
                 body{

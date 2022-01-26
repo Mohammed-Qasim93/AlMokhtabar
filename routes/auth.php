@@ -37,5 +37,5 @@ Route::post('/store', [ReportController::class, 'store'])->middleware('auth')->n
 Route::get('/edit/{id}', [ReportController::class, 'edit'])->middleware('auth')->name('edit');
 Route::put('/update/{id}', [ReportController::class, 'update'])->middleware('auth')->name('update');
 
-Route::get('/result', [ReportController::class, 'result'])->name('result');
-Route::get('/print', [ReportController::class, 'print'])->name('print');
+Route::get('/result', [ReportController::class, 'result'])->middleware('guest')->name('result');
+Route::get('/print', [ReportController::class, 'print'])->middleware('guest')->name('print');
